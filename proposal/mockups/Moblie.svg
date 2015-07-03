@@ -25,16 +25,16 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1161"
+     inkscape:window-height="984"
      id="namedview9854"
      showgrid="false"
      inkscape:zoom="0.45254834"
-     inkscape:cx="642.0215"
-     inkscape:cy="-716.05061"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:cx="-80.45408"
+     inkscape:cy="807.97315"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer18"
+     inkscape:current-layer="headerBG"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-edge-midpoints="true"
      inkscape:bbox-nodes="true"
@@ -4952,68 +4952,6 @@
          width="412.14285"
          id="rect14506" /></flowRegion><flowPara
        id="flowPara14508" /></flowRoot>  <text
-     transform="scale(1.0000285,0.99997151)"
-     id="text14691-7-7"
-     y="-238.42369"
-     x="2254.384"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.09935951px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     xml:space="preserve"
-     sodipodi:linespacing="125%"><tspan
-       style="font-weight:bold;text-align:center;text-anchor:middle"
-       y="-238.42369"
-       x="2257.2544"
-       id="tspan14693-9-9">Rodem house </tspan><tspan
-       style="text-align:center;text-anchor:middle"
-       id="tspan14695-4-9"
-       y="-210.79942"
-       x="2257.2544">is a place where you can: </tspan></text>
-  <rect
-     style="display:inline;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
-     id="rect14628-9-4"
-     width="221.55981"
-     height="105.04433"
-     x="2145.3857"
-     y="-33.169376"
-     rx="0"
-     ry="0" />
-  <g
-     transform="translate(1335.7506,-537.78724)"
-     style="fill:#cccccc"
-     id="g10634-2">
-    <path
-       inkscape:connector-curvature="0"
-       id="path14630-4-6"
-       d="m 825.90638,511.18243 c -0.88008,0.0409 -1.62949,0.32077 -1.9182,0.717 -0.28873,0.39623 -0.0636,0.83588 0.57585,1.12537 l 188.49537,89.73643 c 0.5433,0.31955 1.4237,0.46396 2.2673,0.37203 0.8437,-0.0917 1.5024,-0.40441 1.6965,-0.80439 0.194,-0.39999 -0.1106,-0.81744 -0.7845,-1.075 L 827.81395,511.51745 c -0.48804,-0.24861 -1.1957,-0.37292 -1.90757,-0.33502 l 0,0 z"
-       style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path14632-3-8"
-       d="m 1013.9779,511.18243 c -0.5155,0.0354 -0.9896,0.15348 -1.3424,0.33502 l -187.64757,89.73642 c -0.87796,0.42551 -0.86219,1.10792 0.0353,1.52415 0.89744,0.41623 2.3367,0.40883 3.21465,-0.0166 L 1015.8148,513.025 c 0.7105,-0.31867 0.9084,-0.81777 0.4904,-1.23698 -0.418,-0.41921 -1.3569,-0.66352 -2.3273,-0.6054 z"
-       style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  </g>
-  <g
-     transform="translate(1338.1703,-537.27474)"
-     id="g10086-99">
-    <rect
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       id="rect10080-8"
-       width="104.6722"
-       height="17.826269"
-       x="865.71674"
-       y="547.7417" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.82917595px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="892.75977"
-       y="562.66583"
-       id="text10082-84"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan10084-9"
-         x="892.75977"
-         y="562.66583">image</tspan></text>
-  </g>
-  <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:FontAwesome;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:FontAwesome;font-stretch:normal;font-variant:normal;"
      x="1839.3053"
@@ -5069,27 +5007,7 @@
          height="288.55838"
          x="2371.875"
          y="602.86633" /></flowRegion><flowPara
-       id="flowPara5160" /></flowRoot>  <path
-     inkscape:connector-curvature="0"
-     id="path6165"
-     style="font-size:35.98247528px;font-family:FontAwesome"
-     d="m 1053.8405,-42.797102 1.8273,-1.8272 -4.7187,-4.7187 -1.8273,1.8272 0,2.1485 2.5702,0 0,2.5702 2.1485,0 z m 10.5016,-18.6338 q 0,-0.4417 -0.4417,-0.4417 -0.2008,0 -0.3414,0.1405 l -10.8831,10.8831 q -0.1405,0.1406 -0.1405,0.3414 0,0.4417 0.4417,0.4417 0.2008,0 0.3414,-0.1405 l 10.8831,-10.8831 q 0.1405,-0.1406 0.1405,-0.3414 z m -1.0843,-3.8552 8.3531,8.353 -16.7062,16.7062 -8.353,0 0,-8.3531 16.7061,-16.7061 z m 13.7143,1.9276 q 0,1.0642 -0.7429,1.8071 l -3.3332,3.3332 -8.3531,-8.353 3.3332,-3.3131 q 0.7229,-0.7631 1.8072,-0.7631 1.0642,0 1.8272,0.7631 l 4.7187,4.6986 q 0.7429,0.7831 0.7429,1.8272 z" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path6167"
-     style="font-size:35.98247528px;font-family:FontAwesome"
-     d="m 1091.3189,-57.153902 q 1.506,-1.506 1.506,-3.6344 0,-2.1285 -1.506,-3.6344 -1.5059,-1.506 -3.6344,-1.506 -2.1284,0 -3.6343,1.506 -1.506,1.5059 -1.506,3.6344 0,2.1284 1.506,3.6344 1.5059,1.5059 3.6343,1.5059 2.1285,0 3.6344,-1.5059 z m 6.6463,-3.6344 q 0,2.1886 -0.6626,3.5942 l -7.3089,15.5415 q -0.3213,0.6627 -0.9638,1.0442 -0.6225,0.3815 -1.3454,0.3815 -0.7228,0 -1.3654,-0.3815 -0.6224,-0.3815 -0.9236,-1.0442 l -7.329,-15.5415 q -0.6627,-1.4056 -0.6627,-3.5942 0,-4.2569 3.012,-7.2688 3.0119,-3.0119 7.2687,-3.0119 4.2569,0 7.2688,3.0119 3.0119,3.0119 3.0119,7.2688 z" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path6169"
-     style="font-size:35.98247528px;font-family:FontAwesome"
-     d="m 1104.4208,-58.218202 10.2807,0 0,-3.8552 q 0,-2.1284 -1.5059,-3.6344 -1.506,-1.506 -3.6344,-1.506 -2.1285,0 -3.6344,1.506 -1.506,1.506 -1.506,3.6344 l 0,3.8552 z m 16.7062,1.9277 0,11.5658 q 0,0.8032 -0.5623,1.3654 -0.5622,0.5622 -1.3654,0.5622 l -19.2763,0 q -0.8032,0 -1.3654,-0.5622 -0.5622,-0.5622 -0.5622,-1.3654 l 0,-11.5658 q 0,-0.8032 0.5622,-1.3654 0.5622,-0.5623 1.3654,-0.5623 l 0.6425,0 0,-3.8552 q 0,-3.6946 2.6505,-6.3451 2.6505,-2.6505 6.3452,-2.6505 3.6946,0 6.3451,2.6505 2.6505,2.6505 2.6505,6.3451 l 0,3.8552 0.6425,0 q 0.8032,0 1.3654,0.5623 0.5623,0.5622 0.5623,1.3654 z" />
-  <path
-     inkscape:connector-curvature="0"
-     id="path6175"
-     style="font-size:35.98247528px;font-family:FontAwesome"
-     d="m 1218.1411,-71.069002 q 2.3895,0 4.0761,1.7067 1.7068,1.6867 1.7068,4.0762 l 0,19.2763 q 0,2.3894 -1.7068,4.0761 -1.6866,1.7068 -4.0761,1.7068 l -3.775,0 0,-11.9473 3.9959,0 0.6024,-4.6585 -4.5983,0 0,-2.9717 q 0,-1.1245 0.4619,-1.6867 0.4819,-0.5622 1.8473,-0.5622 l 2.4497,-0.02 0,-4.1565 q -1.265,-0.1807 -3.5742,-0.1807 -2.7308,0 -4.3773,1.6064 -1.6264,1.6063 -1.6264,4.5379 l 0,3.4336 -4.0159,0 0,4.6585 4.0159,0 0,11.9473 -10.6823,0 q -2.3895,0 -4.0963,-1.7068 -1.6866,-1.6867 -1.6866,-4.0761 l 0,-19.2763 q 0,-2.3895 1.6866,-4.0762 1.7068,-1.7067 4.0963,-1.7067 l 19.2763,0 z" />
-  <text
+       id="flowPara5160" /></flowRoot>  <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:FontAwesome;-inkscape-font-specification:FontAwesome;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      x="2058.3438"
@@ -6064,11 +5982,135 @@
        y="6567.9072" /></text>
   <g
      inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Desktop">
+     id="Spareparts"
+     inkscape:label="Spare parts"
+     style="display:none">
+    <path
+       inkscape:connector-curvature="0"
+       id="path6165"
+       style="font-size:35.98247528px;font-family:FontAwesome"
+       d="m 850.66017,-50.609602 1.8273,-1.8272 -4.7187,-4.7187 -1.8273,1.8272 0,2.1485 2.5702,0 0,2.5702 2.1485,0 z m 10.5016,-18.6338 q 0,-0.4417 -0.4417,-0.4417 -0.2008,0 -0.3414,0.1405 l -10.8831,10.8831 q -0.1405,0.1406 -0.1405,0.3414 0,0.4417 0.4417,0.4417 0.2008,0 0.3414,-0.1405 l 10.8831,-10.8831 q 0.1405,-0.1406 0.1405,-0.3414 z m -1.0843,-3.8552 8.3531,8.353 -16.7062,16.7062 -8.353,0 0,-8.3531 16.7061,-16.7061 z m 13.7143,1.9276 q 0,1.0642 -0.7429,1.8071 l -3.3332,3.3332 -8.3531,-8.353 3.3332,-3.3131 q 0.7229,-0.7631 1.8072,-0.7631 1.0642,0 1.8272,0.7631 l 4.7187,4.6986 q 0.7429,0.7831 0.7429,1.8272 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6167"
+       style="font-size:35.98247528px;font-family:FontAwesome"
+       d="m 888.13857,-64.966402 q 1.506,-1.506 1.506,-3.6344 0,-2.1285 -1.506,-3.6344 -1.5059,-1.506 -3.6344,-1.506 -2.1284,0 -3.6343,1.506 -1.506,1.5059 -1.506,3.6344 0,2.1284 1.506,3.6344 1.5059,1.5059 3.6343,1.5059 2.1285,0 3.6344,-1.5059 z m 6.6463,-3.6344 q 0,2.1886 -0.6626,3.5942 l -7.3089,15.5415 q -0.3213,0.6627 -0.9638,1.0442 -0.6225,0.3815 -1.3454,0.3815 -0.7228,0 -1.3654,-0.3815 -0.6224,-0.3815 -0.9236,-1.0442 l -7.329,-15.5415 q -0.6627,-1.4056 -0.6627,-3.5942 0,-4.2569 3.012,-7.2688 3.0119,-3.0119 7.2687,-3.0119 4.2569,0 7.2688,3.0119 3.0119,3.0119 3.0119,7.2688 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6169"
+       style="font-size:35.98247528px;font-family:FontAwesome"
+       d="m 901.24047,-66.030702 10.2807,0 0,-3.8552 q 0,-2.1284 -1.5059,-3.6344 -1.506,-1.506 -3.6344,-1.506 -2.1285,0 -3.6344,1.506 -1.506,1.506 -1.506,3.6344 l 0,3.8552 z m 16.7062,1.9277 0,11.5658 q 0,0.8032 -0.5623,1.3654 -0.5622,0.5622 -1.3654,0.5622 l -19.2763,0 q -0.8032,0 -1.3654,-0.5622 -0.5622,-0.5622 -0.5622,-1.3654 l 0,-11.5658 q 0,-0.8032 0.5622,-1.3654 0.5622,-0.5623 1.3654,-0.5623 l 0.6425,0 0,-3.8552 q 0,-3.6946 2.6505,-6.3451 2.6505,-2.6505 6.3452,-2.6505 3.6946,0 6.3451,2.6505 2.6505,2.6505 2.6505,6.3451 l 0,3.8552 0.6425,0 q 0.8032,0 1.3654,0.5623 0.5623,0.5622 0.5623,1.3654 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6175"
+       style="font-size:35.98247528px;font-family:FontAwesome"
+       d="m 1014.9608,-78.881502 q 2.3895,0 4.0761,1.7067 1.7068,1.6867 1.7068,4.0762 l 0,19.2763 q 0,2.3894 -1.7068,4.0761 -1.6866,1.7068 -4.0761,1.7068 l -3.775,0 0,-11.9473 3.9959,0 0.6024,-4.6585 -4.5983,0 0,-2.9717 q 0,-1.1245 0.4619,-1.6867 0.4819,-0.5622 1.8473,-0.5622 l 2.4497,-0.02 0,-4.1565 q -1.265,-0.1807 -3.5742,-0.1807 -2.7308,0 -4.3773,1.6064 -1.6264,1.6063 -1.6264,4.5379 l 0,3.4336 -4.0159,0 0,4.6585 4.0159,0 0,11.9473 -10.68233,0 q -2.3895,0 -4.0963,-1.7068 -1.6866,-1.6867 -1.6866,-4.0761 l 0,-19.2763 q 0,-2.3895 1.6866,-4.0762 1.7068,-1.7067 4.0963,-1.7067 l 19.27633,0 z" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text74363"
+       y="1801.1416"
+       x="1944.5138"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1801.1416"
+         x="1944.5138"
+         id="tspan74365"
+         sodipodi:role="line">12/1/2016</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text74381"
+       y="1848.8994"
+       x="1946.6915"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1848.8994"
+         x="1946.6915"
+         id="tspan74383"
+         sodipodi:role="line">5/1/2016</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text74393"
+       y="1896.6572"
+       x="1946.0875"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1896.6572"
+         x="1946.0875"
+         id="tspan74395"
+         sodipodi:role="line">29/12/2015</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text74407"
+       y="1754.3423"
+       x="1946.6915"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1754.3423"
+         x="1946.6915"
+         id="tspan74409"
+         sodipodi:role="line">Date</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text74415"
+       y="1754.3423"
+       x="1754.7856"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-weight:bold"
+         y="1754.3423"
+         x="1754.7856"
+         id="tspan74417"
+         sodipodi:role="line">Category</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text74419"
+       y="1801.0244"
+       x="1756.9954"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1801.0244"
+         x="1756.9954"
+         id="tspan74421"
+         sodipodi:role="line">social event</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text74423"
+       y="1847.0342"
+       x="1755.8905"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="1847.0342"
+         x="1755.8905"
+         id="tspan74425"
+         sodipodi:role="line">Rodem fellowship</tspan></text>
+    <text
+       xml:space="preserve"
+       style="display:inline;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1755.8905"
+       y="1894.792"
+       id="text74427"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan74429"
+         x="1755.8905"
+         y="1894.792">Rodem fellowship</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="Desktop"
+     inkscape:label="Desktop"
+     style="display:inline">
     <g
        inkscape:groupmode="layer"
-       id="layer3"
+       id="Monitor"
        inkscape:label="Monitor"
        style="display:inline">
       <g
@@ -6090,9 +6132,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer6"
+       id="headerBG"
        inkscape:label="header BG"
-       style="display:none">
+       style="display:inline">
       <rect
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -6107,9 +6149,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer7"
+       id="Navbase"
        inkscape:label="Nav base"
-       style="display:none">
+       style="display:inline">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.41959381px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -6129,9 +6171,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer17"
+       id="EditheaderBG"
        inkscape:label="Edit header BG"
-       style="display:inline">
+       style="display:none">
       <rect
          ry="0"
          rx="0"
@@ -6146,10 +6188,10 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer5"
-       inkscape:label="logo">
+       id="logo"
+       inkscape:label="logo"
+       style="display:inline">
       <g
-         style=""
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
          id="g5431"
@@ -6177,9 +6219,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer15"
+       id="EditNavbase"
        inkscape:label="Edit Nav base"
-       style="display:inline">
+       style="display:none">
       <text
          sodipodi:linespacing="125%"
          id="text7320-0-8-9"
@@ -6197,9 +6239,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer16"
+       id="EditLogout"
        inkscape:label="Edit Logout"
-       style="display:inline">
+       style="display:none">
       <g
          id="g19055"
          transform="translate(-6058.279,-1976.8066)"
@@ -6228,9 +6270,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer18"
+       id="editoreventsspecific"
        inkscape:label="editor events specific"
-       style="display:inline">
+       style="display:none">
       <rect
          ry="0"
          rx="0"
@@ -6624,7 +6666,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer19"
+       id="editoraddeventspecific"
        inkscape:label="editor add event specific"
        style="display:none">
       <rect
@@ -7071,7 +7113,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer13"
+       id="Contactspecific"
        inkscape:label="Contact specific"
        style="display:none">
       <rect
@@ -7461,7 +7503,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer9"
+       id="Aboutusspecific"
        inkscape:label="About us specific"
        style="display:none">
       <text
@@ -7536,9 +7578,9 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRoot>    </g>
     <g
        inkscape:groupmode="layer"
-       id="layer11"
+       id="Homespecific"
        inkscape:label="Home specific"
-       style="display:none">
+       style="display:inline">
       <rect
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -7781,7 +7823,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer12"
+       id="Attendspecific"
        inkscape:label="Attend specific"
        style="display:none">
       <rect
@@ -8294,7 +8336,7 @@
            id="flowPara6588">This is the description for this week's event. This could be a game night, guest speaker or any other event you can think of.</flowPara></flowRoot>    </g>
     <g
        inkscape:groupmode="layer"
-       id="layer10"
+       id="Footer"
        inkscape:label="Footer"
        style="display:none">
       <rect
@@ -8380,9 +8422,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer14"
+       id="EditFooter"
        inkscape:label="Edit Footer"
-       style="display:inline">
+       style="display:none">
       <g
          id="g6664"
          transform="translate(0.92988963,-6782.0782)"
@@ -8509,7 +8551,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer8"
+       id="Bannerlabel"
        inkscape:label="Banner label"
        style="display:inline">
       <text
@@ -8530,15 +8572,15 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Mobile">
+     id="Mobile"
+     inkscape:label="Mobile"
+     style="display:inline">
     <g
        inkscape:groupmode="layer"
-       id="layer4"
+       id="Phone"
        inkscape:label="Phone"
        style="display:inline">
       <g
-         style=""
          id="g36852"
          transform="translate(-33.885996,-16.446421)"
          inkscape:export-xdpi="90"
@@ -8558,13 +8600,14 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer21"
-       inkscape:label="Banner">
+       id="Banner"
+       inkscape:label="Banner"
+       style="display:inline">
       <g
          inkscape:groupmode="layer"
-         id="layer22"
+         id="Big"
          inkscape:label="Big"
-         style="display:none">
+         style="display:inline">
         <rect
            rx="0"
            ry="0"
@@ -8579,9 +8622,9 @@
       </g>
       <g
          inkscape:groupmode="layer"
-         id="layer23"
+         id="Small"
          inkscape:label="Small"
-         style="display:inline">
+         style="display:none">
         <rect
            style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:#666666;stroke-width:0.99999994;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
            id="rect17563"
@@ -8596,7 +8639,7 @@
       </g>
       <g
          inkscape:groupmode="layer"
-         id="layer24"
+         id="Label"
          inkscape:label="Label"
          style="display:inline">
         <text
@@ -8617,9 +8660,9 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer25"
+       id="MHomespecific"
        inkscape:label="M Home specific"
-       style="display:none">
+       style="display:inline">
       <g
          id="g51239"
          transform="translate(1.8936691,0)">
@@ -8862,12 +8905,12 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer26"
+       id="MAttendspecific"
        inkscape:label="M Attend specific"
        style="display:none" />
     <g
        inkscape:groupmode="layer"
-       id="layer28"
+       id="MContactspecific"
        inkscape:label="M Contact specific"
        style="display:none">
       <g
@@ -9225,7 +9268,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer29"
+       id="MAboutusspecific"
        inkscape:label="M About us specific"
        style="display:none">
       <g
@@ -9271,7 +9314,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer31"
+       id="MEditoreventsspecific"
        inkscape:label="M Editor events specific"
        style="display:none">
       <g
@@ -9376,19 +9419,6 @@
          width="16"
          id="rect74361"
          style="display:inline;overflow:visible;visibility:visible;fill:url(#linearGradient15287);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate" />
-      <text
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         sodipodi:linespacing="125%"
-         id="text74363"
-         y="1801.1416"
-         x="1944.5138"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1801.1416"
-           x="1944.5138"
-           id="tspan74365"
-           sodipodi:role="line">12/1/2016</tspan></text>
       <g
          style="display:inline"
          inkscape:export-ydpi="90"
@@ -9430,19 +9460,6 @@
            y="1849.2949"><tspan
              style="font-weight:bold"
              id="tspan74379">Coffee and Talk </tspan></tspan></text>
-      <text
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         sodipodi:linespacing="125%"
-         id="text74381"
-         y="1848.8994"
-         x="1946.6915"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1848.8994"
-           x="1946.6915"
-           id="tspan74383"
-           sodipodi:role="line">5/1/2016</tspan></text>
       <path
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -9484,19 +9501,6 @@
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
          sodipodi:linespacing="125%"
-         id="text74393"
-         y="1896.6572"
-         x="1946.0875"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1896.6572"
-           x="1946.0875"
-           id="tspan74395"
-           sodipodi:role="line">29/12/2015</tspan></text>
-      <text
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         sodipodi:linespacing="125%"
          id="text74397"
          y="1801.1465"
          x="1055.3552"
@@ -9524,19 +9528,6 @@
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
          sodipodi:linespacing="125%"
-         id="text74407"
-         y="1754.3423"
-         x="1946.6915"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1754.3423"
-           x="1946.6915"
-           id="tspan74409"
-           sodipodi:role="line">Date</tspan></text>
-      <text
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         sodipodi:linespacing="125%"
          id="text74411"
          y="1754.3423"
          x="1139.8408"
@@ -9546,51 +9537,6 @@
            x="1139.8408"
            id="tspan74413"
            sodipodi:role="line">Select</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text74415"
-         y="1754.3423"
-         x="1754.7856"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-weight:bold"
-           y="1754.3423"
-           x="1754.7856"
-           id="tspan74417"
-           sodipodi:role="line">Category</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text74419"
-         y="1801.0244"
-         x="1756.9954"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1801.0244"
-           x="1756.9954"
-           id="tspan74421"
-           sodipodi:role="line">social event</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text74423"
-         y="1847.0342"
-         x="1755.8905"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="1847.0342"
-           x="1755.8905"
-           id="tspan74425"
-           sodipodi:role="line">Rodem fellowship</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="1755.8905"
-         y="1894.792"
-         id="text74427"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan74429"
-           x="1755.8905"
-           y="1894.792">Rodem fellowship</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text14289-0-1"
@@ -9618,12 +9564,26 @@
            id="tspan14333-8-0"
            x="865.32111"
            y="1629.1653">website editor &gt; events </tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="1044.036"
+         y="1660.3237"
+         id="text13003"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan13005"
+           x="1044.036"
+           y="1660.3237"
+           style="font-size:17.5px">logged in as ADMIN</tspan></text>
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer32"
+       id="MEditoraddeventspecific"
        inkscape:label="M Editor add event specific"
-       style="display:inline">
+       style="display:none">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70px;line-height:125%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -10044,7 +10004,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer27"
+       id="footer"
        inkscape:label="footer"
        style="display:none">
       <g
@@ -10109,7 +10069,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer30"
+       id="editorfooter"
        inkscape:label="editor footer"
        style="display:none">
       <g
@@ -10231,7 +10191,7 @@
     </g>
     <g
        inkscape:groupmode="layer"
-       id="layer20"
+       id="header"
        inkscape:label="header"
        style="display:inline">
       <rect
@@ -10297,6 +10257,405 @@
              x="317.27859"
              y="340.85013">Logo</tspan></text>
       </g>
+    </g>
+  </g>
+  <g
+     style="display:inline"
+     id="ArmatureInfo"
+     inkscape:label="Armature"
+     inkscape:groupmode="layer"
+     class="armature-internal">
+    <g
+       style="display:none"
+       inkscape:label="Armature UI"
+       id="ArmatureUI"
+       class="armature-internal"
+       sodipodi:insensitive="true">
+      <rect
+         style="fill:#ffffff"
+         width="744.09448"
+         height="1052.3622"
+         x="0"
+         y="0"
+         id="rect14694" />
+      <svg
+         style="display:none"
+         width="744.09448"
+         height="1052.3622"
+         id="svg14696"
+         version="1.1"
+         inkscape:version="0.91 r"
+         sodipodi:docname="armature.ui.svg">
+        <sodipodi:namedview
+           id="base"
+           pagecolor="#ffffff"
+           bordercolor="#666666"
+           borderopacity="1.0"
+           inkscape:pageopacity="0.0"
+           inkscape:pageshadow="2"
+           inkscape:zoom="1.4142136"
+           inkscape:cx="353.72625"
+           inkscape:cy="844.70273"
+           inkscape:document-units="px"
+           inkscape:current-layer="svg2"
+           showgrid="false"
+           inkscape:window-width="1920"
+           inkscape:window-height="1177"
+           inkscape:window-x="1358"
+           inkscape:window-y="-8"
+           inkscape:window-maximized="1"
+           showguides="true"
+           inkscape:guide-bbox="true">
+          <sodipodi:guide
+             orientation="1,0"
+             position="26.16295,968.02916"
+             id="guide3075" />
+          <sodipodi:guide
+             orientation="0,1"
+             position="142.83557,1021.7693"
+             id="guide3077" />
+          <sodipodi:guide
+             orientation="1,0"
+             position="373.35238,951.05862"
+             id="guide3930" />
+        </sodipodi:namedview>
+        <defs
+           id="defs14702">
+          <linearGradient
+             id="linearGradient3873">
+            <stop
+               style="stop-color:#000000;stop-opacity:0.44642857;"
+               offset="0"
+               id="stop3875" />
+            <stop
+               style="stop-color:#000000;stop-opacity:0;"
+               offset="1"
+               id="stop3877" />
+          </linearGradient>
+        </defs>
+        <metadata
+           id="metadata14707">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title />
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <g
+           style="display:inline"
+           inkscape:label="Layer"
+           id="Layer"
+           inkscape:groupmode="layer"
+           transform="translate(0,2.172441e-5)" />
+        <rect
+           style="fill:#cccccc;fill-opacity:1;stroke:none"
+           id="ArmatureRect"
+           width="744.58344"
+           height="368.40262"
+           x="0.70710677"
+           y="0.18734282"
+           inkscape:label="ArmatureRect" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:30.43082809px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
+           x="25.973013"
+           y="51.709385"
+           id="text8128"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan8130"
+             x="25.973013"
+             y="51.709385">Welcome to Armature</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.74626923px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+           x="26.156029"
+           y="86.138306"
+           id="text3071"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="86.138306"
+             id="tspan3881"
+             style="font-size:14px">Armature allows you to easily create wireframes</tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="103.63831"
+             style="font-size:14px"
+             id="tspan4027">from a single Inkscape document.  </tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="121.13831"
+             style="font-size:14px"
+             id="tspan5241" /><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="138.63831"
+             style="font-size:14px"
+             id="tspan5256">Armature works by turning on and off the visibility  of</tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="156.13831"
+             style="font-size:14px"
+             id="tspan5264">layers in your Inkscape document. These groups of </tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="173.63831"
+             style="font-size:14px"
+             id="tspan5268">layers, called layer sets, will each be a screen in your</tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="191.13831"
+             style="font-size:14px"
+             id="tspan14720">wireframes. </tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="208.63831"
+             style="font-size:14px"
+             id="tspan4029" /><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="226.13831"
+             style="font-size:14px"
+             id="tspan4306">This layer contains a list of each layer set that has </tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="243.63831"
+             style="font-size:14px"
+             id="tspan4429">been created in this document.</tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="261.13831"
+             style="font-size:14px"
+             id="tspan4413" /><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="280.63181"
+             style="font-weight:bold;font-size:16px"
+             id="tspan4417">You may hide this layer, but if you delete </tspan><tspan
+             sodipodi:role="line"
+             x="26.156029"
+             y="300.63181"
+             style="font-weight:bold;font-size:16px"
+             id="tspan4039">it your  wireframe groups will be lost.</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="485.78235"
+           y="58.170097"
+           id="text3918"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3920"
+             x="485.78235"
+             y="58.170097" /></text>
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3922"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
+           transform="matrix(0.82164818,0,0,0.82164818,-31.596489,161.89933)"><flowRegion
+             id="flowRegion3924"><rect
+               id="rect3926"
+               width="236.88077"
+               height="19.79899"
+               x="494.26764"
+               y="56.755859"
+               style="fill:#1a1a1a" /></flowRegion><flowPara
+             id="flowPara3928">Delete Layer sets</flowPara></flowRoot>        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="243.69125"
+           id="text3932"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="243.69125"
+             style="font-size:11.50307465px"
+             id="tspan3963">Activate the <tspan
+   style="font-weight:bold"
+   id="tspan5090">Armature</tspan> layer in inkscape, and delete the layer name</tspan><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="258.0701"
+             style="font-size:11.50307465px"
+             id="tspan5088">from the list.</tspan></text>
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4041"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
+             id="flowRegion4043"><rect
+               id="rect4045"
+               width="14.142136"
+               height="21.213203"
+               x="35.355339"
+               y="240.60359" /></flowRegion><flowPara
+             id="flowPara4047">asdf</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4289"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+             id="flowRegion4291"><rect
+               id="rect4293"
+               width="170.41273"
+               height="26.162951"
+               x="107.48023"
+               y="168.4787" /></flowRegion><flowPara
+             id="flowPara4295" /></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3922-12"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
+           transform="translate(-120.92887,-20.748714)"><flowRegion
+             id="flowRegion3924-60"><rect
+               id="rect3926-4"
+               width="236.88077"
+               height="19.79899"
+               x="494.26764"
+               y="56.755859"
+               style="fill:#1a1a1a" /></flowRegion><flowPara
+             id="flowPara3928-9">Using Armature</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3922-8"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
+           transform="matrix(0.82164818,0,0,0.82164818,-31.59649,65.899329)"><flowRegion
+             id="flowRegion3924-1"><rect
+               id="rect3926-2"
+               width="430.51477"
+               height="20.659586"
+               x="494.26764"
+               y="56.755859"
+               style="fill:#1a1a1a" /></flowRegion><flowPara
+             id="flowPara3928-1">Create or Update Layer sets</flowPara></flowRoot>        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="139.69125"
+           id="text3932-4"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="139.69125"
+             style="font-style:oblique;font-size:11.50307465px;-inkscape-font-specification:'Sans Oblique'"
+             id="tspan5048">Armature &gt;  <tspan
+   style="font-style:oblique;font-weight:bold;-inkscape-font-specification:'Sans Oblique'"
+   id="tspan5054">Create/Update Layer Set</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="75.691254"
+           id="text3932-4-8"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="75.691254"
+             style="font-size:11.50307465px"
+             id="tspan5048-8">Amature is can be found in the <tspan
+   style="font-weight:bold"
+   id="tspan5084">Extensions </tspan>menu..  From there you</tspan><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="90.070099"
+             style="font-size:11.50307465px"
+             id="tspan5086">will be able to create and update layer sets</tspan></text>
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot3922-4"
+           style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
+           transform="matrix(0.82164818,0,0,0.82164818,-31.596489,233.89933)"><flowRegion
+             id="flowRegion3924-5"><rect
+               id="rect3926-5"
+               width="236.88077"
+               height="19.79899"
+               x="494.26764"
+               y="56.755859"
+               style="fill:#1a1a1a" /></flowRegion><flowPara
+             id="flowPara3928-17">Generate wirames</flowPara></flowRoot>        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="331.69125"
+           id="text3932-1"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="331.69125"
+             style="font-size:11.50307465px"
+             id="tspan5088-2">Generate wireframes will place a HTML file in the folder where you</tspan><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="346.0701"
+             style="font-size:11.50307465px"
+             id="tspan5231">created your Inkscape document.  </tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="307.69125"
+           id="text3932-4-7"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="307.69125"
+             style="font-style:oblique;font-size:11.50307465px;-inkscape-font-specification:'Sans Oblique'"
+             id="tspan5048-6">Armature &gt;  <tspan
+   style="font-weight:bold"
+   id="tspan5226">Generate Wireframes</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:14.78966713px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
+           x="374.52881"
+           y="163.69125"
+           id="text3932-42"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="163.69125"
+             style="font-size:11.50307465px;fill:#4d4d4d"
+             id="tspan5218">Armature layer sets are created in the Create/Update Layer Set tab</tspan><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="178.0701"
+             style="font-size:11.50307465px;fill:#4d4d4d"
+             id="tspan5222">of the Armature extension.  When you create or update a layer set</tspan><tspan
+             sodipodi:role="line"
+             x="374.52881"
+             y="192.44894"
+             style="font-size:11.50307465px;fill:#4d4d4d"
+             id="tspan5224">the states of each layer in your document  are recorded.</tspan></text>
+      </svg>
+    </g>
+    <g
+       style="display:inline"
+       inkscape:label="Armature Data"
+       inkscape:groupmode="layer"
+       id="ArmatureData"
+       y="0"
+       class="armature-internal">
+      <text
+         style="font-weight:bold;font-size:20px"
+         x="20"
+         y="345"
+         class="data-node"
+         id="ArmatureDataNode-websiteeditorevents"
+         inkscape:label="on:Desktop,Monitor,EditheaderBG,logo,EditNavbase,EditLogout,editoreventsspecific,EditFooter,Bannerlabel,Mobile,Phone,Banner,Small,Label,MEditoreventsspecific,editorfooter,header,Layer;set:websiteeditorevents;off:Spareparts,headerBG,Navbase,editoraddeventspecific,Contactspecific,Aboutusspecific,Homespecific,Attendspecific,Footer,Big,MHomespecific,MAttendspecific,MContactspecific,MAboutusspecific,MEditoraddeventspecific,footer">websiteeditorevents</text>
+      <text
+         inkscape:label="on:Desktop,Monitor,EditheaderBG,logo,EditNavbase,EditLogout,editoraddeventspecific,Bannerlabel,Mobile,Phone,Banner,Small,Label,MEditoraddeventspecific,header,Layer;set:websiteeditoraddevent;off:Spareparts,headerBG,Navbase,editoreventsspecific,Contactspecific,Aboutusspecific,Homespecific,Attendspecific,Footer,EditFooter,Big,MHomespecific,MAttendspecific,MContactspecific,MAboutusspecific,MEditoreventsspecific,footer,editorfooter"
+         id="ArmatureDataNode-websiteeditoraddevent"
+         class="data-node"
+         y="380.0"
+         x="20"
+         style="font-size:16pt;font-weight:bold">websiteeditoraddevent</text>
+      <text
+         inkscape:label="on:Desktop,Monitor,headerBG,Navbase,logo,Homespecific,Bannerlabel,Mobile,Phone,Banner,Big,Label,MHomespecific,header,Layer;set:homepage;off:Spareparts,EditheaderBG,EditNavbase,EditLogout,editoreventsspecific,editoraddeventspecific,Contactspecific,Aboutusspecific,Attendspecific,Footer,EditFooter,Small,MAttendspecific,MContactspecific,MAboutusspecific,MEditoreventsspecific,MEditoraddeventspecific,footer,editorfooter"
+         id="ArmatureDataNode-homepage"
+         class="data-node"
+         y="415.0"
+         x="20"
+         style="font-size:16pt;font-weight:bold">homepage</text>
     </g>
   </g>
 </svg>
