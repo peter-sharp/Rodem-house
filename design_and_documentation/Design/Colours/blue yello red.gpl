@@ -1,0 +1,20 @@
+GIMP Palette
+#
+130 125 131    mask#0 primary#0
+125 130 124    mask#0 primary#1
+24 158 249    mask#0 primary#2
+6 169 235    mask#0 primary#3
+78 136 217    mask#0 primary#4
+38 164 178    mask#0 primary#5
+127 128 124    mask#1 primary#0
+128 127 131    mask#1 primary#1
+249 70 105    mask#1 primary#2
+249 66 124    mask#1 primary#3
+217 89 91    mask#1 primary#4
+217 78 147    mask#1 primary#5
+124 130 126    mask#2 primary#0
+131 125 129    mask#2 primary#1
+142 143 6    mask#2 primary#2
+154 137 6    mask#2 primary#3
+125 145 38    mask#2 primary#4
+163 126 38    mask#2 primary#5
