@@ -5,7 +5,7 @@ include('./templates/header.php');
 
   <h1>international<br>fellowship</h1>
   <article class="CTA_area">
-    <div class="regular wrapper">
+    <div class="site wrapper">
 
       <p>
           Come to Rodem fellowship to:<br>
