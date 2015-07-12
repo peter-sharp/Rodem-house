@@ -1,3 +1,3 @@
-<footer> <span>&copy; Rodem House</span> <a href="#">login</a> </footer>
+<footer> <span>&copy; Rodem House</span> <a href="editor.php">login</a> </footer>
 </body>
 </html>
