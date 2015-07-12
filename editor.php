@@ -2,7 +2,7 @@
 include('./templates/header.php');
 ?>
 <main>
-  h1{website editor}
+  <h1>website editor</h1>
   <article class="editor">
     <p class="admin">This is where you can make changes to the website. you can make changes to the text
       on the pages listed above. </p>
