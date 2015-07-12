@@ -1,4 +1,4 @@
-<?
+<?php
 include('./templates/header.php');
 ?>
 <main>
@@ -10,13 +10,13 @@ include('./templates/header.php');
       <p>
           Come to Rodem fellowship to:<br>
           practice your <strong>English,</strong>
-          make international friends,<br>
+          make <strong>international friends</strong>,<br>
           and find out about <strong>Christianity</strong>
       </p>
       <button type="button" class="meeting">next meeting</button>
     </div>
   </article>
 </main>
-<?
+<?php
 include('./templates/footer.php');
 ?>
