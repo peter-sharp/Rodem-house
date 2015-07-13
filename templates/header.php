@@ -1,4 +1,5 @@
 <?php
+
     $pages = array(
       'index' => 'home',
       'about' => 'about us',
@@ -24,3 +25,17 @@
       </ul>
     </nav>
   </header>
+  <?php if ( /* !$authenticator->isAuthenticated() */ false ): ?>
+    <main>
+      <h1><small>website editor</small><br>login</h1>
+      <section class="login">
+        <label for="username">user name</label>
+        <input type="text" name="username" value="">
+
+        <label for="password">password</label>
+        <input type="password" name="password" value="">
+
+        <button class="btn btn-CTA" type="submit" name="login">log in</button>
+      </section>
+    </main>
+  <?php endif ?>
