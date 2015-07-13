@@ -7,7 +7,7 @@ include('./templates/header.php');
   <h1>events</h1>
   <p>website editor > events</p>
   <section class="editor">
-    <p>loged in as ADMIN</p>
+    <p>logged in as ADMIN</p>
     <button type="button">add new</button>
     <table>
       <tr>

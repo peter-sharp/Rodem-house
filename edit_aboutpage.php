@@ -8,7 +8,7 @@ include('./templates/header.php');
     <h1>edit<br><small>about us page</small></h1>
     <p>website editor > about page</p>
     <section class="editor">
-      <p>loged in as ADMIN</p>
+      <p>logged in as ADMIN</p>
       <label for="about">about us text</label>
       <textarea  name="about" ></textarea>
 
