@@ -19,7 +19,7 @@
     <nav>
       <ul>
         <?php foreach ($pages as $pageId => $pageTitle): ?>
-        <li <?=(($_GET['pg'] == $pageId) ? 'class="active"' : '')?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
+        <li <?=(((basename($_SERVER['PHP_SELF'])) == $pageId) ? 'class="active"' : '')?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
         <?php endforeach; ?>
       </ul>
     </nav>
