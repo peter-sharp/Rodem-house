@@ -1,7 +1,7 @@
 <?php
 include('./templates/header.php');
 ?>
-<main>
+
   <form class="pages" action="index.html" method="post">
 
   <main>
