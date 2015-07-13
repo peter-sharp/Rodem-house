@@ -1,6 +1,7 @@
 <?php
 include('./templates/header.php');
 ?>
+<?php if ( /* $authenticator->isAuthenticated() */ false ): ?>
 <main>
   <h1>website editor</h1>
   <article class="editor">
@@ -12,6 +13,7 @@ include('./templates/header.php');
     <p> <small>You can also add, update or delete felowship or social events by clicking on the 'events' link above. </small></p>
   </article>
 </main>
+<? endif ?>
 <?php
 include('./templates/footer.php');
 ?>
