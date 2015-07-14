@@ -19,15 +19,15 @@
       <feTurbulence
          id="feTurbulence14568"
          result="turbulence"
-         baseFrequency="0.052000000000000005 0.054000000000000006"
+         baseFrequency="0.05 0.05"
          seed="159"
-         numOctaves="8"
+         numOctaves="10"
          type="fractalNoise" />
       <feDisplacementMap
          id="feDisplacementMap14570"
          xChannelSelector="R"
          yChannelSelector="G"
-         scale="3.4"
+         scale="10"
          in2="turbulence"
          in="SourceGraphic" />
     </filter>
