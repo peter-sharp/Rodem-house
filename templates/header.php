@@ -31,7 +31,7 @@
           <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
           <?php endforeach; ?>
         </ul>
-      </nav>foreach; ?>
+      </nav>
         </ul>
       </nav>
     </div>
