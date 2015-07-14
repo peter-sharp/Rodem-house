@@ -39,6 +39,7 @@ main {
 header,
 footer {
   position: relative;
+  background-color: #423f42;
   background-image: url(../images/noise.svg);
   background-repeat: repeat;
   width: 100%;
