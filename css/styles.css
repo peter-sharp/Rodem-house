@@ -1,0 +1,129 @@
+/* logo */
+/* BG images */
+/* patterns */
+/* colours */
+/* fonts */
+/* ########################### Browser reset ########################### */
+html,
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+body,
+body * {
+  outline: 0;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+  -moz-box-sizing: border-box;
+  /* Firefox 1 - 28 */
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  list-style-type: none;
+}
+/* ############################# main tags ############################# */
+body {
+  background-color: grey;
+}
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  vertical-align: bottom;
+}
+header,
+footer {
+  position: relative;
+  background-image: url(../images/noise.svg);
+  background-repeat: repeat;
+  width: 100%;
+}
+header {
+  min-height: 100px;
+  height: 15%;
+  padding: 5px;
+}
+footer {
+  height: 25px;
+  padding: 5px;
+}
+article {
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/swirls.svg);
+  background-repeat: repeat;
+  background-color: white;
+  padding: 5px;
+}
+h1 {
+  color: white;
+  text-align: left;
+  width: auto;
+  font-size: 100px;
+}
+h1 > small {
+  font-size: 50px;
+  color: white;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+}
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14;
+  color: #423f42;
+}
+a > small {
+  font-size: smaller;
+  color: #ff694c;
+}
+/* ############################# utility classes ############################# */
+.center-block {
+  float: none;
+}
+/* ############################# nav styles ############################# */
+nav li {
+  display: inline-block;
+  padding: 1% 4% 1% 4%;
+  text-transform: uppercase;
+  vertical-align: center;
+}
+nav a {
+  color: white;
+}
+li.active > a {
+  color: grey;
+}
+/* ############################# logo ############################# */
+h1.logo {
+  display: inline-block;
+  background: url(../images/Rodem_logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 50px;
+  min-width: 129px;
+  vertical-align: center;
+}
+h1.logo a {
+  display: inline;
+  width: ;
+  height: ;
+  display: block;
+  text-indent: -9999px;
+}
+/* ///////////////////////////////// page specific ///////////////////////////////// */
+/* ############################# home ############################# */
+main.home {
+  background: url(../images/BG_home.jpg) no-repeat 0 50%;
+  background-size: cover;
+}
+.CTA_area {
+  background-color: #189ef9;
+}
