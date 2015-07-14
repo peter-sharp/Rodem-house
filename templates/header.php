@@ -22,7 +22,7 @@
 </head>
 <body>
   <header>
-    <h1 class="logo">Rodem House</h1>
+    <h1 class="logo"><a href="./index.php">Rodem House</a></h1>
     <nav>
       <ul>
         <?php foreach ($pages as $pageId => $pageTitle): ?>
