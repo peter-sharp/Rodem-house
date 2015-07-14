@@ -16,7 +16,9 @@
   <!-- bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+<!-- fonts -->
 <link rel="stylesheet" href="./font-awesome-4.3.0/css/font-awesome.min.css"> <!-- credit to Font Awesome for the icons. -->
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab' type='text/css'>
 </head>
 <body>
   <header>
