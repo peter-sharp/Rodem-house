@@ -1,5 +1,5 @@
 <?php
-
+    $currentPage = basename($_SERVER['PHP_SELF'],'.php');
     $pages = array(
       'index' => 'home',
       'about' => 'about us',
@@ -21,17 +21,22 @@
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab' type='text/css'>
 </head>
 <body>
-  <header>
-    <h1 class="logo"><a href="./index.php">Rodem House</a></h1>
-    <nav>
-      <ul>
-        <?php foreach ($pages as $pageId => $pageTitle): ?>
-        <li <?=(((basename($_SERVER['PHP_SELF'])) == $pageId) ? 'class="active"' : '')?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
-        <?php endforeach; ?>
-      </ul>
-    </nav>
+  <header class="nav">
+    <div class="container">
+      <h1 class="logo navbar-brand "><a href="./index.php">Rodem House</a></h1>
+
+      <nav class="navbar-right">
+        <ul>
+          <?php foreach ($pages as $pageId => $pageTitle): ?>
+          <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
+          <?php endforeach; ?>
+        </ul>
+      </nav>foreach; ?>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <?php if ( /* !$authenticator->isAuthenticated() */ false ): ?>
+  <?php if ( /* !$authenticator->isAuthenticated() */ false ): #'class="active"'?>
     <main>
       <h1><small>website editor</small><br>login</h1>
       <section class="login">
