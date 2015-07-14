@@ -5,13 +5,10 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json');
+    pkg: grunt.file.readJSON('package.json'),
 
     less: {
       development: {
-        options:{
-          compress: false,
-        },
         files: {
           "css/styles.css": "css/styles.less"
         }
