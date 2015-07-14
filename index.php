@@ -1,11 +1,11 @@
 <?php
 include('./templates/header.php');
 ?>
-<main>
+<main class="home">
 
-  <h1>international<br>fellowship</h1>
+  <h1 class="col-md-4 center-block"><small>international</small><br>fellowship</h1>
   <article class="CTA_area">
-    <div class="site wrapper">
+    <div class="site container">
 
       <p>
           Come to Rodem fellowship to:<br>
