@@ -9,7 +9,11 @@ $editorPage = false;
   </footer>
 </form>
 <?php else:?>
-<footer> <span>&copy; Rodem House</span> <a href="editor.php">login</a> </footer>
+<footer>
+  <div class="container">
+    <span>&copy; Rodem House</span> <a href="editor.php">login</a>
+  </div>
+</footer>
 <?php endif?>
 </body>
 </html>

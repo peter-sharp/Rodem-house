@@ -5,8 +5,7 @@ include('./templates/header.php');
 
   <h1 class="col-md-4 center-block"><small>international</small><br>fellowship</h1>
   <article class="CTA_area">
-    <div class="site container">
-
+    <div class="container">
       <p>
           Come to Rodem fellowship to:<br>
           practice your <strong>English,</strong>

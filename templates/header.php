@@ -28,7 +28,7 @@
     <div class="container">
       <h1 class="logo navbar-brand"><a href="./index.php">Rodem House</a></h1>
 
-      <nav >
+      <nav class="stick-right">
         <ul>
           <?php foreach ($pages as $pageId => $pageTitle): ?>
           <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
