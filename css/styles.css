@@ -66,10 +66,27 @@ h1 {
   text-align: left;
   width: auto;
   font-size: 100px;
+  /* ############################# logo ############################# */
 }
 h1 > small {
   font-size: 50px;
   color: white;
+}
+h1.logo {
+  display: inline-block;
+  background: url(../images/Rodem_logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 50px;
+  min-width: 129px;
+  vertical-align: center;
+}
+h1.logo a {
+  display: inline;
+  width: ;
+  height: ;
+  display: block;
+  text-indent: -9999px;
 }
 h1,
 h2,
@@ -81,6 +98,9 @@ p {
   font-family: 'Roboto Slab', serif;
   font-size: 14;
   color: #423f42;
+}
+a {
+  color: grey;
 }
 a > small {
   font-size: smaller;
@@ -97,28 +117,11 @@ nav li {
   text-transform: uppercase;
   vertical-align: center;
 }
-nav a {
+nav li.active > a {
   color: white;
 }
-li.active > a {
+nav a {
   color: grey;
-}
-/* ############################# logo ############################# */
-h1.logo {
-  display: inline-block;
-  background: url(../images/Rodem_logo.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 50px;
-  min-width: 129px;
-  vertical-align: center;
-}
-h1.logo a {
-  display: inline;
-  width: ;
-  height: ;
-  display: block;
-  text-indent: -9999px;
 }
 /* ///////////////////////////////// page specific ///////////////////////////////// */
 /* ############################# home ############################# */

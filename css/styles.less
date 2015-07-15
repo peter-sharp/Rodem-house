@@ -77,17 +77,32 @@ article {
     background-color: white;
     padding: 5px;
 }
-
 h1 {
   color: white;
   text-align: left;
   width:         auto;
   font-size: 100px;
+  >small {
+    font-size: 50px;
+    color: white;
+  }
+  /* ############################# logo ############################# */
+&.logo {
+  display: inline-block;
+  background:@logo;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 50px;
+  min-width: 129px;
+  vertical-align: center;
+  a {
+    display: inline;
+    width:;
+    height:;
+    display:block;
+    text-indent:-9999px;
+  }
 }
-
-h1>small {
-  font-size: 50px;
-  color: white;
 }
 
 h1, h2, h3 {
@@ -102,9 +117,12 @@ p {
   color: @base_grey;
 }
 
-a>small{
-  font-size:smaller;
-  color: @base_yellow;
+a{
+  color: grey;
+  >small{
+      font-size: smaller;
+      color: @base_yellow;
+    }
 }
 /* ############################# utility classes ############################# */
 
@@ -114,39 +132,23 @@ a>small{
 
 /* ############################# nav styles ############################# */
 
-nav li{
-  display: inline-block;
-  padding: 1% 4% 1% 4%;
-  text-transform: uppercase;
-  vertical-align: center;
+nav{
+  li{
+    display: inline-block;
+    padding: 1% 4% 1% 4%;
+    text-transform: uppercase;
+    vertical-align: center;
+    &.active > a{
+      color:white;
+    }
+  }
+  a{
+    color: grey;
+  }
 }
 
-nav a{
-  color: white;
-}
 
-li.active > a{
-  color:grey;
-}
 
-/* ############################# logo ############################# */
-h1.logo {
-  display: inline-block;
-  background:@logo;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 50px;
-  min-width: 129px;
-  vertical-align: center;
-}
-
-h1.logo a{
-  display: inline;
-  width:;
-  height:;
-  display:block;
-  text-indent:-9999px;
-}
 
 /* ///////////////////////////////// page specific ///////////////////////////////// */
 
