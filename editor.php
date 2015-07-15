@@ -15,7 +15,7 @@ include('./templates/header.php');
     </div>
   </article>
 </main>
-<? endif ?>
+<?php endif; ?>
 <?php
 include('./templates/footer.php');
 ?>
