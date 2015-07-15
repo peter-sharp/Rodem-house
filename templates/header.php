@@ -24,11 +24,11 @@
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab' type='text/css'>
 </head>
 <body>
-  <header class="nav">
-    <div class="container">
-      <h1 class="logo navbar-brand"><a href="./index.php">Rodem House</a></h1>
+  <header >
+    <div class="container center-block">
+      <h1 class="logo "><a href="./index.php">Rodem House</a></h1>
 
-      <nav class="stick-right">
+      <nav class="col-md-8 ">
         <ul>
           <?php foreach ($pages as $pageId => $pageTitle): ?>
           <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>

@@ -78,6 +78,7 @@ h1 > small {
   color: white;
 }
 h1.logo {
+  float: left;
   display: block;
   min-height: 50px;
   min-width: 129px;
@@ -124,7 +125,7 @@ a > small {
 }
 /* ############################# nav styles ############################# */
 nav {
-  float: left;
+  float: right;
 }
 nav li {
   position: relative;
