@@ -2,9 +2,9 @@
 include('./templates/header.php');
 ?>
 <main>
-  <h1>meetings</h1>
+  <h1 class="col-md-4 center-block" >meetings</h1>
   <article class="meetings">
-    <div class="site wrapper">
+    <div class="container">
       <h2>international fellowship</h2>
       <section class="fellowship accordion">
         <p>Enjoy a meal, friendship, and learn more about

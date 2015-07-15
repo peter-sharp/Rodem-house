@@ -3,9 +3,9 @@ include('./templates/header.php');
 ?>
 <main>
 
-  <h1>contact</h1>
+  <h1 class="col-md-4 center-block" >contact</h1>
   <article class="contact" itemscope itemtype="http://schema.org/Person">
-    <div class="site wrapper">
+    <div class="container">
       <p>
         <img src="" alt="" /> 022 333 4444
       </p>

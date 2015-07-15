@@ -48,6 +48,13 @@ main {
   height:     100%;
   width:      100%;
   overflow:   hidden;
+  /* ///////////////////////////////// page specific ///////////////////////////////// */
+
+  /* ############################# home ############################# */
+  &.home{
+    background: @BGimage_home no-repeat 0 50%;
+    background-size: cover;
+  }
 }
 
 header, footer {
@@ -59,8 +66,7 @@ header, footer {
 }
 header {
   min-height:   100px;
-  height:       15%;
-  padding: 5px;
+  padding: 2% 0 2% 0;
 }
 
 footer {
@@ -75,19 +81,35 @@ article {
     background-image: @swirls;
     background-repeat: repeat;
     background-color: white;
-    padding: 5px;
+    padding: 1%;
 }
-
 h1 {
   color: white;
   text-align: left;
   width:         auto;
   font-size: 100px;
+  >small {
+    font-size: 50px;
+    color: white;
+  }
+  /* ############################# logo ############################# */
+&.logo {
+  float: left;
+  display: block;
+  min-height: 50px;
+  min-width: 129px;
+  vertical-align: center;
+  a {
+    background:@logo;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline;
+    width:129px;
+    height:50px;
+    display:block;
+    text-indent:-9999px;
+  }
 }
-
-h1>small {
-  font-size: 50px;
-  color: white;
 }
 
 h1, h2, h3 {
@@ -102,9 +124,12 @@ p {
   color: @base_grey;
 }
 
-a>small{
-  font-size:smaller;
-  color: @base_yellow;
+a{
+  color: grey;
+  >small{
+      font-size: smaller;
+      color: @base_yellow;
+    }
 }
 /* ############################# utility classes ############################# */
 
@@ -112,51 +137,30 @@ a>small{
   float: none;
 }
 
-/* ############################# nav styles ############################# */
-
-nav li{
-  display: inline-block;
-  padding: 1% 4% 1% 4%;
-  text-transform: uppercase;
-  vertical-align: center;
-}
-
-nav a{
-  color: white;
-}
-
-li.active > a{
-  color:grey;
-}
-
-/* ############################# logo ############################# */
-h1.logo {
-  display: inline-block;
-  background:@logo;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 50px;
-  min-width: 129px;
-  vertical-align: center;
-}
-
-h1.logo a{
-  display: inline;
-  width:;
-  height:;
-  display:block;
-  text-indent:-9999px;
-}
-
-/* ///////////////////////////////// page specific ///////////////////////////////// */
-
-/* ############################# home ############################# */
-
-main.home{
-  background: @BGimage_home no-repeat 0 50%;
-  background-size: cover;
-}
-
 .CTA_area {
   background-color: @base_blue;
+}
+
+.stick-right {
+  position: absolute;
+  right: 0;
+}
+/* ############################# nav styles ############################# */
+
+nav{
+  float: right;
+  li{
+    position: relative;
+    min-height: 100px;
+    min-width:  100px;
+    float:    left;
+    padding: 1% 2.5% 1% 2.5%;
+    text-transform: uppercase;
+    &.active > a{
+      color:white;
+    }
+    a{
+      color: grey;
+    }
+  }
 }
