@@ -52,8 +52,7 @@ footer {
 }
 header {
   min-height: 100px;
-  height: 15%;
-  padding: 5px;
+  padding: 2% 0 2% 0;
 }
 footer {
   height: 25px;
@@ -79,7 +78,7 @@ h1 > small {
   color: white;
 }
 h1.logo {
-  display: inline-block;
+  display: block;
   min-height: 50px;
   min-width: 129px;
   vertical-align: center;
@@ -119,16 +118,25 @@ a > small {
 .CTA_area {
   background-color: #189ef9;
 }
+.stick-right {
+  position: absolute;
+  right: 0;
+}
 /* ############################# nav styles ############################# */
+nav {
+  float: left;
+}
 nav li {
-  display: inline-block;
+  position: relative;
+  min-height: 100px;
+  min-width: 100px;
+  float: left;
   padding: 1% 2.5% 1% 2.5%;
   text-transform: uppercase;
-  vertical-align: center;
 }
 nav li.active > a {
   color: white;
 }
-nav a {
+nav li a {
   color: grey;
 }
