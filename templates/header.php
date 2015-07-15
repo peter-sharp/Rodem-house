@@ -11,8 +11,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rodem House</title>
+
   <!-- bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
@@ -23,9 +26,9 @@
 <body>
   <header class="nav">
     <div class="container">
-      <h1 class="logo navbar-brand "><a href="./index.php">Rodem House</a></h1>
+      <h1 class="logo navbar-brand"><a href="./index.php">Rodem House</a></h1>
 
-      <nav class="navbar-right">
+      <nav >
         <ul>
           <?php foreach ($pages as $pageId => $pageTitle): ?>
           <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
