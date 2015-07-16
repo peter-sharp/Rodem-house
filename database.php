@@ -10,6 +10,11 @@ class DatabaseException extends Exception { };
 class DatabaseHelper {
   private $mysqli;
 
+  public $server;
+  public $username;
+  public $password;
+  public $database;
+
   /**
     * constructor method that initialises the database connection
     * @param string $server the server the database belongs to
@@ -18,10 +23,10 @@ class DatabaseHelper {
     * @param string $database the database to connect to
     */
   function DatabaseHelper($server = null, $username = null, $password = null, $database = null){
-    $server   = ();
-    $username = ();
-    $password = ();
-    $database = ();
+    $this->server   = ($server || "localhost");
+    $this->username = ($username || "root");
+    $this->password = ($password || "Ch4ng3m3#");
+    $this->database = ($database || "website");
     //open connection to the database:
     try {
       $this->mysqli = $this->connect();
@@ -40,9 +45,9 @@ class DatabaseHelper {
      * @param string $database the database to connect to
      * @return resource $mysql Successfully connected Mysql database resource.
      */
-  private function connect($server, $username, $password, $database) {
+  private function connect() {
     //connect and select database
-    $mysqli = new mysqli($server, $username, $password, $database);
+    $mysqli = new mysqli($this->server, $this->username, $this->password, $this->database);
 
     $mysqli->select_db($database);
 
@@ -58,7 +63,7 @@ class DatabaseHelper {
     *
     *
     */
-  private function insert($table, $formData){
+  public function insert($table, $formData){
     $mysqli = $this->mysqli;
 
     foreach( $formData as $key => $value){
@@ -72,7 +77,7 @@ class DatabaseHelper {
     $statement = $mysqli->prepare($sql);
 
     // since all inserted values are going to be strings @TODO in future should make this take more data types
-    $types = str_repeat("s",count($values));
+    $types = $this->createTypesArray($values);
 
     // function to insert the contents of an array as arguments to the bind_param function
     $query = call_user_func_array(array($statement, "bind_param"), array_merge(array($types), $values) );
@@ -85,8 +90,32 @@ class DatabaseHelper {
     else {
       $message = "message=Successfully added (".implode(',',$values).")";
     }
+    return $message;
+  }
 
-    //
+  /** returns an array of single character strings representing
+    * the variable types in the list
+    *
+    * @param array $values an array of values to check
+    *
+    * @return array $types an array of variable type strings
+    */
+  private function createTypesArray($values){
+    $types = array();
+    foreach($values as $value){
+      $type = gettype($value);
+      switch($type){
+        case 'integer':
+          $types[] = 'i';
+          break;
+        case 'string':
+          $types[] = 's';
+          break;
+        default:
+          throw new DatabaseException("insert: could not insert $value because $type is not compatible with database");
+      }
+    }
+    return $types;
   }
 
 }
