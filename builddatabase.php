@@ -13,6 +13,7 @@ class DatabaseBuilder {
 		$this->connection = $this->createConnection();
 		$this->createAndEnterDatabase('website');
 		$this->createTables();
+		$this->insertDefaultValues();
 	}
 
 	private function createConnection () {
@@ -35,16 +36,21 @@ class DatabaseBuilder {
     */
   public function querySqlQue ($sqlQueries) {
     foreach($sqlQueries as $sql){
-      $querie = $this->querySql($sql);
-			if($querie)
-        echo "$sql = Success!\n";
+			try {
+      	$query = $this->querySql($sql);
+				if ($query)
+						echo "Sql query: \\$sql\\ , succeeded!\n";
+			}
+			catch(Exception $error){
+				$queryno = array_search($sql, $sqlQueries)+1;
+				echo "Warning, could not execute query no.$queryno \n Due to $error";
+			}
 		}
   }
 
 	public function querySql ($sql) {
 		if ($this->connection->query($sql)) {
 			return TRUE;
-      echo "Sql query: '$sql' , succeeded!\n";
     }
 		else
 			throw new databaseBuilderException( "MySQL Error: ".$this->connection->error);
@@ -108,11 +114,40 @@ class DatabaseBuilder {
 			`address` TEXT NOT NULL,
 			`coordinates` TEXT NOT NULL
 		)",
-);
+		);
 
     $this->querySqlQue($sqlQueries);
 	}
+
+	private function insertDefaultValues(){
+		$sqlQueries = array(
+			"INSERT IGNORE INTO `website`.`user_types`
+			SET `ID` = 1,
+			`title` = 'editor',
+			`DESCRIPTION` = 'Can only edit events on the website'",
+
+			"INSERT IGNORE INTO `website`.`user_types`
+			SET `ID` = 2,
+			`title` = 'admin',
+			`DESCRIPTION` = 'Can edit almost everything on the website'",
+
+			"INSERT IGNORE INTO `website`.`users`
+			SET `ID` = 1,
+			`email` = 'hong_gildong@hanmail.net',
+			`password` = 'k0ng34HonG12',
+			`type_id` = 2",
+
+			"INSERT IGNORE INTO `website`.`users`
+			SET `ID` = 2,
+			`email` = 'dooman@hanmail.net',
+			`password` = 'cabbage46pig',
+			`type_id` = 1"
+		);
+
+		$this->querySqlQue($sqlQueries);
+	}
 }
+
 
 # Start DatabaseBuilder if called from command line
 if (php_sapi_name() == "cli") {
