@@ -10,7 +10,7 @@ class RedirectMessageHelper {
     *
     * @param array $sections an associative array of table names and their editor pages
     */
-  function RedirectHelper($sections = null){
+  function RedirectMessageHelper($sections = null){
     $this->sections = ($sections)? $sections: array(
       "home_page" => "edit_homepage",
       "about_page" => "edit_aboutpage",
@@ -26,7 +26,7 @@ class RedirectMessageHelper {
     *
     * @param string $userStatusMessage message to send to the user
     */
-  
+
 
 }
 ?>
