@@ -55,48 +55,60 @@ class DatabaseBuilder {
 
 		"CREATE TABLE IF NOT EXISTS `users` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `username` VARCHAR(50) NOT NULL,
+      `email` VARCHAR(50) NOT NULL,
       `password` TEXT NOT NULL,
-      `type` VARCHAR(30) NOT NULL
+      `type_id` INT(10) UNSIGNED NOT NULL
+		)",
+
+		"CREATE TABLE IF NOT EXISTS `user_types` (
+      `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      `title` VARCHAR(50) NOT NULL,
+      `DESCRIPTION` TEXT NOT NULL
 		)",
 
     "CREATE TABLE IF NOT EXISTS `events` (
 				`ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         `title` VARCHAR(50) NOT NULL,
+				`page_id` INT(10) UNSIGNED NOT NULL,
+				`category_id` INT(10) UNSIGNED NOT NULL,
         `description` TEXT NOT NULL,
         `datetime` TINYTEXT NOT NULL,
-        `address` TEXT NOT NULL
+        `address_id` INT(10) UNSIGNED,
+				`edited_by` INT(10) UNSIGNED NOT NULL,
+				`image_id` INT(10) UNSIGNED,
+				`featured` TINYINT(1) UNSIGNED NOT NULL,
 		)",
 
-		"CREATE TABLE IF NOT EXISTS `home_page` (
+		"CREATE TABLE IF NOT EXISTS `categories` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `intro` TEXT NOT NULL
+      `title` TEXT NOT NULL,
+			`description` MEDIUMTEXT,
+			`address_id` INT(10) UNSIGNED,
 		)",
 
-    "CREATE TABLE IF NOT EXISTS `about_page` (
+		"CREATE TABLE IF NOT EXISTS `pages` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `intro` MEDIUMTEXT NOT NULL
+      `title` TEXT NOT NULL,
+			`body` MEDIUMTEXT,
+			`contacts_id` INT(10) UNSIGNED,
+			`edited_by` INT(10) UNSIGNED NOT NULL,
 		)",
 
-    "CREATE TABLE IF NOT EXISTS `meetings_page` (
-      `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `CATEGORY` VARCHAR(50) NOT NULL,
-      `intro` TEXT NOT NULL
-		)",
-
-    "CREATE TABLE IF NOT EXISTS `contact_page` (
+		"CREATE TABLE IF NOT EXISTS `contacts` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       `cellphone` TEXT NOT NULL,
 			`phone` TEXT NOT NULL,
 			`email` TEXT NOT NULL,
-			`address` TEXT NOT NULL
+			`address_id` INT(10) UNSIGNED NOT NULL,
 		)",
 
-		"CREATE TABLE IF NOT EXISTS `english_page` (
+    "CREATE TABLE IF NOT EXISTS `addresses` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `description` MEDIUMTEXT NOT NULL,
-			`datetime` TINYTEXT NOT NULL
-		)");
+      `title` TEXT NOT NULL,
+			`address` TEXT NOT NULL,
+			`coordinates` TEXT NOT NULL
+		)",
+);
 
     $this->querySqlQue($sqlQueries);
 	}
