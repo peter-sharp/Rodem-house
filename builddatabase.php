@@ -76,14 +76,14 @@ class DatabaseBuilder {
         `address_id` INT(10) UNSIGNED,
 				`edited_by` INT(10) UNSIGNED NOT NULL,
 				`image_id` INT(10) UNSIGNED,
-				`featured` TINYINT(1) UNSIGNED NOT NULL,
+				`featured` TINYINT(1) UNSIGNED NOT NULL
 		)",
 
 		"CREATE TABLE IF NOT EXISTS `categories` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       `title` TEXT NOT NULL,
 			`description` MEDIUMTEXT,
-			`address_id` INT(10) UNSIGNED,
+			`address_id` INT(10) UNSIGNED
 		)",
 
 		"CREATE TABLE IF NOT EXISTS `pages` (
@@ -91,7 +91,7 @@ class DatabaseBuilder {
       `title` TEXT NOT NULL,
 			`body` MEDIUMTEXT,
 			`contacts_id` INT(10) UNSIGNED,
-			`edited_by` INT(10) UNSIGNED NOT NULL,
+			`edited_by` INT(10) UNSIGNED NOT NULL
 		)",
 
 		"CREATE TABLE IF NOT EXISTS `contacts` (
@@ -99,7 +99,7 @@ class DatabaseBuilder {
       `cellphone` TEXT NOT NULL,
 			`phone` TEXT NOT NULL,
 			`email` TEXT NOT NULL,
-			`address_id` INT(10) UNSIGNED NOT NULL,
+			`address_id` INT(10) UNSIGNED NOT NULL
 		)",
 
     "CREATE TABLE IF NOT EXISTS `addresses` (
