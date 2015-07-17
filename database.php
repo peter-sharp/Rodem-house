@@ -25,7 +25,7 @@ class DatabaseHelper {
   function DatabaseHelper($server = null, $username = null, $password = null, $database = null){
     $this->server   = $server ?: "localhost";
     $this->username = $username ?: "root";
-    $this->password = $password ?: "Ch4ng3m3#";
+    $this->password = $password ?: "";
     $this->database = $database ?: "website";
     //open connection to the database:
     try {
@@ -38,7 +38,7 @@ class DatabaseHelper {
 
   /**
      * Select the database and connect to it using given parameters
-     * If it is unable to connect it dies with an error message.
+     * If it is unable to connect it throws an error message.
      * @param string $server the server the database belongs to
      * @param string $username the username for the database
      * @param string $password the password for the database
@@ -65,7 +65,8 @@ class DatabaseHelper {
     */
   public function insert($table, $formData){
     $mysqli = $this->mysqli;
-
+    if(!$this->array_isAssoc($formData))
+        throw new DatabaseException("Form data needs to be an associative array! \n current:". print_r($formData, true));
     foreach( $formData as $key => $value){
       $values[] = $value;
       $slots[] = "?";
@@ -74,13 +75,18 @@ class DatabaseHelper {
 
 
     $sql = "INSERT INTO `$table`(". implode(',', $keys) .") VALUES (". implode(',', $slots) .")";
-    $statement = $mysqli->prepare($sql);
-    die(gettype($statement));
+    if(!$statement = $mysqli->prepare($sql)){
+      throw new DatabaseException("Error prepearing statement:".$mysqli->error);
+    }
+
     // since all inserted values are going to be strings @TODO in future should make this take more data types
     $types = implode('',$this->createTypesArray($values) );
 
     // function to insert the contents of an array as arguments to the bind_param function
-    $query = call_user_func_array(array($statement, "bind_param"), array_merge(array($types), $values) );
+    $bind_param_args = array_merge(array($types), $values);
+
+    $query = call_user_func_array(array($statement, "bind_param"), $this->array_refValues($bind_param_args));
+    $statement->execute();
 
     // generate header message
     if(!$query){ //throw a mysql error
@@ -93,7 +99,8 @@ class DatabaseHelper {
     return $message;
   }
 
-  /** returns an array of single character strings representing
+  /**
+    * returns an array of single character strings representing
     * the variable types in the list
     *
     * @param array $values an array of values to check
@@ -118,6 +125,34 @@ class DatabaseHelper {
     }
     return $types;
   }
+
+  /**
+    * checks whether a given array is associative or indexed
+    */
+  private function array_isAssoc(array $array) {
+    return (bool)count(array_filter(array_keys($array), 'is_string'));
+  }
+
+  /**
+    * sets the values of a given associative array to refferences
+    * @param array $array array to convert
+    * @return array $array: if php version less than 5.3 or $refferences: array with refferences as values
+    */
+  private function array_refValues(array $array){
+    if(strnatcmp(phpversion(),'5.3') >=0 ) {//Reference is required for PHP 5.3+
+      $references = array();
+      foreach($array as $key => $value)
+          $references[$key] = &$array[$key];
+      return $references;
+    }
+    return $array;
+
+  }
+
+  /**
+  * retrieves contents of given rows from a given table
+  *
+  */
 
 }
 ?>
