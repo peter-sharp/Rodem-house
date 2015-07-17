@@ -151,20 +151,22 @@ class DatabaseHelper {
   }
 
   /**
-  * retrieves contents of given rows from a given table
+  * retrieves contents of given columns from a given table
   * @param array $table table in which to get rows from
-  * @param strings $rows... rows to get data from
+  * @param strings $columns... rows to get data from
   * @return multi-dimensional array $rowData
   */
   public function getRowsFromTable($table){
-    if (func_num_args() < 2){
-        $num_args = func_num_args();
-        throw new BadFunctionCallException("Function getRowsFromTable expects at least 2 arguments; $num_args given.");
+    if (func_num_args() > 1){
+
+      $columnNames = array_slice(func_get_args(), 1);
+      $sqlQuery = "SELECT ".implode(", ", $columnNames)." FROM `$table`";
+
+    }
+    else {
+      $sqlQuery = "SELECT * FROM `$table`";
     }
 
-    $rowNames = array_slice(func_get_args(), 1);
-
-    $sqlQuery = "SELECT ".implode(", ", $rowNames)." FROM `$table`";
     $result = $this->queryRows($sqlQuery);
     return $result;
   }
