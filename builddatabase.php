@@ -7,9 +7,9 @@ class DatabaseBuilder {
 	private $password;
 	private $connection;
 	public function DatabaseBuilder($servername = null, $username = null, $password = null){
-		$this->servername = ($servername) ? $servername : 'localhost';
-		$this->username = ($username) ? $username : 'root';
-		$this->password = ($password) ? $password : 'Ch4ng3m3#';
+		$this->servername = ($servername) ? : 'localhost';
+		$this->username = ($username) ? : 'root';
+		$this->password = ($password) ? : '';
 		$this->connection = $this->createConnection();
 		$this->createAndEnterDatabase('website');
 		$this->createTables();
