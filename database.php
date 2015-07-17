@@ -9,6 +9,7 @@ class DatabaseException extends Exception { };
 
 class DatabaseHelper {
   private $mysqli;
+  private $query;
 
   public $server;
   public $username;
@@ -25,7 +26,7 @@ class DatabaseHelper {
   function DatabaseHelper($server = null, $username = null, $password = null, $database = null){
     $this->server   = $server ?: "localhost";
     $this->username = $username ?: "root";
-    $this->password = $password ?: "";
+    $this->password = $password ?: "Ch4ng3m3#";
     $this->database = $database ?: "website";
     //open connection to the database:
     try {
@@ -90,7 +91,7 @@ class DatabaseHelper {
 
     // generate header message
     if(!$query){ //throw a mysql error
-      throw new DatabaseException( "Error in mysql exception: ".$mysqli->error($query));
+      throw new DatabaseException( "Error in mysql: ".$mysqli->error($query));
       $message = "Error=Failed to add (".implode(',',$values).")";
     }
     else {
@@ -151,8 +152,52 @@ class DatabaseHelper {
 
   /**
   * retrieves contents of given rows from a given table
-  *
+  * @param array $table table in which to get rows from
+  * @param strings $rows... rows to get data from
+  * @return multi-dimensional array $rowData
   */
+  public function getRowsFromTable($table){
+    if (func_num_args() < 2){
+        $num_args = func_num_args();
+        throw new BadFunctionCallException("Function getRowsFromTable expects at least 2 arguments; $num_args given.");
+    }
+
+    $rowNames = array_slice(func_get_args(), 1);
+
+    $sqlQuery = "SELECT ".implode(", ", $rowNames)." FROM `$table`";
+    $result = $this->queryRows($sqlQuery);
+    return $result;
+  }
+
+  /**
+   * fetches an associative array of a single row from a table in the given sql.
+   *
+   * @param string $sql SQL to run against connected database
+   * @return associative array $row Row matched by the given SQL statement
+   */
+  private function queryRow($sql = null){
+    $mysqli = $this->mysqli;
+    $this->query = $this->query ? : $mysqli->query($sql);
+    if(!$this->query)
+          throw new DatabaseException( "Error in mysql: ".$mysqli->error);
+
+    $result = $this->query->fetch_assoc();
+    return $result;
+  }
+  /**
+    * calls the function queryRow for each row in a table and appends each
+    *  result to an array returning the results once finished.
+    *  @param string $sql SQL to run against connected database
+    * @return array of associative arrays
+    **/
+  private function queryRows($sql = null){
+    $result = array();
+    while($row = $this->queryRow($sql) ){
+      $result[] = $row;
+    }
+    return $result;
+  }
+
 
 }
 ?>
