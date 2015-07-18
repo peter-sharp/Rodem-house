@@ -80,6 +80,7 @@ class DatabaseHelper {
     catch(Exception $error) {
       $message = "Error=Failed to add (".implode(',',$values).")";
       //$logger->log($error);
+      //echo $error;
     }
     finally {
       return $message;
@@ -87,15 +88,16 @@ class DatabaseHelper {
   }
 
   /**
-    * prepares binds and executes a given mysql statement
-    * formatted:
-    * {{COLUMNS}} for columns to select
-    * {{values}} for values to add or update
+    * prepares binds and executes a given mysql statement.
+    * uses templates:
+    * {{COLUMNS}} for columns to perform action on
+    * {{values}} for values to add
+    * {{UPDATES}} for columns to update
     * @param string $query query to execute
     * @param associative array $data to insert into the sql statement
     *  throws an error if not successful
     */
-  private function secureQuery($sql,$data){
+  public function secureQuery($sql,$data){
     $mysqli = $this->mysqli;
 
     if(!$this->array_isAssoc($data))
@@ -104,33 +106,90 @@ class DatabaseHelper {
     $columns = array_keys($data);
     $values = array_values($data);
 
-    // generate slots for each value
-    $slots = str_split( str_repeat("?", count($data)) );
+
 
 
     // generate a value types string for the prepared statement
     $types = implode('',$this->createTypesArray($values) );
 
-    // replace {{COLUMNS}}, {{VALUES}} and {{UPDATES}} with their actual values
-    $valuesToInsert = array( implode(',', $columns), implode(',', $slots), implode('=?, ',array_slice($columns, 0 , -1))."=?" ); //array_slice cuts ID off the end
-    $stringsToReplace = array( "{{COLUMNS}}", "{{VALUES}}","{{UPDATES}}" );
+    //check for template sql
+    $isTemplate = strpos($sql,"{{");
+    if( $isTemplate !== FALSE){
+      $finalSql = $this->generateFromTemplate($sql, $columns);
+    }
+    else {
+      $finalSql = $sql;
 
-    $finalSql = str_replace($stringsToReplace, $valuesToInsert, $sql);
-    //if(strpos($finalSql, "UPDATE") !== FALSE) die(var_dump($finalSql));
+    }
+
     if(!$statement = $mysqli->prepare($finalSql)){
       throw new DatabaseException("Error prepearing statement:".$mysqli->error);
     }
 
     // function to insert the contents of an array as arguments to the bind_param function
     $bind_param_args = array_merge(array($types), $values);
-
     $query = call_user_func_array(array($statement, "bind_param"), $this->array_refValues($bind_param_args));
-    if(!$query) //throw a mysql error
-      throw new DatabaseException( "Error in mysql: ".$mysqli->error($query));
 
     $statement->execute();
+    if($mysqli->error) //throw a mysql error
+      throw new DatabaseException( "Error in mysql: ".$mysqli->error);
+
+    $statement->store_result();
+    if($statement->num_rows > 0){
+        return $this->getResultsFromStatement($statement);
+    }
+
+  }
+
+  /**
+    * gets results from a mysqli statement if they EXISTS
+    * @param object $statement mysqli statement(stmt) object
+    * @return array results
+    */
+  private function getResultsFromStatement($statement){
 
 
+    $metadata = $statement->result_metadata();
+
+    //keeps returning the definition of on column of a result untill all columns have been retrieved
+    while ($field = $metadata->fetch_field()) {
+        $parameters[] = &$row[$field->name];
+    }
+    //print_r($metadata);
+    //print_r(get_class_methods($metadata));
+
+
+
+    call_user_func_array(array($statement, 'bind_result'), $parameters);
+    while ($statement->fetch()) {
+      foreach($row as $key => $value) {
+        $column[$key] = $value;
+      }
+      $results[] = $column;
+    }
+    return $results;
+
+  }
+
+  /**
+    * fils out given mysql templates with given parameters
+    * uses templates:
+    * {{COLUMNS}} for columns to perform action on
+    * {{values}} for values to add
+    * {{UPDATES}} for columns to update
+    * @param string $sqlTemplate Template to fill with parameters
+    * @param array $columns To populate the teplates with
+    * @return generated teplate string
+    */
+  private function generateFromTemplate($sqlTemplate, $columns){
+
+    // generate slots for each value
+    $slots = str_split( str_repeat("?", count($columns)) );
+    // replace {{COLUMNS}}, {{VALUES}} and {{UPDATES}} with their actual values
+    $valuesToInsert = array( implode(',', $columns), implode(',', $slots), implode('=?, ',array_slice($columns, 0 , -1))."=?" ); //array_slice cuts ID off the end
+    $stringsToReplace = array( "{{COLUMNS}}", "{{VALUES}}","{{UPDATES}}" );
+
+    return str_replace($stringsToReplace, $valuesToInsert, $sqlTemplate);
   }
 
   /**
@@ -209,7 +268,7 @@ class DatabaseHelper {
     catch(Exception $error) {
       $message = "Error=Failed to update (".implode(',',$values).")";
       //$logger->log($error);
-      echo $error;
+      //echo $error;
     }
     finally {
       return $message;
