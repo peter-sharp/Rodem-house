@@ -62,7 +62,7 @@ class DatabaseBuilder {
 		"CREATE TABLE IF NOT EXISTS `users` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       `email` VARCHAR(50) NOT NULL,
-      `password` TEXT NOT NULL,
+      `password` MEDIUMTEXT NOT NULL,
       `type_id` INT(10) UNSIGNED NOT NULL
 		)",
 
@@ -134,13 +134,13 @@ class DatabaseBuilder {
 			"INSERT IGNORE INTO `website`.`users`
 			SET `ID` = 1,
 			`email` = 'hong_gildong@hanmail.net',
-			`password` = 'k0ng34HonG12',
+			`password` = '".password_hash("k0ng34Ho^G12", PASSWORD_DEFAULT)."',
 			`type_id` = 2",
 
 			"INSERT IGNORE INTO `website`.`users`
 			SET `ID` = 2,
 			`email` = 'dooman@hanmail.net',
-			`password` = 'cabbage46pig',
+			`password` = ".password_hash("cabB@ge46pIg", PASSWORD_DEFAULT).",
 			`type_id` = 1"
 		);
 
