@@ -21,11 +21,20 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
     $this->assertInstanceOf('DatabaseHelper' ,$databaseHelper);
   }
 
+  public function testCanPerformNontemplateSecureQuery(){
+    $sql = "SELECT password FROM `users` WHERE `email` =?";
+
+    $databaseHelper = new DatabaseHelper();
+
+    $chosenRow = $databaseHelper->secureQuery($sql,array('email' => "dooman@hanmail.net"));
+    $this->assertTrue(password_verify("cabB@ge46pIg", $chosenRow[0]["password"]), "Unexpected result: ".print_r($chosenRow[0]["password"],TRUE));
+  }
+
   public function testCanInsertIntoDatabase(){
     $databaseHelper = new DatabaseHelper();
 
     $message = $databaseHelper->insertInTable("pages", array("title" => "contact", "body" => "parking can be found around the back.", "contacts_id" => 3, "edited_by" => 1));
-    print_r("\n$message\n");
+    //print_r("\n$message\n");
     $result = $this->mysqli->query("SELECT title, body, contacts_id, edited_by FROM `pages` WHERE `title` = 'contact'");
     $contact_page = $result->fetch_assoc();
     $this->assertEquals($contact_page['title'] , "contact");
@@ -54,7 +63,7 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
     $this->rows = $databaseHelper->getRowsFromTable('pages','ID');
 
     $message = $databaseHelper->updateInTable("pages",$this->rows[0]['ID'], array("title" => "test", "body" => "This page demostrates that I can update stuff.", "edited_by" => 45));
-    print_r("\n$message\n");
+    //print_r("\n$message\n");
     $result = $this->mysqli->query("SELECT title, body, contacts_id, edited_by FROM `pages` WHERE `title` = 'test'");
     $contact_page = $result->fetch_assoc();
     $this->assertEquals($contact_page['title'] , "test");
@@ -62,6 +71,8 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
     $this->assertEquals($contact_page['contacts_id'] , 3);
     $this->assertEquals($contact_page['edited_by'] , 45);
   }
+
+
 
   public function testCanRemoveFromTable(){
 
@@ -75,7 +86,7 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
       //print_r("\n$message\n");
       $result = $this->mysqli->query("SELECT ID FROM `pages` WHERE ID = $rowId");
       $contact_page = $result->fetch_assoc();
-      $this->assertEquals($contact_page, NULL, "Contains: ". print_r($contact_page, TRUE));
+      $this->assertEquals($contact_page, NULL, "Unexpected result, contains: ". print_r($contact_page, TRUE));
     }
 
   }
