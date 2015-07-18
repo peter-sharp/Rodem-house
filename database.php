@@ -106,9 +106,6 @@ class DatabaseHelper {
     $columns = array_keys($data);
     $values = array_values($data);
 
-
-
-
     // generate a value types string for the prepared statement
     $types = implode('',$this->createTypesArray($values) );
 
@@ -119,7 +116,6 @@ class DatabaseHelper {
     }
     else {
       $finalSql = $sql;
-
     }
 
     if(!$statement = $mysqli->prepare($finalSql)){
