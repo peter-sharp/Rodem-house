@@ -24,7 +24,7 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
   public function testCanInsertIntoDatabase(){
     $databaseHelper = new DatabaseHelper();
 
-    $message = $databaseHelper->insert("pages", array("title" => "contact", "body" => "parking can be found around the back.", "contacts_id" => 3, "edited_by" => 1));
+    $message = $databaseHelper->insertInTable("pages", array("title" => "contact", "body" => "parking can be found around the back.", "contacts_id" => 3, "edited_by" => 1));
     print_r("\n$message\n");
     $result = $this->mysqli->query("SELECT title, body, contacts_id, edited_by FROM `pages` WHERE `title` = 'contact'");
     $contact_page = $result->fetch_assoc();
@@ -47,6 +47,20 @@ class DatabaseTest extends PHPUnit_Framework_Testcase {
       $this->assertArrayhasKey('contacts_id' ,$row, "Could not find 'contacts_id' in row.$index: ". print_r($row, TRUE));
       $this->assertArrayhasKey('edited_by' ,$row, "Could not find 'edited_by' in row.$index: ". print_r($row, TRUE));
     }
+  }
+
+  public function testCanupdateTable(){
+    $databaseHelper = new DatabaseHelper();
+    $this->rows = $databaseHelper->getRowsFromTable('pages','ID');
+
+    $message = $databaseHelper->updateInTable("pages",$this->rows[0]['ID'], array("title" => "test", "body" => "This page demostrates that I can update stuff.", "edited_by" => 45));
+    print_r("\n$message\n");
+    $result = $this->mysqli->query("SELECT title, body, contacts_id, edited_by FROM `pages` WHERE `title` = 'test'");
+    $contact_page = $result->fetch_assoc();
+    $this->assertEquals($contact_page['title'] , "test");
+    $this->assertEquals($contact_page['body'] , "This page demostrates that I can update stuff.");
+    $this->assertEquals($contact_page['contacts_id'] , 3);
+    $this->assertEquals($contact_page['edited_by'] , 45);
   }
 
   public function testCanRemoveFromTable(){

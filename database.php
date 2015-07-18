@@ -64,7 +64,7 @@ class DatabaseHelper {
     *
     *
     */
-  public function insert($table, $formData){
+  public function insertInTable($table, $formData){
 
 
     $sql = "INSERT INTO `$table`({{COLUMNS}}) VALUES ({{VALUES}})";
@@ -112,11 +112,11 @@ class DatabaseHelper {
     $types = implode('',$this->createTypesArray($values) );
 
     // replace {{COLUMNS}}, {{VALUES}} and {{UPDATES}} with their actual values
-    $valuesToInsert = array( implode(',', $columns), implode(',', $slots), implode('=? ',$values)."=?" );
+    $valuesToInsert = array( implode(',', $columns), implode(',', $slots), implode('=?, ',array_slice($columns, 0 , -1))."=?" ); //array_slice cuts ID off the end
     $stringsToReplace = array( "{{COLUMNS}}", "{{VALUES}}","{{UPDATES}}" );
 
     $finalSql = str_replace($stringsToReplace, $valuesToInsert, $sql);
-
+    //if(strpos($finalSql, "UPDATE") !== FALSE) die(var_dump($finalSql));
     if(!$statement = $mysqli->prepare($finalSql)){
       throw new DatabaseException("Error prepearing statement:".$mysqli->error);
     }
@@ -145,8 +145,7 @@ class DatabaseHelper {
 
     $types = array();
     foreach($values as $value){
-      $type = gettype($value);
-      switch($type){
+      switch(gettype($value)){
         case 'integer':
           $types[] = 'i';
           break;
@@ -164,7 +163,7 @@ class DatabaseHelper {
     * checks whether a given array is associative or indexed
     */
   private function array_isAssoc(array $array) {
-    return (bool)count(array_filter(array_keys($array), 'is_string'));
+    return count(array_filter(array_keys($array), 'is_string')) != 0;
   }
 
   /**
@@ -200,15 +199,17 @@ class DatabaseHelper {
 
     // get values for header message
     $values = array_values($formData);
-    $formDataAndID = array_merge($formData,array($id));
+    //append ID onto the end to match sql query
+    $formDataAndID = array_merge($formData,array("ID" => $id));
     try{
-      $this->secureQuery($sql,$formData);
+      $this->secureQuery($sql,$formDataAndID);
 
       $message = "message=Successfully updated (".implode(',',$values).")";
     }
     catch(Exception $error) {
       $message = "Error=Failed to update (".implode(',',$values).")";
       //$logger->log($error);
+      echo $error;
     }
     finally {
       return $message;
@@ -239,7 +240,9 @@ class DatabaseHelper {
 
 
     /**
-    * retrieves contents of given columns from a given table
+    * retrieves all rows of given columns from a given table
+    * NOTE not efficient for tables with thousands of rows
+    * @TODO add minimum and maximum ID parameters
     * @param array $table table in which to get rows from
     * @param strings $columns... rows to get data from
     * @return multi-dimensional array $rowData
@@ -270,9 +273,9 @@ class DatabaseHelper {
   private function queryRow($sql = null){
     $mysqli = $this->mysqli;
     $this->query = $this->query ? : $mysqli->query($sql);
-    if($mysqli->error)
+    if($mysqli->error){
           throw new DatabaseException( "Error in mysql: ".$mysqli->error);
-
+    }
 
     // we have selected something
     $result = $this->query->fetch_assoc();
