@@ -9,7 +9,7 @@ class DatabaseBuilder {
 	public function DatabaseBuilder($servername = null, $username = null, $password = null){
 		$this->servername = ($servername) ? : 'localhost';
 		$this->username = ($username) ? : 'root';
-		$this->password = ($password) ? : '';
+		$this->password = ($password) ? : 'Ch4ng3m3#';
 		$this->connection = $this->createConnection();
 		$this->createAndEnterDatabase('website');
 		$this->createTables();
@@ -140,7 +140,7 @@ class DatabaseBuilder {
 			"INSERT IGNORE INTO `website`.`users`
 			SET `ID` = 2,
 			`email` = 'dooman@hanmail.net',
-			`password` = ".password_hash("cabB@ge46pIg", PASSWORD_DEFAULT).",
+			`password` = '".password_hash("cabB@ge46pIg", PASSWORD_DEFAULT)."',
 			`type_id` = 1"
 		);
 
