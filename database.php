@@ -299,14 +299,14 @@ class DatabaseHelper {
     * NOTE not efficient for tables with thousands of rows
     * @TODO add minimum and maximum ID parameters
     * @param array $table table in which to get rows from
-    * @param strings $columns... rows to get data from
+    * @param array $columnNames collumns to get data from
+    * @param string $joinSql [optional] sql to join other tables @TODO..maybe find way to automate this
     * @return multi-dimensional array $rowData
     */
-  public function getRowsFromTable($table){
+  public function getRowsFromTable($table, $columnNames, $joinSql = ""){
     if (func_num_args() > 1){
 
-      $columnNames = array_slice(func_get_args(), 1);
-      $sqlQuery = "SELECT ".implode(",", $columnNames)." FROM `$table`";
+      $sqlQuery = "SELECT ".implode(",", $columnNames)." FROM `$table`".$joinSql;
 
     }
     else {
