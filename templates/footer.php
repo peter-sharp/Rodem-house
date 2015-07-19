@@ -1,17 +1,18 @@
-<?php
-$editorPage = false;
- if ($editorPage === true):?>
+<?php $edit_events = ($currentPage === 'edit_events');
+if ($edit_events && $authenticator->isAuthenticated()):?>
   <footer>
-    <p>What would you like to do with the selected activities?</p>
-    <button type="button">delete</button>
-    <button type="button">view</button>
-    <button type="button">edit</button>
+    <div class="container">
+      <p>What would you like to do with the selected activities?</p>
+      <button type="button">delete</button>
+      <button type="button">view</button>
+      <button type="button">edit</button>
+    </div>
   </footer>
 </form>
 <?php else:?>
 <footer>
   <div class="container">
-    <span>&copy; Rodem House</span> <a href="editor.php">login</a>
+    <span>&copy; Rodem House</span> <?= ($authenticator->isAuthenticated())? "" : "<a href=\"editor.php\">login</a>" ; ?>
   </div>
 </footer>
 <?php endif?>
