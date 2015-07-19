@@ -68,16 +68,16 @@ class DatabaseBuilder {
 
 		"CREATE TABLE IF NOT EXISTS `user_types` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `title` VARCHAR(50) NOT NULL,
-      `DESCRIPTION` TEXT NOT NULL
+      `type_title` VARCHAR(50) NOT NULL,
+      `type_description` TEXT NOT NULL
 		)",
 
     "CREATE TABLE IF NOT EXISTS `events` (
 				`ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        `title` VARCHAR(50) NOT NULL,
+        `event_title` VARCHAR(50) NOT NULL,
 				`page_id` INT(10) UNSIGNED NOT NULL,
 				`category_id` INT(10) UNSIGNED NOT NULL,
-        `description` TEXT NOT NULL,
+        `event_description` TEXT NOT NULL,
         `datetime` TINYTEXT NOT NULL,
         `address_id` INT(10) UNSIGNED,
 				`edited_by` INT(10) UNSIGNED NOT NULL,
@@ -87,14 +87,14 @@ class DatabaseBuilder {
 
 		"CREATE TABLE IF NOT EXISTS `categories` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `title` TEXT NOT NULL,
-			`description` MEDIUMTEXT,
+      `category_title` TEXT NOT NULL,
+			`category_description` MEDIUMTEXT,
 			`address_id` INT(10) UNSIGNED
 		)",
 
 		"CREATE TABLE IF NOT EXISTS `pages` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `title` TEXT NOT NULL,
+      `page_title` TEXT NOT NULL,
 			`body` MEDIUMTEXT,
 			`contacts_id` INT(10) UNSIGNED,
 			`edited_by` INT(10) UNSIGNED NOT NULL
@@ -110,10 +110,16 @@ class DatabaseBuilder {
 
     "CREATE TABLE IF NOT EXISTS `addresses` (
       `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      `title` TEXT NOT NULL,
+      `address_title` TEXT NOT NULL,
 			`address` TEXT NOT NULL,
 			`coordinates` TEXT NOT NULL
 		)",
+		"CREATE TABLE IF NOT EXISTS `images` (
+      `ID` INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      `image_title` TEXT NOT NULL,
+			`image_description` TEXT NOT NULL,
+			`image_location` TEXT NOT NULL
+		)"
 		);
 
     $this->querySqlQue($sqlQueries);
@@ -123,13 +129,13 @@ class DatabaseBuilder {
 		$sqlQueries = array(
 			"INSERT IGNORE INTO `website`.`user_types`
 			SET `ID` = 1,
-			`title` = 'editor',
-			`DESCRIPTION` = 'Can only edit events on the website'",
+			`type_title` = 'editor',
+			`type_description` = 'Can only edit events on the website'",
 
 			"INSERT IGNORE INTO `website`.`user_types`
 			SET `ID` = 2,
-			`title` = 'admin',
-			`DESCRIPTION` = 'Can edit almost everything on the website'",
+			`type_title` = 'admin',
+			`type_description` = 'Can edit almost everything on the website'",
 
 			"INSERT IGNORE INTO `website`.`users`
 			SET `ID` = 1,
@@ -141,7 +147,90 @@ class DatabaseBuilder {
 			SET `ID` = 2,
 			`email` = 'dooman@hanmail.net',
 			`password` = '".password_hash("cabB@ge46pIg", PASSWORD_DEFAULT)."',
-			`type_id` = 1"
+			`type_id` = 1",
+
+			"INSERT IGNORE INTO `website`.`categories`
+			SET `ID` = 1,
+			`category_title` = 'rodem fellowship',
+			`category_description` = 'Enjoy a meal, friendship, and learn more about Christianity every Tuesday at 6pm.',
+			`address_id` = 1",
+
+			"INSERT IGNORE INTO `website`.`categories`
+			SET `ID` = 2,
+			`category_title` = 'bible study',
+			`category_description` = \"Study the Bible and find out why it's the world's best seller.\",
+			`address_id` = 2",
+
+			"INSERT IGNORE INTO `website`.`categories`
+			SET `ID` = 3,
+			`category_title` = 'social events'",
+
+			"INSERT IGNORE INTO `website`.`events`
+			SET `ID` = 1,
+			`event_title` = 'Ice Skating',
+			`page_id` = 3,
+			`category_id` = 3,
+			`event_description` = 'Chill with us this weekend at the Alpine Ice sports center.',
+			`datetime` = UNIX_TIMESTAMP(),
+			`address_id` = 3,
+			`edited_by` = 2,
+			`image_id` = 2,
+			`featured` = 1 ",
+
+			"INSERT IGNORE INTO `website`.`events`
+			SET `ID` = 2,
+			`event_title` = 'Guest speaker: Hanako Yamada',
+			`page_id` = 3,
+			`category_id` = 1,
+			`event_description` = 'Hanako will share about her life struggles and how God helped her.',
+			`datetime` = UNIX_TIMESTAMP(),
+			`edited_by` = 1,
+			`image_id` = 1,
+			`featured` = 1 ",
+
+			"INSERT IGNORE INTO `website`.`images`
+			SET `ID` = 1,
+			`image_title` = 'guest speaker',
+			`image_description` = 'an abstract image of a woman speaking into a microphone in front of a projector',
+			`image_location` = './images/events/guest_speaker.png'",
+
+			"INSERT IGNORE INTO `website`.`images`
+			SET `ID` = 2,
+			`image_title` = 'ice skating',
+			`image_description` = 'a dramatic image of a man and a woman figure skating',
+			`image_location` = './images/events/ice_skating.jpg'",
+
+			"INSERT IGNORE INTO `website`.`pages`
+			SET `ID` = 1,
+			`page_title` = 'home',
+			`body` = 'Come to Rodem fellowship to:<br>
+          practice your <strong>English,</strong>
+          make <strong>international friends</strong>,<br>
+          and find out about <strong>Christianity</strong>',
+			`edited_by` = 1",
+
+			"INSERT IGNORE INTO `website`.`pages`
+			SET `ID` = 1,
+			`page_title` = 'home',
+			`body` = 'Come to Rodem fellowship to:<br>
+          practice your <strong>English,</strong>
+          make <strong>international friends</strong>,<br>
+          and find out about <strong>Christianity</strong>',
+			`edited_by` = 1",
+
+			"INSERT IGNORE INTO `website`.`pages`
+			SET `ID` = 1,
+			`page_title` = 'about us',
+			`body` = '<h2>who we are</h2>
+        <p>Rodem House is a charitable trust organization <small>(Registration No: CC10913)</small> to support missionaries
+          and pastors who need rest and refreshment. Also we support international people who come to
+          Christchurch. Rodem house is a faith mission operated by prayer and the support of Christians.</p>',
+			`edited_by` = 1",
+
+			"INSERT IGNORE INTO `website`.`pages`
+			SET `ID` = 1,
+			`page_title` = 'meetings',
+			`edited_by` = 1",
 		);
 
 		$this->querySqlQue($sqlQueries);
