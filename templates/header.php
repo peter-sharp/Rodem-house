@@ -55,11 +55,11 @@
     </div>
   </header>
   <?php if ( $editorPage && !$authenticator->isAuthenticated()  ): ?>
-    <main>
-      <h1><small>website editor</small><br>login</h1>
-      <section class="login">
+    <main class="editor">
+      <h1 class="col-md-5 center-block"><small>website editor</small><br>login</h1>
+      <section >
 
-        <form method="POST" action="<?= $_SERVER['PHP_SELF']?>">
+        <form method="POST" action="<?= $_SERVER['PHP_SELF']?>" class="col-md-3 center-block" class="login">
 
           <div class="form-group">
             <label for="login[email]">email</label>
