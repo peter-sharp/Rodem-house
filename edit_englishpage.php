@@ -9,7 +9,7 @@ include('./templates/header.php');
     <p>website editor > English page</p>
     <div class="container">
       <section class="editor">
-        <p>logged in as ADMIN</p>
+        <p>logged in as <?= $_SESSION['usertype']?></p>
         <label for="about">English lessons description text</label>
         <textarea  name="about" ></textarea>
 

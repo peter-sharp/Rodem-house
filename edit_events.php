@@ -8,7 +8,7 @@ include('./templates/header.php');
   <div class="container">
     <p>website editor > events</p>
     <section class="editor">
-      <p>logged in as ADMIN</p>
+      <p>logged in as <?= $_SESSION['usertype']?></p>
       <button type="button">add new</button>
       <table>
         <tr>

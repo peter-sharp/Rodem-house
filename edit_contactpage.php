@@ -8,7 +8,7 @@ include('./templates/header.php');
   <div class="container">
     <p>website editor > home page</p>
     <section class="editor">
-      <p>logged in as ADMIN</p>
+      <p>logged in as <?= $_SESSION['usertype']?></p>
       <label for="cellphone">cellphone number</label>
       <input type="tel" name="cellphone" value="">
 

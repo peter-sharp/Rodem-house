@@ -8,7 +8,7 @@ include('./templates/header.php');
   <div class="container">
     <p>website editor > meetings page</p>
     <section class="editor">
-      <p>logged in as ADMIN</p>
+      <p>logged in as <?= $_SESSION['usertype']?></p>
       <h2>rodem fellowship meeting</h2>
       <label for="intro">Rodem fellowship introduction text</label>
       <textarea  name="intro" ></textarea>
