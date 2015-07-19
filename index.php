@@ -12,7 +12,7 @@ include('./templates/header.php');
           make <strong>international friends</strong>,<br>
           and find out about <strong>Christianity</strong>
       </p>
-      <button type="button" class="meeting">next meeting</button>
+      <button type="button" class="btn btn-CTA" href="meetings.php">next meeting</button>
     </div>
   </article>
 </main>
