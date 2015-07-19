@@ -17,10 +17,12 @@ class AuthenticatorHelper {
     //$this->logger = new Logger();
 
     if($_POST['login']){
-       $username = $_POST['login']['username'];
+       $email = $_POST['login']['email'];
+
        $password = $_POST['login']['password'];
 
-       if($user = $this->login($username, $password) ){
+
+       if($user = $this->login($email, $password) ){
            // $user being a users database row
            $_SESSION['user'] = $user;
        }
@@ -47,13 +49,16 @@ class AuthenticatorHelper {
   public function login($email, $password) {
 
     //build query to find all users
-    $sql = "SELECT password FROM `users` WHERE email = ?";
+    $sql = "SELECT password, type_title FROM `users`
+    INNER JOIN `user_types` ON `user_types`.ID = `users`. type_id
+    WHERE `users`.email = ? ";
 
     //run query to find specific user
     if($result = $this->database->secureQuery($sql,array('email' => $email)) ){
         if ( password_verify( $password, $result[0]['password'] ) ){
           $_SESSION['username'] = $username;
           $_SESSION['loggedIn'] = TRUE;
+          $_SESSION['usertype'] = strtoupper($result[0]['type_title']);
         }
         else {
           $result = FALSE;
@@ -75,7 +80,8 @@ class AuthenticatorHelper {
     * @return boolean True if logged in otherwise false.
     */
   public function isAuthenticated(){
-    return $_SESSION['loggedIn'];
+
+    return  $_SESSION['loggedIn'];
   }
 
   /**
