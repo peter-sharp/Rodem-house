@@ -16,7 +16,7 @@ include('./templates/header.php');
         <label for="time">time</label>
         <input type="time" name="time" value="">
 
-        <a class="btn btn-back" name="change">back</button>
+        <a class="btn btn-back" name="change">back</a>
         <button class="btn btn-CTA" type="submit" name="change">change</button>
       </section>
     </div>

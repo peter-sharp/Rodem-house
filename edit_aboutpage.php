@@ -13,7 +13,7 @@ include('./templates/header.php');
         <label for="about">about us text</label>
         <textarea  name="about" ></textarea>
 
-        <a class="btn btn-back" name="change">back</button>
+        <a class="btn btn-back" name="change">back</a>
         <button class="btn btn-CTA" type="submit" name="change">change</button>
       </section>
     </div>
