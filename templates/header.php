@@ -1,12 +1,28 @@
 <?php
+    require_once('authenticator.php');
+    $authenticator = new AuthenticatorHelper();
+    //database.php already required in authenticator, so:
+    $database = new DatabaseHelper();
+
     $currentPage = basename($_SERVER['PHP_SELF'],'.php');
-    $pages = array(
-      'index' => 'home',
-      'about' => 'about us',
-      'meetings' => 'meetings',
-      'contact' => 'contact',
-      'english' => '<small>free</small></br>English lessons'
-    );
+    $editorPage = strpos($currentPage, 'edit') !== FALSE ;
+    $pages = ($authenticator->isAuthenticated()) ?
+          array(
+            'editor' => 'editor home',
+            'edit_events' => 'events',
+            'edit_homepage' => 'home page',
+            'edit_aboutpage' => 'about us page',
+            'edit_meetingspage' => 'meetings page',
+            'edit_contactpage' => 'contact page',
+            'edit_englishpage' => 'English lessons page'
+          )
+        : array(
+          'index' => 'home',
+          'about' => 'about us',
+          'meetings' => 'meetings',
+          'contact' => 'contact',
+          'english' => '<small>free</small></br>English lessons'
+        );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,21 +51,34 @@
           <?php endforeach; ?>
         </ul>
       </nav>
-        </ul>
-      </nav>
+      <?php if($authenticator->isAuthenticated()):?><a href="./<?=$pageId?>.php?logout=yes" class="pull-right">logout</a><?php endif?>
     </div>
   </header>
-  <?php if ( /* !$authenticator->isAuthenticated() */ false ): #'class="active"'?>
+  <?php if ( $editorPage && !$authenticator->isAuthenticated()  ): ?>
     <main>
       <h1><small>website editor</small><br>login</h1>
       <section class="login">
-        <label for="username">user name</label>
-        <input type="text" name="username" value="">
 
-        <label for="password">password</label>
-        <input type="password" name="password" value="">
+        <form method="POST" action="<?= $_SERVER['PHP_SELF']?>">
 
-        <button class="btn btn-CTA" type="submit" name="login">log in</button>
+          <div class="form-group">
+            <label for="login[email]">email</label>
+            <div class="input-group">
+              <input type="text" id="name" name="login[email]" class="form-control" value="<?= (isset($_POST['login[email]']) )? $_POST['login[email]'] : ""?>">
+              <span class="input-group-addon"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login[password]">password</label>
+            <div class="input-group">
+              <input type="password" id="name" name="login[password]" class="form-control">
+              <span class="input-group-addon"></span>
+            </div>
+          </div>
+
+          <input  type="submit"  name="submit" id="submit" value="log in" class="btn btn-CTA pull-right">
+        </form>
       </section>
     </main>
   <?php endif ?>
