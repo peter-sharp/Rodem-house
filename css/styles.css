@@ -66,6 +66,9 @@ article {
   background-color: white;
   padding: 1%;
 }
+article.editor {
+  background-color: #c1bfc1;
+}
 h1 {
   color: white;
   text-align: left;
@@ -118,10 +121,61 @@ a > small {
 }
 .CTA_area {
   background-color: #189ef9;
+  text-align: right;
 }
-.stick-right {
-  position: absolute;
-  right: 0;
+.btn {
+  position: relative;
+  border-radius: 0;
+  padding: 3px 12px;
+  background-color: #333333;
+  box-shadow: 0 4px #000000;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.btn:active {
+  top: 4px;
+  box-shadow: none;
+}
+.btn.btn-CTA {
+  background-color: #ff694c;
+  box-shadow: 0 4px #992500;
+  text-shadow: 0 -1px #992500;
+}
+.btn.btn-CTA:active {
+  top: 4px;
+  box-shadow: none;
+}
+.btn.btn-CTA:visited {
+  color: white;
+}
+.btn.btn-CTA:hover {
+  color: #ffffff;
+}
+.btn.btn-ADD {
+  padding: 3px 10%;
+  background-color: #189ef9;
+  box-shadow: 0 4px #00305e;
+  text-shadow: 0 -1px #00305e;
+}
+.btn.btn-ADD:after {
+  font-size: 17px;
+  content: " +";
+}
+.btn.btn-ADD:active {
+  top: 4px;
+  box-shadow: none;
+}
+.btn.btn-ADD:visited {
+  color: white;
+}
+.btn.btn-ADD:hover {
+  color: #94d2fc;
+}
+.user-type {
+  color: #837d83;
+  font-weight: lighter;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 /* ############################# nav styles ############################# */
 nav {
