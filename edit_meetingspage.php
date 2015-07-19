@@ -1,6 +1,7 @@
 <?php
 include('./templates/header.php');
 $meetingspage = $database->getRowsFromTable("pages", array("body","ID"));
+
 if($_POST['login'])   $database->updateInTable(`pages`, $meetingspage[0]['ID'], array("body" => $_POST['change']['intro'] ) );
 ?>
 <form class="pages" action="<?= $_SERVER['PHP_SELF']?>" method="POST">
