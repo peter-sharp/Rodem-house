@@ -1,5 +1,7 @@
 <?php
 include('./templates/header.php');
+
+$events = $database->getRowsFromTable('events', array('event_title','datetime','category_title','featured'), "INNER JOIN `categories` ON `categories`.ID = `events`. category_id");
 ?>
 <form class="events" action="index.html" method="post">
 
@@ -18,13 +20,15 @@ include('./templates/header.php');
           <th></th>
           <th>Select</th>
         </tr>
-        <tr>
-          <td>Ice Skating</td>
-          <td>12/1/2016</td>
-          <td>social event</td>
-          <td><strong>featured</strong></td>
-          <td><input type="checkbox" name="select" value=""></td>
-        </tr>
+        <?php foreach($events as $event):?>
+          <tr>
+            <td><?= $event['event_title']?></td>
+            <td><?= gmdate("d-m-Y\ H:i:s\ ", $event['datetime'])?></td>
+            <td><?= $event['category_title']?></td>
+            <td><strong><?= (intval($event['featured']) )? "featured" : "" ?></strong></td>
+            <td><input type="checkbox" name="select" value=""></td>
+          </tr>
+        <?php endforeach?>
       </table>
     </section>
   </div>
