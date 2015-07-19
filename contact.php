@@ -16,7 +16,7 @@ include('./templates/header.php');
         <img src="" alt="" /> person@rodemhouse.org
       </p>
       <p>
-        <img src="" alt="" /> Some St, Suburb, CHristchurch
+        <img src="" alt="" /> Some St, Suburb, Christchurch
       </p>
       <div class="map"></div>
     </div>
