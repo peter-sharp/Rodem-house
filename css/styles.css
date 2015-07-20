@@ -3,6 +3,7 @@
 /* patterns */
 /* colours */
 /* fonts */
+/* banners */
 /* ########################### Browser reset ########################### */
 html,
 body {
@@ -35,12 +36,6 @@ main {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  /* ///////////////////////////////// page specific ///////////////////////////////// */
-  /* ############################# home ############################# */
-}
-main.home {
-  background: url(../images/BG_home.jpg) no-repeat 0 50%;
-  background-size: cover;
 }
 header,
 footer {
@@ -64,7 +59,7 @@ article {
   background-image: url(../images/swirls.svg);
   background-repeat: repeat;
   background-color: white;
-  padding: 1%;
+  padding: 2% 0;
 }
 article.editor {
   background-color: #c1bfc1;
@@ -74,11 +69,13 @@ h1 {
   text-align: left;
   width: auto;
   font-size: 100px;
-  /* ############################# logo ############################# */
+  text-shadow: 0 0 5px #000;
+  /*  logo  */
 }
 h1 > small {
   font-size: 50px;
   color: white;
+  text-shadow: 0 0 5px #000;
 }
 h1.logo {
   float: left;
@@ -107,6 +104,7 @@ p {
   font-family: 'Roboto Slab', serif;
   font-size: 14;
   color: #423f42;
+  margin: 0 0 2% 0;
 }
 a {
   color: grey;
@@ -115,7 +113,30 @@ a > small {
   font-size: smaller;
   color: #ff694c;
 }
+td {
+  padding: 1%;
+}
+td > input {
+  width: 20px;
+}
+td > strong {
+  margin: 20px;
+}
+tr:not(:first-child) {
+  background-color: #ff694c;
+}
+tr:nth-child(2) {
+  background-color: #ff5432;
+}
 /* ############################# utility classes ############################# */
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .center-block {
   float: none;
 }
@@ -125,6 +146,7 @@ a > small {
 }
 .btn {
   position: relative;
+  margin: 3% 0;
   border-radius: 0;
   padding: 3px 12px;
   background-color: #333333;
@@ -177,6 +199,9 @@ a > small {
   font-weight: lighter;
   font-family: 'Roboto Condensed', sans-serif;
 }
+.banner {
+  height: 50%;
+}
 /* ############################# nav styles ############################# */
 nav {
   float: right;
@@ -194,4 +219,41 @@ nav li.active > a {
 }
 nav li a {
   color: grey;
+}
+/* ############################# page specific ############################# */
+.home > .banner {
+  background-image: url(../images/banner_home.jpg);
+  background-position: left 70%;
+  height: 70%;
+  background-size: cover;
+}
+.about > .banner {
+  background-image: url(../images/banner_about_us.jpg);
+  background-position: left 0;
+  height: 70%;
+  background-size: cover;
+}
+.meetings > .banner {
+  background-image: url(../images/banner_meetings.jpg);
+  background-position: left 0;
+  height: 40%;
+  background-size: cover;
+}
+.contact > .banner {
+  background: url(../images/banner_contact_phonebox.png) no-repeat, url(../images/banner_contact_tiled.jpg) repeat-x;
+  background-position: left 0;
+  height: 40%;
+  background-size: contain;
+}
+.english > .banner {
+  background-image: url(../images/banner_english.svg);
+  background-position: left 0;
+  height: 40%;
+  background-size: cover;
+}
+.editor > .banner {
+  background-image: url(../images/banner_editor_gears.jpg);
+  background-position: left 0;
+  height: 40%;
+  background-size: cover;
 }
