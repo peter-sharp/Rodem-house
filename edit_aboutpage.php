@@ -4,9 +4,11 @@ include('./templates/header.php');
 
   <form class="pages" action="index.html" method="post">
 
-  <main>
+  <main class="editor">
+  <div class="banner">
     <h1 class="col-md-4 center-block" >edit<br><small>about us page</small></h1>
-  <article class="editor">
+  </div>
+  <article>
       <div class="container">
       <p class="breadcrumb">website editor > about page</p>
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>

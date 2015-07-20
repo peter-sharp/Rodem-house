@@ -7,9 +7,11 @@ if($_POST['login'])   $database->updateInTable(`pages`, $meetingspage[0]['ID'], 
 ?>
 <form class="pages" action="index.html" method="post">
 
-<main>
-  <h1 class="col-md-4 center-block" >edit<br><small>home page</small></h1>
-  <article class="editor">
+<main class="editor">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >edit<br><small>home page</small></h1>
+  </div>
+  <article>
     <div class="container">
       <p class="breadcrumb">website editor > home page</p>
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>

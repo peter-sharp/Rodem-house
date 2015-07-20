@@ -6,9 +6,11 @@ if($_POST['login'])   $database->updateInTable(`pages`, $meetingspage[0]['ID'], 
 ?>
 <form class="pages" action="<?= $_SERVER['PHP_SELF']?>" method="POST">
 
-<main>
-  <h1 class="col-md-4 center-block" >edit<br><small>meetings page</small></h1>
-  <article  class="editor">
+<main class="editor">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >edit<br><small>meetings page</small></h1>
+  </div>
+  <article>
     <div class="container">
       <p class="breadcrumb">website editor > meetings page</p>
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>

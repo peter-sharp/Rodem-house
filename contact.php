@@ -1,10 +1,12 @@
 <?php
 include('./templates/header.php');
 ?>
-<main>
+<main class="contact">
 
-  <h1 class="col-md-4 center-block" >contact</h1>
-  <article class="contact" itemscope itemtype="http://schema.org/Person">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >contact</h1>
+  </div>
+  <article itemscope itemtype="http://schema.org/Person">
     <div class="container">
       <p>
         <img src="" alt="" /> 022 333 4444

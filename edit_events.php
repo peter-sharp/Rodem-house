@@ -5,10 +5,12 @@ $events = $database->getRowsFromTable('events', array('event_title','datetime','
 ?>
 <form class="events" action="index.html" method="post">
 
-<main>
-  <h1 class="col-md-4 center-block" >events</h1>
+<main  class="editor">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >events</h1>
+  </div>
   <p class="breadcrumb">website editor > events</p>
-  <article class="editor">
+  <article>
     <div class="container">
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
         <button type="button" class="btn btn-ADD">add new</button>

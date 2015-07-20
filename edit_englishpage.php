@@ -4,10 +4,12 @@ include('./templates/header.php');
 
   <form class="pages" action="index.html" method="post">
 
-  <main>
-    <h1 class="col-md-4 center-block" >edit<br><small>English lessons page</small></h1>
+  <main class="editor">
+    <div class="banner">
+      <h1 class="col-md-4 center-block" >edit<br><small>English lessons page</small></h1>
+    </div>
     <p class="breadcrumb">website editor > English page</p>
-    <article class="editor">
+    <article>
       <div class="container">
           <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
           <label for="about">English lessons description text</label>

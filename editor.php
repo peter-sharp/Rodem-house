@@ -2,9 +2,11 @@
 include('./templates/header.php');
 ?>
 <?php if ( $authenticator->isAuthenticated()): ?>
-<main>
-  <h1 class="col-md-4 center-block" >website editor</h1>
-  <article class="editor">
+<main class="editor">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >website editor</h1>
+  </div>
+  <article >
     <div class="container">
       <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
       <p class="admin">This is where you can make changes to the website. you can make changes to the text

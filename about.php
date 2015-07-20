@@ -1,9 +1,11 @@
 <?php
 include('./templates/header.php');
 ?>
-<main>
-  <h1 class="col-md-4 center-block" >about us</h1>
-  <article class="about">
+<main class="about">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >about us</h1>
+  </div>
+  <article>
     <div class="container">
       <div class="site wrapper">
         <h2>who we are</h2>
