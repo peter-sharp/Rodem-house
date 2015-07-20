@@ -12,7 +12,7 @@ if ($edit_events && $authenticator->isAuthenticated()):?>
 <?php else:?>
 <footer>
   <div class="container">
-    <span>&copy; Rodem House</span> <?= ($authenticator->isAuthenticated())? "" : "<a href=\"editor.php\">login</a>" ; ?>
+    <span>&copy; Rodem House</span> <?= ($authenticator->isAuthenticated())? "" : "<div class=\"login pull-right\"><span class=\"icon-login\"></span><a href=\"editor.php\">login</a></div>" ; ?>
   </div>
 </footer>
 <?php endif?>
