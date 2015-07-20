@@ -40,14 +40,14 @@
 <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab' type='text/css'>
 </head>
 <body>
-  <header >
+  <header <?= ($authenticator->isAuthenticated())? 'class="editor"' : '' ;?>>
     <div class="container center-block">
       <h1 class="logo "><a href="./index.php">Rodem House</a></h1>
 
-      <nav class="col-md-8 ">
-        <ul>
+      <nav class="pull-right">
+        <ul >
           <?php foreach ($pages as $pageId => $pageTitle): ?>
-          <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></li>
+          <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><span><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></span></li>
           <?php endforeach; ?>
         </ul>
       </nav>
@@ -56,29 +56,31 @@
   </header>
   <?php if ( $editorPage && !$authenticator->isAuthenticated()  ): ?>
     <main class="editor">
-      <h1 class="col-md-5 center-block"><small>website editor</small><br>login</h1>
+    <div class="banner login">
+        <h1><small>website editor</small><br>login</h1>
       <section >
 
-        <form method="POST" action="<?= $_SERVER['PHP_SELF']?>" class="col-md-3 center-block" class="login">
+        <form method="POST" action="<?= $_SERVER['PHP_SELF']?>" class="col-md-3 center-block login" >
 
-          <div class="form-group">
-            <label for="login[email]">email</label>
-            <div class="input-group">
-              <input type="text" id="name" name="login[email]" class="form-control" value="<?= (isset($_POST['login[email]']) )? $_POST['login[email]'] : ""?>">
-              <span class="input-group-addon"></span>
+            <div class="form-group">
+              <label for="login[email]">email</label>
+              <div class="input-group">
+                <input type="text" id="name" name="login[email]" class="form-control" value="<?= (isset($_POST['login[email]']) )? $_POST['login[email]'] : ""?>">
+                <span class="input-group-addon"></span>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="login[password]">password</label>
-            <div class="input-group">
-              <input type="password" id="name" name="login[password]" class="form-control">
-              <span class="input-group-addon"></span>
+            <div class="form-group">
+              <label for="login[password]">password</label>
+              <div class="input-group">
+                <input type="password" id="name" name="login[password]" class="form-control">
+                <span class="input-group-addon"></span>
+              </div>
             </div>
-          </div>
 
-          <input  type="submit"  name="submit" id="submit" value="log in" class="btn btn-CTA pull-right">
+            <input  type="submit"  name="submit" id="submit" value="log in" class="btn btn-CTA pull-right">
         </form>
       </section>
+    </div>
     </main>
   <?php endif ?>
