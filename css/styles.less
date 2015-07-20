@@ -14,8 +14,13 @@
 @swirls: url(../images/swirls.svg);
 @noise: url(../images/noise.svg);
 
+.background-swirlspattern(@colour){
+  background-image: @swirls;
+  background-repeat: repeat;
+  background-color: @colour;
+}
 /* colours */
-@base_yellow: #ff694c;
+@base_yellow: #ffe57d;
 @base_blue: #189ef9;
 @base_orange: #ff694c;
 @base_grey: #423f42;
@@ -28,29 +33,36 @@
 @font_body: 'Roboto Slab', serif;
 
 /* banners */
-.banner-big(@image, @vertical-offset){
-  >.banner{
-      background-image: @image;
-      background-position: left @vertical-offset;
-      height:           70%;
-      background-size: cover;
-  }
+.banner-big(){
+  height:           70%;
 }
-.banner-reg(@image, @vertical-offset){
-  >.banner{
-      background-image: @image;
-      background-position: left @vertical-offset;
-      height:           40%;
-      background-size: cover;
-  }
+.banner-reg(){
+  height:           45%;
 }
-.banner-reg-fgbg(@imagefg,@imagetile, @vertical-offset){
-  >.banner{
-      background: @imagefg no-repeat, @imagetile repeat-x;
-      background-position: left @vertical-offset;
-      height:           40%;
-      background-size: contain;
-  }
+
+.banner-image(@image, @vertical-offset){
+  background-image: @image;
+  background-position: left @vertical-offset;
+  background-size:  cover;
+}
+.banner-image-double(@imagefg,@imagetile, @vertical-offset){
+  background: @imagefg no-repeat, @imagetile repeat-x;
+  background-position: 60% @vertical-offset;
+  height:           40%;
+  background-size: contain;
+}
+/* set styles */
+.pannel-shadow(){
+  box-shadow: 0 0 10px #000;
+}
+
+/* alignment utilities */
+.vertical-align(@transform: -20%) {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(@transform);
+  -ms-transform: translateY(@transform);
+  transform: translateY(@transform);
 }
 /* ########################### Browser reset ########################### */
 html, body {
@@ -60,6 +72,7 @@ html, body {
     width:  100%;
 }
 body, body * {
+    z-index: 0;
     outline: 0;
     border:  0 none;
     margin:  0;
@@ -86,44 +99,131 @@ main {
 }
 
 header, footer {
+
   position: relative;
   background-color: @base_grey;
   background-image: @noise;
   background-repeat: repeat;
   width:             100%;
+
+
 }
+
+form{
+  &.login{
+    .pannel-shadow();
+  }
+}
+
 header {
-  min-height:   100px;
-  padding: 2% 0 2% 0;
+  z-index: 2;
+  min-height:   50px;
+  height: 10%;
+  &.editor{
+    height: 25%;
+  }
+  @media screen and (max-width: 1188px) {
+    height: 25%;
+  }
+  @media screen and (max-width: 572px) {
+    height: 60%;
+  }
+  padding: 1.1% 0 1.1% 0;
+  .pannel-shadow();
+
+  /*  nav styles  */
+  nav{
+    min-width: 60%;
+    float: right;
+    @media screen and (max-width: 572px) {
+      clear:both;
+      float: none;
+    }
+    min-height: 20px;
+    .vertical-align();
+    li{
+      position: relative;
+      min-width:  180px;
+      min-height: 50px;
+      float:    left;
+      @media screen and (max-width: 572px) {
+        clear:both;
+        float: none;
+        min-height: 70px;
+      }
+      padding: 1% 2.5% 1% 2.5%;
+      text-transform: uppercase;
+      span{
+        position: absolute;
+        width: 100%;
+        bottom: -10px;
+
+        a{
+          color: grey;
+          @media screen and (max-width: 572px) {
+            font-size: 20px
+          }
+          >small{
+              font-size: smaller;
+              color: @base_yellow;
+          }
+        }
+      }
+      &.active a{
+        color:white;
+        >small{
+            font-size: smaller;
+            color: lighten(@base_yellow, 20%);
+        }
+      }
+    }
+  }
 }
 
 footer {
-
-  height:   25px;
-  padding: 5px;
+  min-height:   25px;
+  padding: 0 14px;
+  p{
+    color: lighten(@base_grey, 20%);
+  }
 }
 
 article {
+    z-index: 2;
     height:           100%;
     width:            100%;
-    background-image: @swirls;
-    background-repeat: repeat;
-    background-color: white;
+    .background-swirlspattern(white);
+    .pannel-shadow();
     padding: 2% 0;
     &.editor{
       background-color: @editor_grey;
     }
+    &.CTA_area {
+      background-color: lighten(@base_blue, 10%);
+      text-align: right;
+      p {
+        font-size: 18px;
+        strong{
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
 }
 h1 {
   color:         white;
-  text-align:    left;
+  text-align:    center;
   width:         auto;
   font-size:     100px;
+  @media screen and (max-width: 572px) {
+    font-size:   60px;
+  }
   text-shadow: 0 0 5px #000;
   >small {
     font-size: 50px;
     color: white;
     text-shadow: 0 0 5px #000;
+    text-align: left;
   }
   /*  logo  */
   &.logo {
@@ -131,7 +231,7 @@ h1 {
     display: block;
     min-height: 50px;
     min-width: 129px;
-    vertical-align: center;
+    .vertical-align(0);
     a {
       background:@logo;
       background-size: contain;
@@ -147,6 +247,7 @@ h1 {
 
 h1, h2, h3 {
   font-family: @font_heading;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -160,10 +261,7 @@ p {
 
 a{
   color: grey;
-  >small{
-      font-size: smaller;
-      color: @base_yellow;
-    }
+
 }
 
 td{
@@ -196,9 +294,9 @@ tr{
   float: none;
 }
 
-.CTA_area {
-  background-color: @base_blue;
-  text-align: right;
+.breadcrumb{
+  background-color: transparent;
+  color:lightgrey;
 }
 
 .btn{
@@ -262,46 +360,68 @@ tr{
   height: 50%;
 }
 
-/* ############################# nav styles ############################# */
 
-nav{
-  float: right;
-  li{
-    position: relative;
-    min-height: 100px;
-    min-width:  100px;
-    float:    left;
-    padding: 1% 2.5% 1% 2.5%;
-    text-transform: uppercase;
-    &.active > a{
-      color:white;
-    }
-    a{
-      color: grey;
-    }
-  }
-}
 
 /* ############################# page specific ############################# */
 
 .home{
-  .banner-big(@BGimage_home, 70%)
+  >.banner{
+      .banner-big();
+      .banner-image(@BGimage_home, 70%);
+  }
 }
 .about{
-  .banner-big( @BGimage_about, 0);
+  >.banner{
+      .banner-big();
+      .banner-image( @BGimage_about, 0);
+  }
 }
 
 .meetings{
-  .banner-reg( @BGimage_meetings, 0);
+  >.banner{
+    .banner-reg();
+    .banner-image( @BGimage_meetings, 0);
+  }
 }
 
 .contact{
-  .banner-reg-fgbg(@BGimage_contactFG, @BGimage_contactBG, 0);
+  >.banner{
+    .banner-reg();
+    .banner-image-double(@BGimage_contactFG, @BGimage_contactBG, 0);
+  }
 }
 
 .english{
-  .banner-reg( @BGimage_english, 0);
+  >.banner{
+    .banner-reg();
+    .banner-image( @BGimage_english, 0);
+  }
 }
 .editor{
-  .banner-reg( @BGimage_editor, 0);
+  background-color: black;
+  form.login{
+      .background-swirlspattern(@editor_grey);
+      width: 50%;
+      height: 300px;
+      padding: 50px 15%;
+  }
+  >.banner{
+    .banner-reg();
+    &.login{
+      position: relative;
+      height: 100%;
+    }
+    &::after{
+      content: "";
+      .banner-image( @BGimage_editor, 0);
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+  }
 }

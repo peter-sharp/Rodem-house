@@ -4,6 +4,8 @@
 /* colours */
 /* fonts */
 /* banners */
+/* set styles */
+/* alignment utilities */
 /* ########################### Browser reset ########################### */
 html,
 body {
@@ -14,6 +16,7 @@ body {
 }
 body,
 body * {
+  z-index: 0;
   outline: 0;
   border: 0 none;
   margin: 0;
@@ -45,44 +48,145 @@ footer {
   background-repeat: repeat;
   width: 100%;
 }
+form.login {
+  box-shadow: 0 0 10px #000;
+}
 header {
-  min-height: 100px;
-  padding: 2% 0 2% 0;
+  z-index: 2;
+  min-height: 50px;
+  height: 10%;
+  padding: 1.1% 0 1.1% 0;
+  box-shadow: 0 0 10px #000;
+  /*  nav styles  */
+}
+header.editor {
+  height: 25%;
+}
+@media screen and (max-width: 1188px) {
+  header {
+    height: 25%;
+  }
+}
+@media screen and (max-width: 572px) {
+  header {
+    height: 60%;
+  }
+}
+header nav {
+  min-width: 60%;
+  float: right;
+  min-height: 20px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-20%);
+  -ms-transform: translateY(-20%);
+  transform: translateY(-20%);
+}
+@media screen and (max-width: 572px) {
+  header nav {
+    clear: both;
+    float: none;
+  }
+}
+header nav li {
+  position: relative;
+  min-width: 180px;
+  min-height: 50px;
+  float: left;
+  padding: 1% 2.5% 1% 2.5%;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 572px) {
+  header nav li {
+    clear: both;
+    float: none;
+    min-height: 70px;
+  }
+}
+header nav li span {
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+}
+header nav li span a {
+  color: grey;
+}
+@media screen and (max-width: 572px) {
+  header nav li span a {
+    font-size: 20px;
+  }
+}
+header nav li span a > small {
+  font-size: smaller;
+  color: #ffe57d;
+}
+header nav li.active a {
+  color: white;
+}
+header nav li.active a > small {
+  font-size: smaller;
+  color: #fff9e3;
 }
 footer {
-  height: 25px;
-  padding: 5px;
+  min-height: 25px;
+  padding: 0 14px;
+}
+footer p {
+  color: #767176;
 }
 article {
+  z-index: 2;
   height: 100%;
   width: 100%;
   background-image: url(../images/swirls.svg);
   background-repeat: repeat;
   background-color: white;
+  box-shadow: 0 0 10px #000;
   padding: 2% 0;
 }
 article.editor {
   background-color: #c1bfc1;
 }
+article.CTA_area {
+  background-color: #4ab3fa;
+  text-align: right;
+}
+article.CTA_area p {
+  font-size: 18px;
+}
+article.CTA_area p strong {
+  color: white;
+  font-size: 20px;
+}
 h1 {
   color: white;
-  text-align: left;
+  text-align: center;
   width: auto;
   font-size: 100px;
   text-shadow: 0 0 5px #000;
   /*  logo  */
 }
+@media screen and (max-width: 572px) {
+  h1 {
+    font-size: 60px;
+  }
+}
 h1 > small {
   font-size: 50px;
   color: white;
   text-shadow: 0 0 5px #000;
+  text-align: left;
 }
 h1.logo {
   float: left;
   display: block;
   min-height: 50px;
   min-width: 129px;
-  vertical-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 h1.logo a {
   background: url(../images/Rodem_logo.svg);
@@ -98,6 +202,7 @@ h1,
 h2,
 h3 {
   font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
 }
 p {
@@ -109,10 +214,6 @@ p {
 a {
   color: grey;
 }
-a > small {
-  font-size: smaller;
-  color: #ff694c;
-}
 td {
   padding: 1%;
 }
@@ -123,10 +224,10 @@ td > strong {
   margin: 20px;
 }
 tr:not(:first-child) {
-  background-color: #ff694c;
+  background-color: #ffe57d;
 }
 tr:nth-child(2) {
-  background-color: #ff5432;
+  background-color: #ffe063;
 }
 /* ############################# utility classes ############################# */
 .absolute-center {
@@ -140,9 +241,9 @@ tr:nth-child(2) {
 .center-block {
   float: none;
 }
-.CTA_area {
-  background-color: #189ef9;
-  text-align: right;
+.breadcrumb {
+  background-color: transparent;
+  color: lightgrey;
 }
 .btn {
   position: relative;
@@ -202,58 +303,66 @@ tr:nth-child(2) {
 .banner {
   height: 50%;
 }
-/* ############################# nav styles ############################# */
-nav {
-  float: right;
-}
-nav li {
-  position: relative;
-  min-height: 100px;
-  min-width: 100px;
-  float: left;
-  padding: 1% 2.5% 1% 2.5%;
-  text-transform: uppercase;
-}
-nav li.active > a {
-  color: white;
-}
-nav li a {
-  color: grey;
-}
 /* ############################# page specific ############################# */
 .home > .banner {
+  height: 70%;
   background-image: url(../images/banner_home.jpg);
   background-position: left 70%;
-  height: 70%;
   background-size: cover;
 }
 .about > .banner {
+  height: 70%;
   background-image: url(../images/banner_about_us.jpg);
   background-position: left 0;
-  height: 70%;
   background-size: cover;
 }
 .meetings > .banner {
+  height: 45%;
   background-image: url(../images/banner_meetings.jpg);
   background-position: left 0;
-  height: 40%;
   background-size: cover;
 }
 .contact > .banner {
+  height: 45%;
   background: url(../images/banner_contact_phonebox.png) no-repeat, url(../images/banner_contact_tiled.jpg) repeat-x;
-  background-position: left 0;
+  background-position: 60% 0;
   height: 40%;
   background-size: contain;
 }
 .english > .banner {
+  height: 45%;
   background-image: url(../images/banner_english.svg);
   background-position: left 0;
-  height: 40%;
   background-size: cover;
 }
+.editor {
+  background-color: black;
+}
+.editor form.login {
+  background-image: url(../images/swirls.svg);
+  background-repeat: repeat;
+  background-color: #c1bfc1;
+  width: 50%;
+  height: 300px;
+  padding: 50px 15%;
+}
 .editor > .banner {
+  height: 45%;
+}
+.editor > .banner.login {
+  position: relative;
+  height: 100%;
+}
+.editor > .banner::after {
+  content: "";
   background-image: url(../images/banner_editor_gears.jpg);
   background-position: left 0;
-  height: 40%;
   background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
