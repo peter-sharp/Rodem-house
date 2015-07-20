@@ -1,8 +1,10 @@
 <?php
 include('./templates/header.php');
 ?>
-<main>
-  <h1 class="col-md-4 center-block" >meetings</h1>
+<main class="meetings">
+  <div class="banner">
+    <h1 class="col-md-4 center-block" >meetings</h1>
+  </div>
   <article class="meetings">
     <div class="container">
       <h2>international fellowship</h2>
