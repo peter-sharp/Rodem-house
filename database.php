@@ -154,8 +154,6 @@ class DatabaseHelper {
     //print_r($metadata);
     //print_r(get_class_methods($metadata));
 
-
-
     call_user_func_array(array($statement, 'bind_result'), $parameters);
     while ($statement->fetch()) {
       foreach($row as $key => $value) {
