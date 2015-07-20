@@ -19,9 +19,9 @@
       <feTurbulence
          id="feTurbulence14568"
          result="turbulence"
-         baseFrequency="0.05 0.05"
+         baseFrequency="0.052 0.054"
          seed="159"
-         numOctaves="10"
+         numOctaves="8"
          type="fractalNoise" />
       <feDisplacementMap
          id="feDisplacementMap14570"
