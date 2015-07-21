@@ -6,8 +6,7 @@
 
     $currentPage = basename($_SERVER['PHP_SELF'],'.php');
     $editorPage = strpos($currentPage, 'edit') !== FALSE ;
-    $pages = ($authenticator->isAuthenticated()) ?
-          array(
+    $editorpages = array(
             'editor' => 'editor home',
             'edit_events' => 'events',
             'edit_homepage' => 'home page',
@@ -15,8 +14,8 @@
             'edit_meetingspage' => 'meetings page',
             'edit_contactpage' => 'contact page',
             'edit_englishpage' => 'English lessons page'
-          )
-        : array(
+          );
+    $pages = array(
           'index' => 'home',
           'about' => 'about us',
           'meetings' => 'meetings',
@@ -50,8 +49,18 @@
           <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><span><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></span></li>
           <?php endforeach; ?>
         </ul>
+
+        <ul >
+          <?php if($authenticator->isAuthenticated()):?>
+            <?php foreach ($editorpages as $pageId => $pageTitle): ?>
+              <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><span><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></span></li>
+            <?php endforeach; ?>
+            <li class="logout pull-right"><a href="./<?=$pageId?>.php?logout=yes" ><b>logout</b></a></li>
+          <?php else:?>
+            <li class="login pull-right"><span class="icon-login"></span><a href="./editor.php"><small>login</small></a></li>
+          <?php endif;?>
+        </ul>
       </nav>
-      <?php if($authenticator->isAuthenticated()):?><a href="./<?=$pageId?>.php?logout=yes" class="pull-right">logout</a><?php endif?>
     </div>
   </header>
   <?php if ( $editorPage && !$authenticator->isAuthenticated()  ): ?>
