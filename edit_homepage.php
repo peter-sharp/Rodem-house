@@ -1,11 +1,21 @@
 <?php
 include('./templates/header.php');
 
-$homepage = $database->getRowsFromTable("pages", array("body","ID"));
+function getHomeContents($content){
+  global $database;
+  $contents = $database->getRowsFromTable("pages", array("body","ID"))[0][$content];
+  return $contents;
+}
 
-if($_POST['login'])   $database->updateInTable(`pages`, $meetingspage[0]['ID'], array("body" => $_POST['change']['intro'] ) );
+$homeID = getHomeContents('ID');
+//die(var_dump($homeID));
+if($_POST['change']){
+  $database->updateInTable('pages', $homeID, array("body" => $_POST['change']['intro'] ) );
+}
+
+
 ?>
-<form class="pages" action="index.html" method="post">
+<form method="POST" class="pages" action="<?= $_SERVER['PHP_SELF']?>" >
 
 <main class="editor">
   <div class="banner">
@@ -18,15 +28,13 @@ if($_POST['login'])   $database->updateInTable(`pages`, $meetingspage[0]['ID'], 
       <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
       <div class="col-md-4 center-block">
 
-
-
           <div class="form-group ">
             <label for="">introduction text</label>
-            <textarea  id="name" name="change[intro]" class="form-control"><?= $homepage[0]['body']?></textarea>
+            <textarea  id="name" name="change[intro]" class="form-control"><?= getHomeContents('body');?></textarea>
 
 
-            <a class="btn btn-back" name="change">back</a>
-            <button class="btn btn-CTA pull-right" type="submit" name="change">change</button>
+            <a class="btn btn-back" name="submit">back</a>
+            <input class="btn btn-CTA pull-right" type="submit" id="submit" name="submit" value="change">
 
           </div>
       </div>
