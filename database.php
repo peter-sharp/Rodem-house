@@ -312,8 +312,7 @@ class DatabaseHelper {
     }
 
     $result = $this->queryRows($sqlQuery);
-    // close $this->query
-    $this->query->close();
+
     return $result;
   }
 
