@@ -114,8 +114,13 @@ form{
     .pannel-shadow();
   }
 }
+textarea{
+  width: 100%;
+  min-height: 200px;
+}
 
 header {
+
   z-index: 2;
   min-height:   50px;
   height: 10%;
@@ -140,24 +145,20 @@ header {
       float: none;
     }
     min-height: 20px;
-    .vertical-align();
+    ul{
+      clear: both;
+    }
     li{
       position: relative;
-      min-width:  180px;
-      min-height: 50px;
       float:    left;
       @media screen and (max-width: 572px) {
         clear:both;
         float: none;
         min-height: 70px;
       }
-      padding: 1% 2.5% 1% 2.5%;
+      padding: 20px 20px 5px;
       text-transform: uppercase;
       span{
-        position: absolute;
-        width: 100%;
-        bottom: -10px;
-
         a{
           color: grey;
           @media screen and (max-width: 572px) {
@@ -176,7 +177,14 @@ header {
             color: lighten(@base_yellow, 20%);
         }
       }
-    }
+      b{
+        font-weight: bolder;
+      }
+      small{
+        font-size: smaller;
+        font-weight: lighter;
+      }
+    } /* /li */
   }
 }
 

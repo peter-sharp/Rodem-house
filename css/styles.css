@@ -51,6 +51,10 @@ footer {
 form.login {
   box-shadow: 0 0 10px #000;
 }
+textarea {
+  width: 100%;
+  min-height: 200px;
+}
 header {
   z-index: 2;
   min-height: 50px;
@@ -76,11 +80,7 @@ header nav {
   min-width: 60%;
   float: right;
   min-height: 20px;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-20%);
-  -ms-transform: translateY(-20%);
-  transform: translateY(-20%);
+  /* /li */
 }
 @media screen and (max-width: 572px) {
   header nav {
@@ -88,12 +88,13 @@ header nav {
     float: none;
   }
 }
+header nav ul {
+  clear: both;
+}
 header nav li {
   position: relative;
-  min-width: 180px;
-  min-height: 50px;
   float: left;
-  padding: 1% 2.5% 1% 2.5%;
+  padding: 20px 20px 5px;
   text-transform: uppercase;
 }
 @media screen and (max-width: 572px) {
@@ -102,11 +103,6 @@ header nav li {
     float: none;
     min-height: 70px;
   }
-}
-header nav li span {
-  position: absolute;
-  width: 100%;
-  bottom: -10px;
 }
 header nav li span a {
   color: grey;
@@ -126,6 +122,13 @@ header nav li.active a {
 header nav li.active a > small {
   font-size: smaller;
   color: #fff9e3;
+}
+header nav li b {
+  font-weight: bolder;
+}
+header nav li small {
+  font-size: smaller;
+  font-weight: lighter;
 }
 footer {
   min-height: 25px;
