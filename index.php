@@ -1,5 +1,7 @@
 <?php
 include('./templates/header.php');
+$homepage = $database->getRowsFromTable("pages", array("body"))[0];
+
 ?>
 <main class="home">
 
@@ -9,10 +11,14 @@ include('./templates/header.php');
   <article class="CTA_area">
     <div class="container">
       <p>
+      <?php if($homepage['body']):
+              echo $homepage['body'];
+      else: ?>
           Come to Rodem fellowship to:<br>
           practice your <strong>English,</strong>
           make <strong>international friends</strong>,<br>
           and find out about <strong>Christianity</strong>
+    <?php endif?>
       </p>
       <a class="btn btn-CTA" href="./meetings.php">next meeting</a>
     </div>
