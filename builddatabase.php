@@ -211,15 +211,6 @@ class DatabaseBuilder {
 
 			"INSERT IGNORE INTO `website`.`pages`
 			SET `ID` = 2,
-			`page_title` = 'home',
-			`body` = 'Come to Rodem fellowship to:<br>
-          practice your <strong>English,</strong>
-          make <strong>international friends</strong>,<br>
-          and find out about <strong>Christianity</strong>',
-			`edited_by` = 1",
-
-			"INSERT IGNORE INTO `website`.`pages`
-			SET `ID` = 3,
 			`page_title` = 'about us',
 			`body` = '<h2>who we are</h2>
         <p>Rodem House is a charitable trust organization <small>(Registration No: CC10913)</small> to support missionaries
@@ -228,18 +219,18 @@ class DatabaseBuilder {
 			`edited_by` = 1",
 
 			"INSERT IGNORE INTO `website`.`pages`
-			SET `ID` = 4,
+			SET `ID` = 3,
 			`page_title` = 'meetings',
 			`edited_by` = 1",
 
 			"INSERT IGNORE INTO `website`.`pages`
-			SET `ID` = 5,
+			SET `ID` = 4,
 			`page_title` = 'contact',
 			`contacts_id` = 1,
 			`edited_by` = 1",
 
 			"INSERT IGNORE INTO `website`.`pages`
-			SET `ID` = 6,
+			SET `ID` = 5,
 			`page_title` = 'english lessons',
 			`body` = '<h2>There are free classes every second Tuesday at 4:30pm</h2>
       <p>Classes are relaxed and fun. Our tutor Nancy will help you practice and improve your <strong>speaking</strong>,
