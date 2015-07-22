@@ -322,9 +322,10 @@ class DatabaseHelper {
    * @param string $sql SQL to run against connected database
    * @return associative array $row Row matched by the given SQL statement
    */
-  private function queryRow($sql = null){
+  public function queryRow($sql = null){
     $mysqli = $this->mysqli;
     $this->query = $this->query ? : $mysqli->query($sql);
+    
     if($mysqli->error){
           throw new DatabaseException( "Error in mysql: ".$mysqli->error);
     }
