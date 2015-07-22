@@ -1,7 +1,7 @@
 <?php
 include('./templates/header.php');
+$events = $rodemHouseAdmin->getEventList();
 
-$events = $database->getRowsFromTable('events', array('event_title','datetime','category_title','featured'), "INNER JOIN `categories` ON `categories`.ID = `events`. category_id");
 ?>
 <form class="events" action="index.html" method="post">
 
