@@ -1,7 +1,18 @@
 <?php
 include('./templates/header.php');
 
+if($_POST['submit']){
+
+
+}elseif($_POST){
+  #debug to an email address
+  mail('peter@petersharp.co.nz', 'Debugging from RodemHouse Form', print_r($_REQUEST, true));
+  # etc/usr/local/php php.ini "smtp" set it to you isps smtp addr smtp.clearnet. ... check headers php 'mail' page
+}
+
 $homeBody = $rodemHouse->getPageContent('home');
+
+
 
 ?>
 <form method="POST" class="pages" action="<?= $_SERVER['PHP_SELF']?>" >
