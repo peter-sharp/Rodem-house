@@ -1,8 +1,11 @@
 <?php
-    require_once('authenticator.php');
+    require_once('class.authenticator.php');
+    require_once('class.rodem_house.php');
     $authenticator = new AuthenticatorHelper();
     //database.php already required in authenticator, so:
     $database = new DatabaseHelper();
+
+    $rodemHouse = new RodemHouse();
 
     $currentPage = basename($_SERVER['PHP_SELF'],'.php');
     $editorPage = strpos($currentPage, 'edit') !== FALSE ;
@@ -92,4 +95,4 @@
       </section>
     </div>
     </main>
-  <?php endif ?>
+  <?php endif;
