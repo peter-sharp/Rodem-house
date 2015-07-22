@@ -1,18 +1,7 @@
 <?php
 include('./templates/header.php');
 
-function getHomeContents($content){
-  global $database;
-  $contents = $database->getRowsFromTable("pages", array("body","ID"))[0][$content];
-  return $contents;
-}
-
-$homeID = getHomeContents('ID');
-//die(var_dump($homeID));
-if($_POST['change']){
-  $database->updateInTable('pages', $homeID, array("body" => $_POST['change']['intro'] ) );
-}
-
+$homeBody = $rodemHouse->getPageContent('home');
 
 ?>
 <form method="POST" class="pages" action="<?= $_SERVER['PHP_SELF']?>" >
@@ -29,12 +18,12 @@ if($_POST['change']){
       <div class="col-md-4 center-block">
 
           <div class="form-group ">
-            <label for="">introduction text</label>
-            <textarea  id="name" name="change[intro]" class="form-control"><?= getHomeContents('body');?></textarea>
+            <label >introduction text</label>
+            <textarea  name="change[intro]" class="form-control"><?= $homeBody['body']?></textarea>
 
 
             <a class="btn btn-back" name="submit">back</a>
-            <input class="btn btn-CTA pull-right" type="submit" id="submit" name="submit" value="change">
+            <input class="btn btn-CTA pull-right" type="submit"  name="submit" value="change">
 
           </div>
       </div>
