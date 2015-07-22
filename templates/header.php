@@ -1,11 +1,12 @@
 <?php
     require_once('class.authenticator.php');
-    require_once('class.rodem_house.php');
+    require_once('class.rodem_house.administrator.php');
     $authenticator = new AuthenticatorHelper();
     //database.php already required in authenticator, so:
     $database = new DatabaseHelper();
 
     $rodemHouse = new RodemHouse();
+    $rodemHouseAdmin = new RodemHouseAdmin();
 
     $currentPage = basename($_SERVER['PHP_SELF'],'.php');
     $editorPage = strpos($currentPage, 'edit') !== FALSE ;
