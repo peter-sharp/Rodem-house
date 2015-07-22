@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('database.php');
+require_once('class.database.php');
 #TODO require_once('logger.php');
 
 class AuthenticatorException extends Exception { };
