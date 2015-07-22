@@ -10,6 +10,7 @@ class DatabaseException extends Exception { };
 class DatabaseHelper {
   private $mysqli;
   private $query;
+  private $foreignKeys;
 
   public $server;
   public $username;
@@ -28,6 +29,16 @@ class DatabaseHelper {
     $this->username = $username ?: "root";
     $this->password = $password ?: "Ch4ng3m3#";
     $this->database = $database ?: "website";
+
+    $this->foreignKeys = array(
+      "type_id" => "user_types",
+      "page_id" => "pages",
+      "category_id" => "categories",
+      "address_id" => "addresses",
+      "edited_by" => "users",
+      "image_id" => "images",
+      "contacts_id" => "contacts"
+    );
     //open connection to the database:
     try {
       $this->mysqli = $this->connect();
@@ -80,7 +91,7 @@ class DatabaseHelper {
     catch(Exception $error) {
       $message = "Error=Failed to add (".implode(',',$values).")";
       //$logger->log($error);
-      //echo $error;
+      // $error;
     }
     finally {
       return $message;
@@ -138,7 +149,7 @@ class DatabaseHelper {
   }
 
   /**
-    * gets results from a mysqli statement if they EXISTS
+    * gets results from a mysqli statement if they exist
     * @param object $statement mysqli statement(stmt) object
     * @return array results
     */
@@ -298,10 +309,10 @@ class DatabaseHelper {
     * @TODO add minimum and maximum ID parameters
     * @param array $table table in which to get rows from
     * @param array $columnNames collumns to get data from
-    * @param string $joinSql [optional] sql to join other tables @TODO..maybe find way to automate this
+    * @param string $joinSql [optional] sql to join other tables @TODO..re-evaluate function, *sniff* *sniff* smells like bad code
     * @return multi-dimensional array $rowData
     */
-  public function getRowsFromTable($table, $columnNames, $joinSql = ""){
+  public function getRowsFromTable($table, $columnNames = null, $joinSql = null){
     if (func_num_args() > 1){
 
       $sqlQuery = "SELECT ".implode(",", $columnNames)." FROM `$table`".$joinSql;
@@ -315,6 +326,75 @@ class DatabaseHelper {
 
     return $result;
   }
+  /**
+ 	 * builds a mysql select query from given action, table name and search parameters
+ 	 *
+   * @param string $table The name of the table to perform the action on
+   * @param array $columnNames collumns to get data from
+   * @param associative array $searchParams Conditions you'd like to put on the search
+   *  in the format "column name" => "value"
+ 	 * @return string containing the contructed mysql query
+	 */
+
+  public function buildSelectQuery($table, array $columnNames, array $searchParams){
+    $sql = "";
+    if (isset($columnNames)){
+      $sql = "SELECT ".implode(",", $columnNames);
+    }
+    else {
+      $sql = "SELECT *";
+    }
+    $sql .= " FROM `$table`";
+    $sql .= $this->buildJoinQuery($table);
+
+    if (isset($searchParams)){
+      $sql .= $this->buildSearchQuery($searchParams);
+    }
+    return $sql;
+  }
+  /**
+ 	 * builds a join query for all foreign keys in a given table
+ 	 *
+ 	 * @param string $table The name of the table
+ 	 * @return string sql statement with join statements for all foreign keys
+	 */
+  public function buildJoinQuery($table){
+    $sql = "";
+    $comunNames = array();
+    $result = $this->mysqli->query("SELECT `COLUMN_NAME`
+      FROM `INFORMATION_SCHEMA`.`COLUMNS`
+      WHERE `TABLE_SCHEMA`='website'
+      AND `TABLE_NAME`='$table'");
+
+    while($row = $result->fetch_row()){
+      $columnNames[] = $row[0];
+    }
+    //die(var_dump($columnNames));
+    foreach($columnNames as $columnName){
+
+      if(array_key_exists($columnName, $this->foreignKeys)){
+
+        $foreignTable = $this->foreignKeys[$columnName];
+        $sql .= " INNER JOIN `$foreignTable` ON `$foreignTable`.ID = `$table`.$columnName";
+      }
+    }
+    return $sql;
+  }
+
+  /**
+ 	 * builds a search condition query for each given key => value pair in a given
+   * associative array
+ 	 *
+ 	 * @param associative array $params column to check in => value to find
+ 	 * @return string sql statement of searches
+	 */
+  public function buildSearchQuery(array $params){
+    $sql = ' WHERE ';
+    foreach ($params as $column => $value) {
+      $conditions []= "`$column`=$value";
+    }
+    return $sql.implode(" && ",$conditions);
+  }
 
   /**
    * executes a given sql query on a row and returns an appropriate value.
@@ -325,7 +405,7 @@ class DatabaseHelper {
   public function queryRow($sql = null){
     $mysqli = $this->mysqli;
     $this->query = $this->query ? : $mysqli->query($sql);
-    
+
     if($mysqli->error){
           throw new DatabaseException( "Error in mysql: ".$mysqli->error);
     }
