@@ -1,6 +1,6 @@
 <?php
 include('./templates/header.php');
-$homepage = $database->getRowsFromTable("pages", array("body"))[0];
+$homepageContent = $rodemHouse->getPageContent('home'); // $database->getRowsFromTable("pages", array("body"))[0];
 
 ?>
 <main class="home">
