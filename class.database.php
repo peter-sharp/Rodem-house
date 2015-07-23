@@ -306,15 +306,16 @@ class DatabaseHelper {
     /**
     * retrieves all rows of given columns from a given table
     * NOTE not efficient for tables with thousands of rows
-    * @TODO add minimum and maximum ID parameters
+    *
     * @param array $table table in which to get rows from
     * @param array $columnNames collumns to get data from
+    * @param array $tablesToJoin tables to join to the query
     * @param associative array $searchParams cearch conditions for query: ('column' => 'value' ) where column = value
     * @return multi-dimensional array $rowData
     */
-  public function getRowsFromTable($table, $columnNames = null, $searchParams = null){
+  public function getRowsFromTable($table, $columnNames = null, $tablesToJoin = null, $searchParams = null){
 
-    $sqlQuery = $this->buildSelectQuery($table, $columnNames, $searchParams);
+    $sqlQuery = $this->buildSelectQuery($table, $columnNames, $tablesToJoin, $searchParams);
 
     $result = $this->queryRows($sqlQuery);
 
@@ -326,12 +327,13 @@ class DatabaseHelper {
  	 *
    * @param string $table The name of the table to perform the action on
    * @param array $columnNames collumns to get data from
+   * @param array $tablesToJoin tables to join to the query
    * @param associative array $searchParams Conditions you'd like to put on the search
    *  in the format "column name" => "value"
  	 * @return string containing the contructed mysql query
 	 */
 
-  public function buildSelectQuery($table, array $columnNames, array $searchParams){
+  public function buildSelectQuery($table,array $columnNames, $tablesToJoin = null, $searchParams = null){
     $sql = "";
     if (isset($columnNames)){
       $sql = "SELECT ".implode(", ", $columnNames);
@@ -340,7 +342,7 @@ class DatabaseHelper {
       $sql = "SELECT *";
     }
     $sql .= " FROM `$table`";
-    $sql .= $this->buildJoinQuery($table);
+    $sql .= $this->buildJoinQuery($table, $tablesToJoin);
 
     if (isset($searchParams)){
       $sql .= $this->buildSearchQuery($searchParams);
