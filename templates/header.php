@@ -36,7 +36,7 @@
       <nav class="pull-right">
         <ul >
           <?php foreach ($pages as $pageId => $pageTitle): ?>
-          <li <?=(($currentPage == $pageId) ? 'class="active"' : '') ?>><span><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></span></li>
+          <li class="<?=(($pageId === 'english') ? 'english ' : '')?><?=(($currentPage == $pageId) ? 'active' : '')?>" ><span><a href="./<?=$pageId?>.php" ><?=$pageTitle?></a></span></li>
           <?php endforeach; ?>
         </ul>
 
