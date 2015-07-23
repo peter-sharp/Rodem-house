@@ -1,23 +1,33 @@
 <?php
 include('./templates/header.php');
+
+$rodemHouseAdmin->updatePage('about us',array('body' => $_POST['change']['text']));
+
+
+$homeBody = $rodemHouse->getPageContent('about us');
 ?>
 
-  <form class="pages" action="index.html" method="post">
+  <form class="pages" action="<?= $_SERVER['PHP_SELF']?>" method="POST">
 
   <main class="editor">
   <div class="banner">
     <h1 class="col-md-4 center-block" >edit<br><small>about us page</small></h1>
+    <p class="breadcrumb">website editor > about page</p>
   </div>
   <article>
       <div class="container">
-      <p class="breadcrumb">website editor > about page</p>
-        <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
-        <label for="about">about us text</label>
-        <textarea  name="about" ></textarea>
 
-        <a class="btn btn-back" name="change">back</a>
-        <button class="btn btn-CTA" type="submit" name="change">change</button>
-    </div>
+        <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
+        <div class="col-md-4 center-block">
+          <div class="form-group ">
+            <label for="about">about us text</label>
+            <textarea  name="change[text]" class="form-control"><?= $homeBody['body'] ?></textarea>
+
+            <a class="btn btn-back" name="submit" href="./editor.php">back</a>
+            <input class="btn btn-CTA pull-right" type="submit" name="submit" value="change">
+          </div>
+      </div>
+    </div> <!-- /container -->
   </article>
 </main>
 <?php
