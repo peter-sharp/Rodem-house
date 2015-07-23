@@ -420,59 +420,58 @@ tr:nth-child(2) {
 }
 /* ############################# page specific ############################# */
 .home > .banner {
-  height: 70%;
+  height: 560px;
   background-image: url(../images/banner_home.jpg);
   background-position: left 70%;
   background-size: cover;
 }
 @media screen and (max-width: 983px) {
   .home > .banner {
-    height: 35%;
+    height: 340px;
   }
 }
 .about > .banner {
-  height: 70%;
+  height: 560px;
   background-image: url(../images/banner_about_us.jpg);
-  background-position: left 0;
+  background-position: left 10%;
   background-size: cover;
 }
 @media screen and (max-width: 983px) {
   .about > .banner {
-    height: 35%;
+    height: 340px;
   }
 }
 .meetings > .banner {
-  height: 45%;
+  height: 350px;
   background-image: url(../images/banner_meetings.jpg);
   background-position: left 0;
   background-size: cover;
 }
 @media screen and (max-width: 983px) {
   .meetings > .banner {
-    height: 22%;
+    height: 160px;
   }
 }
 .contact > .banner {
-  height: 45%;
+  height: 350px;
   background: url(../images/banner_contact_phonebox.png) no-repeat, url(../images/banner_contact_tiled.jpg) repeat-x;
   background-position: 60% 0;
-  height: 40%;
   background-size: contain;
 }
 @media screen and (max-width: 983px) {
   .contact > .banner {
-    height: 22%;
+    height: 160px;
   }
 }
 .english > .banner {
-  height: 45%;
+  height: 350px;
   background-image: url(../images/banner_english.svg);
   background-position: left 0;
   background-size: cover;
 }
 @media screen and (max-width: 983px) {
   .english > .banner {
-    height: 22%;
+    height: 160px;
   }
 }
 .editor {
@@ -487,11 +486,11 @@ tr:nth-child(2) {
   padding: 50px 15%;
 }
 .editor > .banner {
-  height: 45%;
+  height: 350px;
 }
 @media screen and (max-width: 983px) {
   .editor > .banner {
-    height: 22%;
+    height: 160px;
   }
 }
 .editor > .banner.login {
