@@ -36,9 +36,20 @@ body {
 }
 main {
   position: relative;
-  height: 100%;
   width: 100%;
-  overflow: hidden;
+}
+main.editor article {
+  background-color: #c1bfc1;
+}
+main.contact article {
+  background-color: #7bb2fc;
+}
+main.contact article p {
+  color: white;
+  font-size: 20px;
+}
+main.contact article p > img {
+  margin-right: 20px;
 }
 header,
 footer {
@@ -61,29 +72,34 @@ input {
 }
 header {
   z-index: 2;
-  min-height: 50px;
-  height: 10%;
+  height: 100px;
   padding: 1.1% 0 1.1% 0;
   box-shadow: 0 0 10px #000;
   /*  nav styles  */
-}
-header.editor {
-  height: 25%;
+  /* nav*/
 }
 @media screen and (max-width: 1188px) {
   header {
-    height: 25%;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 983px) {
+  header {
+    height: 180px;
   }
 }
 @media screen and (max-width: 572px) {
   header {
-    height: 60%;
+    height: 500px;
   }
+}
+header.editor {
+  height: 25%;
 }
 header nav {
   min-width: 200px;
   float: right;
-  min-height: 20px;
+  min-height: 50px;
   /* /li */
 }
 @media screen and (max-width: 572px) {
@@ -139,28 +155,39 @@ header nav li b {
 header nav li small {
   font-weight: lighter;
 }
+header nav .icon {
+  width: 14px;
+}
 footer {
   min-height: 25px;
-  padding: 0 14px;
+  padding: 14px 0 ;
 }
 footer p {
-  color: #767176;
+  color: #908a90;
+  font-size: 16px;
+  font-weight: bold;
 }
 footer input {
-  color: #a9a4a9;
+  color: #dad9da;
+  font-size: 18px;
+  margin-right: 30px;
+}
+footer input:last-child {
+  margin-right: 0;
+}
+footer .icon {
+  width: 20px;
+  margin-right: 8px;
 }
 article {
   z-index: 2;
-  height: 100%;
+  min-height: 420px;
   width: 100%;
   background-image: url(../images/swirls.svg);
   background-repeat: repeat;
   background-color: white;
   box-shadow: 0 0 10px #000;
   padding: 2% 0;
-}
-article.editor {
-  background-color: #c1bfc1;
 }
 article.CTA_area {
   background-color: #4ab3fa;
@@ -220,6 +247,9 @@ h3 {
   font-weight: bold;
   text-transform: uppercase;
 }
+h2 {
+  font-size: 30px;
+}
 p {
   font-family: 'Roboto Slab', serif;
   font-size: 14;
@@ -233,6 +263,9 @@ small {
   font-size: smaller;
   font-weight: lighter;
   color: #767176;
+}
+th {
+  border-bottom: 5px solid #189ef9;
 }
 td {
   padding: 1%;
@@ -250,6 +283,9 @@ tr:nth-child(2) {
   background-color: #ffe063;
 }
 /* ############################# utility classes ############################# */
+.mobile_menu {
+  display: none;
+}
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -257,6 +293,17 @@ tr:nth-child(2) {
   left: 0;
   bottom: 0;
   right: 0;
+}
+.arrow_right {
+  /* Thanks to css-tricks.com/snippets/css/css-triangle/ Note: must be block element*/
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #111437;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 .center-block {
   float: none;
@@ -301,10 +348,6 @@ tr:nth-child(2) {
   box-shadow: 0 4px #00305e;
   text-shadow: 0 -1px #00305e;
 }
-.btn.btn-ADD:after {
-  font-size: 17px;
-  content: " +";
-}
 .btn.btn-ADD:active {
   top: 4px;
   box-shadow: none;
@@ -323,6 +366,58 @@ tr:nth-child(2) {
 .banner {
   height: 50%;
 }
+/* accordion */
+.rotate_90 {
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.accordion_tab {
+  color: white;
+}
+.accordion_tab.fellowship {
+  background-color: #189ef9;
+}
+.accordion_tab.social {
+  background-color: #f9427c;
+}
+.accordion_tab > h2 {
+  text-align: center;
+}
+.accordion_tab > .arrow_right {
+  float: right;
+  margin-right: 100px;
+  margin-top: 8px;
+}
+.accordion_tab + * {
+  clear: both;
+  overflow: hidden;
+  max-height: 900px;
+  padding-bottom: 20px;
+  background-color: white;
+  transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+}
+.accordion_tab :hover {
+  cursor: pointer;
+}
+.accordion_tab + .closed {
+  /* messy */
+  max-height: 0px;
+  padding-bottom: 0;
+  background-color: #dfdfdf;
+  background-image: -webkit-linear-gradient(white, white, #dfdfdf);
+  background-image: -o-linear-gradient(white, white, #dfdfdf);
+  background-image: linear-gradient(white, white, #dfdfdf);
+  transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+}
 /* ############################# page specific ############################# */
 .home > .banner {
   height: 70%;
@@ -330,17 +425,32 @@ tr:nth-child(2) {
   background-position: left 70%;
   background-size: cover;
 }
+@media screen and (max-width: 983px) {
+  .home > .banner {
+    height: 35%;
+  }
+}
 .about > .banner {
   height: 70%;
   background-image: url(../images/banner_about_us.jpg);
   background-position: left 0;
   background-size: cover;
 }
+@media screen and (max-width: 983px) {
+  .about > .banner {
+    height: 35%;
+  }
+}
 .meetings > .banner {
   height: 45%;
   background-image: url(../images/banner_meetings.jpg);
   background-position: left 0;
   background-size: cover;
+}
+@media screen and (max-width: 983px) {
+  .meetings > .banner {
+    height: 22%;
+  }
 }
 .contact > .banner {
   height: 45%;
@@ -349,11 +459,21 @@ tr:nth-child(2) {
   height: 40%;
   background-size: contain;
 }
+@media screen and (max-width: 983px) {
+  .contact > .banner {
+    height: 22%;
+  }
+}
 .english > .banner {
   height: 45%;
   background-image: url(../images/banner_english.svg);
   background-position: left 0;
   background-size: cover;
+}
+@media screen and (max-width: 983px) {
+  .english > .banner {
+    height: 22%;
+  }
 }
 .editor {
   background-color: black;
@@ -368,6 +488,11 @@ tr:nth-child(2) {
 }
 .editor > .banner {
   height: 45%;
+}
+@media screen and (max-width: 983px) {
+  .editor > .banner {
+    height: 22%;
+  }
 }
 .editor > .banner.login {
   position: relative;

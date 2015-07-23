@@ -23,8 +23,10 @@
 @base_yellow: #ffe57d;
 @base_blue: #189ef9;
 @base_orange: #ff694c;
+@base_pink: #f9427c;
 @base_grey: #423f42;
 @editor_grey:  lighten(@base_grey,50%);
+@contact_blue: lighten(spin(@base_blue,10),20%);
 
 @button_base: #333;
 
@@ -35,9 +37,15 @@
 /* banners */
 .banner-big(){
   height:           70%;
+  @media screen and (max-width: 983px) {
+    height: 35%;
+  }
 }
 .banner-reg(){
   height:           45%;
+  @media screen and (max-width: 983px) {
+    height: 22%;
+  }
 }
 
 .banner-image(@image, @vertical-offset){
@@ -93,9 +101,20 @@ body {
 
 main {
   position: relative;
-  height:     100%;
   width:      100%;
-  overflow:   hidden;
+  &.editor article{
+    background-color: @editor_grey;
+  }
+  &.contact article{
+    background-color: @contact_blue;
+    p{
+      color: white;
+      font-size: 20px;
+      >img{
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 header, footer {
@@ -125,25 +144,26 @@ input{
 header {
 
   z-index: 2;
-  min-height:   50px;
-  height: 10%;
-  &.editor{
-    height: 25%;
-  }
+  height: 100px;
   @media screen and (max-width: 1188px) {
-    height: 25%;
+    height: 120px;
+  }
+  @media screen and (max-width: 983px) {
+    height: 180px;
   }
   @media screen and (max-width: 572px) {
-    height: 60%;
+    height: 500px;
   }
   padding: 1.1% 0 1.1% 0;
   .pannel-shadow();
-
+  &.editor{
+    height: 25%;
+  }
   /*  nav styles  */
   nav{
     min-width: 200px;
     float: right;
-    min-height: 20px;
+    min-height: 50px;
     @media screen and (max-width: 572px) {
       clear:both;
       float: none;
@@ -194,30 +214,42 @@ header {
         font-weight: lighter;
       }
     } /* /li */
-  }
+    .icon{
+      width: 14px;
+    }
+  } /* nav*/
 }
 
 footer {
   min-height:   25px;
-  padding: 0 14px;
+  padding: 14px 0 ;
   p{
-    color: lighten(@base_grey, 20%);
+    color: lighten(@base_grey, 30%);
+    font-size: 16px;
+    font-weight: bold;
   }
   input{
-    color: lighten(@base_grey, 40%);
+    color: lighten(@base_grey, 60%);
+    font-size: 18px;
+    margin-right: 30px;
+    &:last-child{
+      margin-right:   0;
+    }
+  }
+  .icon{
+    width: 20px;
+    margin-right: 8px;
   }
 }
 
 article {
     z-index: 2;
-    height:           100%;
+    min-height:           420px;
     width:            100%;
     .background-swirlspattern(white);
     .pannel-shadow();
     padding: 2% 0;
-    &.editor{
-      background-color: @editor_grey;
-    }
+
     &.CTA_area {
       background-color: lighten(@base_blue, 10%);
       text-align: right;
@@ -271,6 +303,9 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: 30px;
+}
 
 p {
   font-family: @font_body;
@@ -289,9 +324,12 @@ small{
   font-weight: lighter;
   color:       lighten(@base_grey, 20%);
 }
-
+th {
+  border-bottom: 5px solid @base_blue;
+}
 td{
   padding: 1%;
+
 
   >input {
     width: 20px;
@@ -309,11 +347,25 @@ tr{
     }
 }
 /* ############################# utility classes ############################# */
+.mobile_menu {
+  display: none;
+}
 
 .absolute-center {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.arrow_right { /* Thanks to css-tricks.com/snippets/css/css-triangle/ Note: must be block element*/
+    width:          0;
+    height:         0;
+    border-top:     10px solid transparent;
+    border-bottom:  10px solid transparent;
+    border-left:    20px solid #111437;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 .center-block {
@@ -361,10 +413,7 @@ tr{
     @base_blue_shadow: darken(spin(saturate(@base_blue, 5%), 5), 35%);
     box-shadow: 0 4px @base_blue_shadow;
     text-shadow: 0 -1px @base_blue_shadow;
-    &:after{
-      font-size: 17px;
-      content: " +";
-    }
+
     &:active{
       top: 4px;
       box-shadow: none;
@@ -384,10 +433,60 @@ tr{
 }
 .banner {
   height: 50%;
+
 }
 
-
-
+/* accordion */
+.rotate_90 {
+  -moz-transform:      rotate(90deg);
+  -o-transform:        rotate(90deg);
+  -webkit-transform:   rotate(90deg);
+  transform:           rotate(90deg);
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.accordion_tab{
+    color: white;
+    &.fellowship{
+      background-color: @base_blue;
+    }
+    &.social{
+      background-color: @base_pink;
+    }
+    >h2{
+      text-align: center;
+    }
+    >.arrow_right{
+        float:right;
+        margin-right: 100px;
+        margin-top: 8px;
+    }
+    + * {
+      clear:both;
+    	overflow: 		hidden;
+    	max-height:		900px;
+    	padding-bottom:	20px;
+    	background-color: white;
+      transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -webkit-transition: all 0.5s linear;
+    }
+    :hover {
+        cursor:         pointer;
+    }
+    + .closed { /* messy */
+    	max-height: 		0px;
+    	padding-bottom:	0;
+    	background-color: #dfdfdf;
+    	background-image:  -webkit-linear-gradient(white, white, #dfdfdf);
+      background-image:  -o-linear-gradient(white, white, #dfdfdf);
+      background-image:  linear-gradient(white, white, #dfdfdf);
+      transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -webkit-transition: all 0.5s linear;
+    }
+}
 /* ############################# page specific ############################# */
 
 .home{
