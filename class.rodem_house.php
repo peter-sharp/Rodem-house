@@ -6,7 +6,23 @@ class RodemHouseException extends Exception {};
 class RodemHouse {
     public $database;
     public $currentPage; #@TODO needed for router-like functionality of index page
-    public $pageNames = array('home','about us','meetings','contact', 'english lessons');
+    public $pageTitles = array('home','about us','meetings','contact', 'english lessons');
+    public $navItems = array('editorPages' => array(
+            'editor' => 'editor home',
+            'edit_events' => 'events',
+            'edit_homepage' => 'home page',
+            'edit_aboutpage' => 'about us page',
+            'edit_meetingspage' => 'meetings page',
+            'edit_contactpage' => 'contact page',
+            'edit_englishpage' => 'English lessons page'
+          ),
+     'pages' => array(
+          'index' => 'home',
+          'about' => 'about us',
+          'meetings' => 'meetings',
+          'contact' => 'contact',
+          'english' => '<small>free</small></br>English lessons'
+        ) );
 
     private $eventsSqlParams;
 
@@ -26,12 +42,14 @@ class RodemHouse {
  	 * @return body contents of the page @TODO could store the whole page
 	 */
     public function getPageContent($pageName){
-      if (in_array($pageName, $this->pageNames)){
+      if (in_array($pageName, $this->pageTitles)){
         return $this->database->queryRow("SELECT `body` FROM `pages` WHERE page_title= '$pageName'");
       }
       else {
         throw new RodemHouseException("Error: $pageName is not a known page!");
       }
+
+
     }
 
   /**
@@ -73,9 +91,22 @@ class RodemHouse {
         $categories = $database->getRowsFromTable('events', $columns );
       }
       return $categories;
-    }
+  }
 
-    public function getPageNames(){
-      return $this->pageNames;
-    }
+  public function getPageTitles(){
+    return $this->pageTitles;
+  }
+
+  /**
+   * redirects to a page with a given page name
+   *
+   * @param string $pageName name of page to redirect to
+   * @return void
+   */
+  public function gotToPage($pageName){
+    $allPages = array_merge($this->navItems['editorPages'],$this->navItems['pages']);
+    $location = array_search($pageName, $allPages);
+    header("location: ./$location.php");
+  }
+
 }
