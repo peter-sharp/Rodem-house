@@ -1,15 +1,9 @@
 <?php
 include('./templates/header.php');
 
-$id = $rodemHouseAdmin->getPageID('home');
+$rodemHouseAdmin->updatePage('home',array('body' => $_POST['change']['intro']));
 
-if($_POST['submit']){
- $database->updateInTable('pages', $id, array('body' => $_POST['change']['intro']));
-}elseif($_POST){
-  #debug to an email address
-  mail('peter@petersharp.co.nz', 'Debugging from RodemHouse Form', print_r($_REQUEST, true));
-  # etc/usr/local/php php.ini "smtp" set it to you isps smtp addr smtp.clearnet. ... check headers php 'mail' page
-}
+
 
 $homeBody = $rodemHouse->getPageContent('home');
 
@@ -34,7 +28,7 @@ $homeBody = $rodemHouse->getPageContent('home');
             <textarea  name="change[intro]" class="form-control"><?= $homeBody['body']?></textarea>
 
 
-            <a class="btn btn-back" name="submit">back</a>
+            <a class="btn btn-back" name="submit" href="./editor.php">back</a>
             <input class="btn btn-CTA pull-right" type="submit"  name="submit" value="change">
 
           </div>
