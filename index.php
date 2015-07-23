@@ -1,6 +1,6 @@
 <?php
 include('./templates/header.php');
-$homepageContent = $rodemHouse->getPageContent('home'); 
+$homeBody = $rodemHouse->getPageContent('home')['body'];
 
 ?>
 <main class="home">
@@ -11,8 +11,8 @@ $homepageContent = $rodemHouse->getPageContent('home');
   <article class="CTA_area">
     <div class="container">
       <p>
-      <?php if($homepage['body']):
-              echo $homepage['body'];
+      <?php if($homeBody):
+              echo $homeBody;
       else: ?>
           Come to Rodem fellowship to:<br>
           practice your <strong>English,</strong>

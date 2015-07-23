@@ -1,9 +1,10 @@
 <?php
 include('./templates/header.php');
 
+$id = $rodemHouseAdmin->getPageID('home');
+
 if($_POST['submit']){
-
-
+ $database->updateInTable('pages', $id, array('body' => $_POST['change']['intro']));
 }elseif($_POST){
   #debug to an email address
   mail('peter@petersharp.co.nz', 'Debugging from RodemHouse Form', print_r($_REQUEST, true));
