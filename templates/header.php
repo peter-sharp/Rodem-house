@@ -10,22 +10,8 @@
 
     $currentPage = basename($_SERVER['PHP_SELF'],'.php');
     $editorPage = strpos($currentPage, 'edit') !== FALSE ;
-    $editorpages = array(
-            'editor' => 'editor home',
-            'edit_events' => 'events',
-            'edit_homepage' => 'home page',
-            'edit_aboutpage' => 'about us page',
-            'edit_meetingspage' => 'meetings page',
-            'edit_contactpage' => 'contact page',
-            'edit_englishpage' => 'English lessons page'
-          );
-    $pages = array(
-          'index' => 'home',
-          'about' => 'about us',
-          'meetings' => 'meetings',
-          'contact' => 'contact',
-          'english' => '<small>free</small></br>English lessons'
-        );
+    $editorpages = $rodemHouse->navItems['editorPages'];
+    $pages = $rodemHouse->navItems['pages'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
