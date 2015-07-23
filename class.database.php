@@ -309,23 +309,18 @@ class DatabaseHelper {
     * @TODO add minimum and maximum ID parameters
     * @param array $table table in which to get rows from
     * @param array $columnNames collumns to get data from
-    * @param string $joinSql [optional] sql to join other tables @TODO..re-evaluate function, *sniff* *sniff* smells like bad code
+    * @param associative array $searchParams cearch conditions for query: ('column' => 'value' ) where column = value
     * @return multi-dimensional array $rowData
     */
-  public function getRowsFromTable($table, $columnNames = null, $joinSql = null){
-    if (func_num_args() > 1){
+  public function getRowsFromTable($table, $columnNames = null, $searchParams = null){
 
-      $sqlQuery = "SELECT ".implode(",", $columnNames)." FROM `$table`".$joinSql;
-
-    }
-    else {
-      $sqlQuery = "SELECT * FROM `$table`";
-    }
+    $sqlQuery = $this->buildSelectQuery($table, $columnNames, $searchParams);
 
     $result = $this->queryRows($sqlQuery);
 
     return $result;
   }
+
   /**
  	 * builds a mysql select query from given action, table name and search parameters
  	 *
@@ -339,7 +334,7 @@ class DatabaseHelper {
   public function buildSelectQuery($table, array $columnNames, array $searchParams){
     $sql = "";
     if (isset($columnNames)){
-      $sql = "SELECT ".implode(",", $columnNames);
+      $sql = "SELECT ".implode(", ", $columnNames);
     }
     else {
       $sql = "SELECT *";
@@ -355,16 +350,17 @@ class DatabaseHelper {
   /**
  	 * builds a join query for all foreign keys in a given table
  	 *
- 	 * @param string $table The name of the table
+ 	 * @param string $sourceTable The name of the table
+   * @param array $tablesToJoin tables to join to the query
  	 * @return string sql statement with join statements for all foreign keys
 	 */
-  public function buildJoinQuery($table){
+  public function buildJoinQuery($sourceTable, $tablesToJoin = array()){
     $sql = "";
-    $comunNames = array();
+    $columnNames = array();
     $result = $this->mysqli->query("SELECT `COLUMN_NAME`
       FROM `INFORMATION_SCHEMA`.`COLUMNS`
       WHERE `TABLE_SCHEMA`='website'
-      AND `TABLE_NAME`='$table'");
+      AND `TABLE_NAME`='$sourceTable'");
 
     while($row = $result->fetch_row()){
       $columnNames[] = $row[0];
@@ -372,10 +368,12 @@ class DatabaseHelper {
     //die(var_dump($columnNames));
     foreach($columnNames as $columnName){
 
-      if(array_key_exists($columnName, $this->foreignKeys)){
+      if(array_key_exists($columnName, $this->foreignKeys) ){
 
         $foreignTable = $this->foreignKeys[$columnName];
-        $sql .= " INNER JOIN `$foreignTable` ON `$foreignTable`.ID = `$table`.$columnName";
+        if (in_array($foreignTable, $tablesToJoin)){
+          $sql .= " INNER JOIN `$foreignTable` ON `$foreignTable`.ID = `$sourceTable`.$columnName";
+        }
       }
     }
     return $sql;
@@ -391,7 +389,7 @@ class DatabaseHelper {
   public function buildSearchQuery(array $params){
     $sql = ' WHERE ';
     foreach ($params as $column => $value) {
-      $conditions []= "`$column`=$value";
+      $conditions []= "`$column`='$value'";
     }
     return $sql.implode(" && ",$conditions);
   }
