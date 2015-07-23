@@ -4,7 +4,7 @@ require_once('class.database.php');
 class RodemHouseException extends Exception {};
 
 class RodemHouse {
-    private $database;
+    public $database;
     public $currentPage; #@TODO needed for router-like functionality of index page
     public $pageNames = array('home','about us','meetings','contact', 'english lessons');
 
@@ -16,13 +16,7 @@ class RodemHouse {
       $this->eventsSqlParams = array(
         'columns' =>  array('ID','event_title','page_title','category_title','event_description',
         'datetime','address_title','address','coordinates','image_title','image_description',
-        'image_location','featured'),
-
-        'joins' => "INNER JOIN `pages` ON `pages`.ID = `events`.page_id
-        INNER JOIN `categories` ON `categories`.ID = `events`.category_id
-        INNER JOIN `addresses` ON `addresses`.ID = `events`.address_id
-        INNER JOIN `images` ON `images`.ID = `events`.image_id"
-      );
+        'image_location','featured'));
     }
 
     /**
@@ -51,16 +45,13 @@ class RodemHouse {
     public function getFeaturedEvents($category = null){
       $columns = $this->eventsSqlParams['columns'];
 
-      $sql = $this->eventsSqlParams['joins']." WHERE `events`.featured = 1";
-
       if (isset($category)){
-        $events = $database->getRowsFromTable('events',
-          $columns,
-          $sql." AND WHERE `categories`.category_title = $category");
+        $events = $database->getRowsFromTable('events', $columns, array("category_title" => $category, 'featured' => 1));
       }
       else {
-        $events = $database->getRowsFromTable('events', $columns, $sql);
+        $events = $database->getRowsFromTable('events', $columns, array('featured' => 1));
       }
+      return $events;
     }
 
     /**
@@ -74,16 +65,14 @@ class RodemHouse {
       $columns = array('ID','category_title','category_description',
       'address_title','address','coordinates');
 
-      $sql = " INNER JOIN `addresses` ON `addresses`.ID = `categories`.address_id";
 
       if (isset($title)){
-        $events = $database->getRowsFromTable('categories',
-          $columns,
-          $sql." WHERE `categories`.category_title = $title");
+        $categories = $database->getRowsFromTable('categories', $columns, array('category_title' => $title));
       }
       else{
-        $events = $database->getRowsFromTable('events', $columns, $sql);
+        $categories = $database->getRowsFromTable('events', $columns );
       }
+      return $categories;
     }
 
     public function getPageNames(){
