@@ -36,7 +36,7 @@ class RodemHouseAdmin extends RodemHouse {
  	 * @return string ID of page
 	 */
   public function getPageID($pageName){
-    if (in_array($pageName, $this->pageNames)){
+    if (in_array($pageName, $this->pageTitles)){
       $sql = $this->database->buildSelectQuery("pages", array("`pages`.ID","page_title"), array( 'page_title' => $pageName));
       $id = $this->database->queryRow($sql)['ID'];
       //die(var_dump($id));
@@ -46,5 +46,27 @@ class RodemHouseAdmin extends RodemHouse {
       throw new RodemHouseException("Error: $pageName is not a known page!");
     }
   }
+
+  /**
+ 	 * updates a page with given parameters
+ 	 *
+ 	 * @param string $pageName of page to update
+   * @param associative array $changes changes to be made column => value
+ 	 * @return void
+	 */
+  public function updatePage($pageName,$changes){
+    $id = $this->getPageID($pageName);
+    if($_POST['submit']){
+     $this->database->updateInTable('pages', $id, $changes);
+     $this->gotToPage($pageName);
+    }elseif($_POST){
+      #debug to an email address
+      mail('peter@petersharp.co.nz', 'Debugging from RodemHouse Form ', print_r($_REQUEST, true));
+      # etc/usr/local/php php.ini "smtp" set it to you isps smtp addr smtp.clearnet. ... check headers php 'mail' page
+    }
+  }
+
+
+
 
 }
