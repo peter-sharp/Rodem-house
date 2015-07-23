@@ -13,7 +13,7 @@ class RodemHouseAdmin extends RodemHouse {
 	 */
 
   public function getEventList(){
-    $events = $this->database->getRowsFromTable('events', array('event_title','datetime','category_title','featured'));
+    $events = $this->database->getRowsFromTable('events', array('event_title','datetime','category_title','featured','`events`.ID'), array('categories'));
     return $events;
   }
 
@@ -37,7 +37,7 @@ class RodemHouseAdmin extends RodemHouse {
 	 */
   public function getPageID($pageName){
     if (in_array($pageName, $this->pageTitles)){
-      $sql = $this->database->buildSelectQuery("pages", array("`pages`.ID","page_title"), array( 'page_title' => $pageName));
+      $sql = $this->database->buildSelectQuery("pages", array("`pages`.ID","page_title"),null , array( 'page_title' => $pageName));
       $id = $this->database->queryRow($sql)['ID'];
       //die(var_dump($id));
       return $id;
@@ -55,14 +55,37 @@ class RodemHouseAdmin extends RodemHouse {
  	 * @return void
 	 */
   public function updatePage($pageName,$changes){
-    $id = $this->getPageID($pageName);
+
     if($_POST['submit']){
-     $this->database->updateInTable('pages', $id, $changes);
-     $this->gotToPage($pageName);
+      $id = $this->getPageID($pageName);
+      $this->database->updateInTable('pages', $id, $changes);
+      $this->gotToPage($pageName);
     }elseif($_POST){
       #debug to an email address
       mail('peter@petersharp.co.nz', 'Debugging from RodemHouse Form ', print_r($_REQUEST, true));
       # etc/usr/local/php php.ini "smtp" set it to you isps smtp addr smtp.clearnet. ... check headers php 'mail' page
+    }
+  }
+
+  /**
+ 	 * performs appropriate action on a given ID
+ 	 *
+ 	 * @param array $ids The ids to perform the action on
+   * @param string $action the type of action to perform
+ 	 * @return void
+	 */
+
+  public function selectEventEditAction($ids,$action){
+    $id = array_keys($ids);
+    $action = array_keys($action)[0];
+    switch($action){
+      case 'add':
+        return array(
+          'type' => $action
+        );
+      case 'edit':
+      case 'view':
+      case 'delete':
     }
   }
 
