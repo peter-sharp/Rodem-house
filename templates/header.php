@@ -47,7 +47,7 @@
             <?php endforeach; ?>
             <li class="logout pull-right"><a href="./<?=$pageId?>.php?logout=yes" ><b>logout</b></a></li>
           <?php else:?>
-            <li class="login pull-right"><span class="icon-login"></span><a href="./editor.php"><small>login</small></a></li>
+            <li class="login pull-right"><img class="icon" src="./images/icons/editor.svg" alt="website editor icon"><a href="./editor.php"><small>login</small></a></li>
           <?php endif;?>
         </ul>
       </nav>
