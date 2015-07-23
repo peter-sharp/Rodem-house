@@ -1,9 +1,11 @@
 <?php
 include('./templates/header.php');
 $events = $rodemHouseAdmin->getEventList();
-
+if ($_POST) {
+  $action = $rodemHouseAdmin->selectEventEditAction($_POST['affect'],$_POST['action']);
+}
 ?>
-<form class="events" action="index.html" method="post">
+<?= (!isset($action))? '<form class="events" action="'.$_SERVER['PHP_SELF'].'" method="POST">' : '' ?>
 
 <main  class="editor">
   <div class="banner">
@@ -11,9 +13,10 @@ $events = $rodemHouseAdmin->getEventList();
   </div>
   <p class="breadcrumb">website editor > events</p>
   <article>
+    <?php if(!isset($action)):?>
     <div class="container">
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
-        <button type="button" class="btn btn-ADD">add new</button>
+        <input type="submit" class="btn btn-ADD" name="action[add]" value="add new  +" >
         <table>
           <tr>
             <th>Title</th>
@@ -28,11 +31,16 @@ $events = $rodemHouseAdmin->getEventList();
               <td><?= gmdate("d-m-Y H:i:s ", $event['datetime'])?></td>
               <td><?= $event['category_title']?></td>
               <td><strong><?= (intval($event['featured']) )? "featured" : "" ?></strong></td>
-              <td><input type="checkbox" name="select" value=""></td>
+              <td><input type="checkbox" name="affect[<?= $event['ID']?>]" value=""></td>
             </tr>
           <?php endforeach?>
         </table>
     </div>
+  <?php else:
+    echo '<form class="events" action="'.$_SERVER['PHP_SELF'].'" method="POST">';
+      include('./_event_form.php');
+    echo '<form>';
+  endif;?>
   </article>
 </main>
 <?php
