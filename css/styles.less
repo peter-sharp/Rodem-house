@@ -118,7 +118,10 @@ textarea{
   width: 100%;
   min-height: 200px;
 }
-
+input{
+  background-color: transparent;
+  color:inherit;
+}
 header {
 
   z-index: 2;
@@ -138,26 +141,35 @@ header {
 
   /*  nav styles  */
   nav{
-    min-width: 60%;
+    min-width: 200px;
     float: right;
+    min-height: 20px;
     @media screen and (max-width: 572px) {
       clear:both;
       float: none;
     }
-    min-height: 20px;
     ul{
       clear: both;
     }
     li{
       position: relative;
       float:    left;
+      &:not(.english){
+      padding:  24px 80px 0 0;
+      }
+      &.english{
+        padding: 0 ;
+      }
+      &.login{
+        padding: 0;
+      }
+      text-transform: uppercase;
       @media screen and (max-width: 572px) {
         clear:both;
         float: none;
         min-height: 70px;
       }
-      padding: 20px 20px 5px;
-      text-transform: uppercase;
+
       span{
         a{
           color: grey;
@@ -165,7 +177,6 @@ header {
             font-size: 20px
           }
           >small{
-              font-size: smaller;
               color: @base_yellow;
           }
         }
@@ -173,7 +184,6 @@ header {
       &.active a{
         color:white;
         >small{
-            font-size: smaller;
             color: lighten(@base_yellow, 20%);
         }
       }
@@ -181,7 +191,6 @@ header {
         font-weight: bolder;
       }
       small{
-        font-size: smaller;
         font-weight: lighter;
       }
     } /* /li */
@@ -193,6 +202,9 @@ footer {
   padding: 0 14px;
   p{
     color: lighten(@base_grey, 20%);
+  }
+  input{
+    color: lighten(@base_grey, 40%);
   }
 }
 
@@ -270,6 +282,12 @@ p {
 a{
   color: grey;
 
+}
+
+small{
+  font-size: smaller;
+  font-weight: lighter;
+  color:       lighten(@base_grey, 20%);
 }
 
 td{
@@ -431,5 +449,8 @@ tr{
       z-index: -1;
     }
 
+  }
+  li:not(.english){
+  padding:  24px 20px 0 0;
   }
 }
