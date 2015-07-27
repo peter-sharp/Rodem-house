@@ -1,6 +1,8 @@
 /* logo */
 @logo: url(../images/Rodem_logo.svg);
 
+
+@image_map-pin: url(../images/icons/map_pin-black.svg);
 /* BG images */
 @BGimage_home: url(../images/banner_home.jpg);
 @BGimage_about: url(../images/banner_about_us.jpg);
@@ -22,7 +24,9 @@
 /* colours */
 @base_yellow: #ffe57d;
 @base_blue: #189ef9;
+@base_blue_shadow: darken(spin(saturate(@base_blue, 5%), 5), 35%);
 @base_orange: #ff694c;
+@base_orange_shadow: darken(spin(saturate(@base_orange, 5%), 5), 35%);
 @base_pink: #f9427c;
 @base_grey: #423f42;
 @editor_grey:  lighten(@base_grey,50%);
@@ -36,7 +40,7 @@
 
 /* banners */
 .banner-big(){
-  height:           560px;
+  height:           500px;
   @media screen and (max-width: 983px) {
     height: 340px;
   }
@@ -97,13 +101,23 @@ body, body * {
 body {
     background-color: @base_grey;
     background-image: @noise;
+    min-height: 900px;
 }
 
 main {
   position: relative;
   width:      100%;
-  &.editor article{
-    background-color: @editor_grey;
+  min-height: 800px;
+  &.editor {
+      background-color: black;
+      min-height: 400px;
+      article{
+        background-color: @editor_grey;
+        min-height: 200px;
+      }
+      .banner {
+        min-height: 200px;
+      }
   }
   &.contact article{
     background-color: @contact_blue;
@@ -128,9 +142,15 @@ header, footer {
 
 }
 
+label {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
 form{
   &.login{
     .pannel-shadow();
+    min-height: 400px;
   }
 }
 textarea{
@@ -140,6 +160,9 @@ textarea{
 input{
   background-color: transparent;
   color:inherit;
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
 }
 header {
 
@@ -180,8 +203,10 @@ header {
       &.english{
         padding: 0 ;
       }
-      &.login{
+      &.login, &.logout{
         padding: 0;
+        position:absolute;
+        right: 20px;
       }
       text-transform: uppercase;
       @media screen and (max-width: 572px) {
@@ -190,17 +215,23 @@ header {
         min-height: 70px;
       }
 
-      span{
-        a{
-          color: grey;
-          @media screen and (max-width: 572px) {
-            font-size: 20px
-          }
-          >small{
-              color: @base_yellow;
-          }
+
+      a{
+        color: lighten(@base_grey, 40%);
+        @media screen and (max-width: 572px) {
+          font-size: 20px
+        }
+        >small{
+            color: @base_yellow;
         }
       }
+      a[href^="./editor"]{
+        >small{
+          color:  lighten(@base_grey, 30%);
+        }
+      }
+
+
       &.active a{
         color:white;
         >small{
@@ -244,7 +275,7 @@ footer {
 
 article {
     z-index: 2;
-    min-height:           420px;
+    min-height:           550px;
     width:            100%;
     .background-swirlspattern(white);
     .pannel-shadow();
@@ -261,13 +292,22 @@ article {
         }
       }
     }
+
+    h2, h3, h4 {
+      margin-bottom: 40px;
+    }
+    .accordion_tab {
+      h2 {
+        margin-bottom: 0;
+      }
+    }
 }
 h1 {
   color:         white;
   text-align:    center;
   width:         auto;
   font-size:     100px;
-  @media screen and (max-width: 572px) {
+  @media screen and (max-width: 870px) {
     font-size:   60px;
   }
   text-shadow: 0 0 5px #000;
@@ -301,7 +341,12 @@ h1, h2, h3 {
   font-family: @font_heading;
   font-weight: bold;
   text-transform: uppercase;
+
 }
+
+
+
+
 
 h2 {
   font-size: 30px;
@@ -347,6 +392,29 @@ tr{
     }
 }
 /* ############################# utility classes ############################# */
+.map{
+  width:100%;
+  height: 200px;
+  background-color: @base_blue;
+}
+.map_caption {
+  margin-top: 80px;
+  font-weight: lighter;
+  color: lighten(@base_grey, 30%);
+  &:before {
+    content: "";
+    display: block;
+    position: relative;
+    background-image: @image_map-pin;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:16px;
+    height:   16px;
+    top: 3px;
+    margin-right: 10px;
+    float:left;
+  }
+}
 .mobile_menu {
   display: none;
 }
@@ -373,8 +441,11 @@ tr{
 }
 
 .breadcrumb{
+  position: absolute;
+  top: 300px;
   background-color: transparent;
-  color:lightgrey;
+  color:lighten(@base_grey, 20%);
+
 }
 
 .btn{
@@ -393,7 +464,7 @@ tr{
   }
   &.btn-CTA{
     background-color: @base_orange;
-    @base_orange_shadow: darken(spin(saturate(@base_orange, 5%), 5), 35%);
+
     box-shadow: 0 4px @base_orange_shadow;
     text-shadow: 0 -1px @base_orange_shadow;
     &:active{
@@ -410,7 +481,6 @@ tr{
   &.btn-ADD{
     padding: 3px 10%;
     background-color: @base_blue;
-    @base_blue_shadow: darken(spin(saturate(@base_blue, 5%), 5), 35%);
     box-shadow: 0 4px @base_blue_shadow;
     text-shadow: 0 -1px @base_blue_shadow;
 
@@ -433,7 +503,9 @@ tr{
 }
 .banner {
   height: 50%;
-
+  h1{
+    top: 40px;
+  }
 }
 
 /* accordion */
@@ -492,7 +564,7 @@ tr{
 .home{
   >.banner{
       .banner-big();
-      .banner-image(@BGimage_home, 70%);
+      .banner-image(@BGimage_home, -450px);
   }
 }
 .about{
@@ -514,6 +586,9 @@ tr{
     .banner-reg();
     .banner-image-double(@BGimage_contactFG, @BGimage_contactBG, 0);
   }
+  p:nth-child(4) {
+    margin-top: 80px;
+  }
 }
 
 .english{
@@ -523,23 +598,23 @@ tr{
   }
 }
 .editor{
-  background-color: black;
   form.login{
       .background-swirlspattern(@editor_grey);
       width: 50%;
       height: 300px;
       padding: 50px 15%;
+      margin-top: 100px;
   }
   >.banner{
     .banner-reg();
     &.login{
       position: relative;
-      height: 100%;
+      min-height: 800px;
     }
     &::after{
       content: "";
       .banner-image( @BGimage_editor, 0);
-      opacity: 0.5;
+      opacity: 0.2;
       top: 0;
       left: 0;
       bottom: 0;
@@ -549,7 +624,17 @@ tr{
     }
 
   }
-  li:not(.english){
-  padding:  24px 20px 0 0;
+  nav {
+    clear:both;
+    li:not(.english){
+      padding:  24px 20px 0 0;
+      a[href^="./edit"] {
+        color: @base_blue;
+
+      }
+      &.active a{
+        color:white;
+      }
+    }
   }
 }

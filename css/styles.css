@@ -34,13 +34,23 @@ body * {
 body {
   background-color: #423f42;
   background-image: url(../images/noise.svg);
+  min-height: 900px;
 }
 main {
   position: relative;
   width: 100%;
+  min-height: 800px;
+}
+main.editor {
+  background-color: black;
+  min-height: 400px;
 }
 main.editor article {
   background-color: #c1bfc1;
+  min-height: 200px;
+}
+main.editor .banner {
+  min-height: 200px;
 }
 main.contact article {
   background-color: #7bb2fc;
@@ -60,8 +70,13 @@ footer {
   background-repeat: repeat;
   width: 100%;
 }
+label {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
 form.login {
   box-shadow: 0 0 10px #000;
+  min-height: 400px;
 }
 textarea {
   width: 100%;
@@ -70,6 +85,9 @@ textarea {
 input {
   background-color: transparent;
   color: inherit;
+}
+input:last-of-type {
+  margin-bottom: 60px;
 }
 header {
   z-index: 2;
@@ -123,8 +141,11 @@ header nav li:not(.english) {
 header nav li.english {
   padding: 0 ;
 }
-header nav li.login {
+header nav li.login,
+header nav li.logout {
   padding: 0;
+  position: absolute;
+  right: 20px;
 }
 @media screen and (max-width: 572px) {
   header nav li {
@@ -133,16 +154,19 @@ header nav li.login {
     min-height: 70px;
   }
 }
-header nav li span a {
-  color: grey;
+header nav li a {
+  color: #a9a4a9;
 }
 @media screen and (max-width: 572px) {
-  header nav li span a {
+  header nav li a {
     font-size: 20px;
   }
 }
-header nav li span a > small {
+header nav li a > small {
   color: #ffe57d;
+}
+header nav li a[href^="./editor"] > small {
+  color: #908a90;
 }
 header nav li.active a {
   color: white;
@@ -182,7 +206,7 @@ footer .icon {
 }
 article {
   z-index: 2;
-  min-height: 420px;
+  min-height: 550px;
   width: 100%;
   background-image: url(../images/swirls.svg);
   background-repeat: repeat;
@@ -201,6 +225,14 @@ article.CTA_area p strong {
   color: white;
   font-size: 20px;
 }
+article h2,
+article h3,
+article h4 {
+  margin-bottom: 40px;
+}
+article .accordion_tab h2 {
+  margin-bottom: 0;
+}
 h1 {
   color: white;
   text-align: center;
@@ -209,7 +241,7 @@ h1 {
   text-shadow: 0 0 5px #000;
   /*  logo  */
 }
-@media screen and (max-width: 572px) {
+@media screen and (max-width: 870px) {
   h1 {
     font-size: 60px;
   }
@@ -284,6 +316,29 @@ tr:nth-child(2) {
   background-color: #ffe063;
 }
 /* ############################# utility classes ############################# */
+.map {
+  width: 100%;
+  height: 200px;
+  background-color: #189ef9;
+}
+.map_caption {
+  margin-top: 80px;
+  font-weight: lighter;
+  color: #908a90;
+}
+.map_caption:before {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: url(../images/icons/map_pin-black.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  margin-right: 10px;
+  float: left;
+}
 .mobile_menu {
   display: none;
 }
@@ -310,8 +365,10 @@ tr:nth-child(2) {
   float: none;
 }
 .breadcrumb {
+  position: absolute;
+  top: 300px;
   background-color: transparent;
-  color: lightgrey;
+  color: #767176;
 }
 .btn {
   position: relative;
@@ -367,6 +424,9 @@ tr:nth-child(2) {
 .banner {
   height: 50%;
 }
+.banner h1 {
+  top: 40px;
+}
 /* accordion */
 .rotate_90 {
   -moz-transform: rotate(90deg);
@@ -421,9 +481,9 @@ tr:nth-child(2) {
 }
 /* ############################# page specific ############################# */
 .home > .banner {
-  height: 560px;
+  height: 500px;
   background-image: url(../images/banner_home.jpg);
-  background-position: left 70%;
+  background-position: left -450px;
   background-size: cover;
 }
 @media screen and (max-width: 983px) {
@@ -432,7 +492,7 @@ tr:nth-child(2) {
   }
 }
 .about > .banner {
-  height: 560px;
+  height: 500px;
   background-image: url(../images/banner_about_us.jpg);
   background-position: left 10%;
   background-size: cover;
@@ -464,6 +524,9 @@ tr:nth-child(2) {
     height: 160px;
   }
 }
+.contact p:nth-child(4) {
+  margin-top: 80px;
+}
 .english > .banner {
   height: 350px;
   background-image: url(../images/banner_english.svg);
@@ -475,9 +538,6 @@ tr:nth-child(2) {
     height: 160px;
   }
 }
-.editor {
-  background-color: black;
-}
 .editor form.login {
   background-image: url(../images/swirls.svg);
   background-repeat: repeat;
@@ -485,6 +545,7 @@ tr:nth-child(2) {
   width: 50%;
   height: 300px;
   padding: 50px 15%;
+  margin-top: 100px;
 }
 .editor > .banner {
   height: 350px;
@@ -496,14 +557,14 @@ tr:nth-child(2) {
 }
 .editor > .banner.login {
   position: relative;
-  height: 100%;
+  min-height: 800px;
 }
 .editor > .banner::after {
   content: "";
   background-image: url(../images/banner_editor_gears.jpg);
   background-position: left 0;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -511,6 +572,15 @@ tr:nth-child(2) {
   position: absolute;
   z-index: -1;
 }
-.editor li:not(.english) {
+.editor nav {
+  clear: both;
+}
+.editor nav li:not(.english) {
   padding: 24px 20px 0 0;
+}
+.editor nav li:not(.english) a[href^="./edit"] {
+  color: #189ef9;
+}
+.editor nav li:not(.english).active a {
+  color: white;
 }
