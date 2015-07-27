@@ -56,7 +56,7 @@ class AuthenticatorHelper {
     //run query to find specific user
     if($result = $this->database->secureQuery($sql,array('email' => $email)) ){
         if ( password_verify( $password, $result[0]['password'] ) ){
-          $_SESSION['username'] = $username;
+          $_SESSION['email'] = $email;
           $_SESSION['loggedIn'] = TRUE;
           $_SESSION['usertype'] = strtoupper($result[0]['type_title']);
         }
