@@ -21,7 +21,7 @@ $homeBody = $rodemHouse->getPageContent('home');
     <div class="container">
 
       <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
-      <div class="col-md-4 center-block">
+      <div class="col-md-8 center-block">
 
           <div class="form-group ">
             <label >introduction text</label>
