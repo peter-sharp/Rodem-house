@@ -18,7 +18,7 @@ $homeBody = $rodemHouse->getPageContent('about us');
       <div class="container">
 
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
-        <div class="col-md-4 center-block">
+        <div class="col-md-8 center-block">
           <div class="form-group ">
             <label for="about">about us text</label>
             <textarea  name="change[text]" class="form-control"><?= $homeBody['body'] ?></textarea>
