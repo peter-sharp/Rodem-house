@@ -6,25 +6,30 @@ include('./templates/header.php');
 <main class="editor">
   <div class="banner">
     <h1 class="col-md-4 center-block" >edit<br><small>contact page</small></h1>
+    <p class="breadcrumb">website editor > home page</p>
   </div>
   <article>
     <div class="container">
-      <p class="breadcrumb">website editor > home page</p>
+
         <p class="user-type pull-right">logged in as <?= $_SESSION['usertype']?></p>
-        <label for="cellphone">cellphone number</label>
-        <input type="tel" name="cellphone" value="">
+        <div class="col-md-4 center-block">
+          <div class="form-group">
+            <label for="cellphone">cellphone number</label>
+            <input type="tel" name="cellphone" value="" class="form-control">
 
-        <label for="phone">cellphone number</label>
-        <input type="tel" name="phone" value="">
+            <label for="phone">phone number</label>
+            <input type="tel" name="phone" value="" class="form-control">
 
-        <label for="email">cellphone number</label>
-        <input type="email" name="email" value="">
+            <label for="email">email</label>
+            <input type="email" name="email" value="" class="form-control">
 
-        <label for="address">cellphone number</label>
-        <input type="text" name="address" value="">
+            <label for="address">address</label>
+            <input type="text" name="address" value="" class="form-control">
 
-        <a class="btn btn-back" name="change">back</a>
-        <button class="btn btn-CTA" type="submit" name="change">change</button>
+            <a class="btn btn-back" name="change" href="./editor.php">back</a>
+            <button class="btn btn-CTA pull-right" type="submit" name="change">change</button>
+          </div>
+        </div>
     </div>
   </article>
 </main>
