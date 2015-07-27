@@ -1,8 +1,12 @@
 <?php
 include('./templates/header.php');
 $events = $rodemHouseAdmin->getEventList();
-if ($_POST) {
+if ($_POST['action']) {
   $action = $rodemHouseAdmin->selectEventEditAction($_POST['affect'],$_POST['action']);
+}
+else if ($_POST['add']){
+  $message = $rodemHouseAdmin->addEvent($_POST['add']);
+  echo $message;
 }
 ?>
 <?= (!isset($action))? '<form class="events" action="'.$_SERVER['PHP_SELF'].'" method="POST">' : '' ?>
