@@ -84,11 +84,46 @@ class RodemHouseAdmin extends RodemHouse {
           'type' => $action
         );
       case 'edit':
+        return array(
+          'type' => $action
+        );
       case 'view':
+        return array(
+          'type' => $action
+        );
       case 'delete':
+        return array(
+          'type' => $action
+        );
+      default:
+      #log an error
+      #send message to user
     }
   }
 
+  /**
+ 	 * adds a given event array to the database
+ 	 *
+ 	 * @param associative array $event event data to store in the database
+ 	 * @return string $message to inform the user whether their action was successful or not
+	 */
+	public function addEvent($event){
+    die(var_dump($_SESSION));
+    #TODO query database to get IDs for page_id, category_id, address_id, edited_by, image_id
+    $pageID = $this->database->getRowsFromTable('pages', array('ID','page_title'), null, array('page_title' => 'meetings'))['ID'];
+    $categoryID = $this->database->getRowsFromTable('categories', array('ID','category_title'), null, array('category_title' => $event['category']))['ID'];
+    $addressID = $this->database->getRowsFromTable('addresses', array('ID','address'), null, array('address' => $event['address']))['ID'];
+
+    $data = array(
+      'event_title' => $event['title'],
+      'event_description' => $event['description'],
+      'datetime' => strtotime($event['datetime']),
+      'featured' => isset($event['featured']),
+
+    );
+	  $message = $this->database->insertInTable('events',$data);
+    return $message;
+	}
 
 
 
