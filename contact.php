@@ -1,6 +1,7 @@
 <?php
 include('./templates/header.php');
 ?>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
 <main class="contact">
 
   <div class="banner">
@@ -18,12 +19,17 @@ include('./templates/header.php');
         <img src="./images/icons/letter.svg" alt="letter icon" /> person@rodemhouse.org
       </p>
       <p>
-        <img src="./images/icons/map_pin.svg" alt="map pin icon" /> Some St, Suburb, Christchurch
+        <img src="./images/icons/map_pin.svg" alt="map pin icon" /> 344 Manchester St, Christchurch Central, Richmond 8013
       </p>
-      <div class="map"></div>
+
+      <div class="map" id="Rodem Fellowship"
+      data-location-x="-43.518982"
+      data-location-y="172.640104"
+      data-zoom="17">
+      </div>
     </div>
   </article>
-
+  <script src="./scripts/maps.js"></script>
 </main>
 <?php
 include('./templates/footer.php');
