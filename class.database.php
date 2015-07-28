@@ -91,11 +91,11 @@ class DatabaseHelper {
     catch(Exception $error) {
       $message = "Error=Failed to add (".implode(',',$values).")";
       //$logger->log($error);
-      // $error;
+      throw new DatabaseException($error);
     }
-    finally {
-      return $message;
-    }
+    // finally {
+    //   return $message;
+    // }
   }
 
   /**
@@ -114,8 +114,10 @@ class DatabaseHelper {
     if(!$this->array_isAssoc($data))
         throw new DatabaseException("data needs to be an associative array! \n current:". print_r($formData, true));
 
-    $columns = array_keys($data);
-    $values = array_values($data);
+    $dataFiltered = array_filter($data);
+
+    $columns = array_keys($dataFiltered);
+    $values = array_values($dataFiltered);
 
     // generate a value types string for the prepared statement
     $types = implode('',$this->createTypesArray($values) );
@@ -130,17 +132,18 @@ class DatabaseHelper {
     }
 
     if(!$statement = $mysqli->prepare($finalSql)){
-      throw new DatabaseException("Error prepearing statement:".$mysqli->error);
+      throw new DatabaseException("Error preparing statement:".$mysqli->error);
     }
 
     // function to insert the contents of an array as arguments to the bind_param function
     $bind_param_args = array_merge(array($types), $values);
     $query = call_user_func_array(array($statement, "bind_param"), $this->array_refValues($bind_param_args));
-
-    $statement->execute();
-    if($mysqli->error) //throw a mysql error
-      throw new DatabaseException( "Error in mysql: ".$mysqli->error);
-
+    try{
+      $statement->execute();
+    }
+    catch(Exception $error) {//throw a mysql error
+      throw new DatabaseException( "Error in mysql: $sql\nerror = ".$mysqli->error);
+    }
     $statement->store_result();
     if($statement->num_rows > 0){
         return $this->getResultsFromStatement($statement);
@@ -213,11 +216,14 @@ class DatabaseHelper {
         case 'integer':
           $types[] = 'i';
           break;
+        case 'boolean':
+          $types[] = 'i';
+          break;
         case 'string':
           $types[] = 's';
           break;
         default:
-          throw new DatabaseException("insert: could not insert $value because $type is not compatible with database");
+          throw new DatabaseException("insert: could not insert $value because $type is not compatible with the database");
       }
     }
     return $types;
@@ -316,7 +322,7 @@ class DatabaseHelper {
   public function getRowsFromTable($table, $columnNames = null, $tablesToJoin = null, $searchParams = null){
 
     $sqlQuery = $this->buildSelectQuery($table, $columnNames, $tablesToJoin, $searchParams);
-
+    //die(var_dump($sqlQuery));
     $result = $this->queryRows($sqlQuery);
 
     return $result;
@@ -374,7 +380,7 @@ class DatabaseHelper {
 
         $foreignTable = $this->foreignKeys[$columnName];
         if (in_array($foreignTable, $tablesToJoin)){
-          $sql .= " INNER JOIN `$foreignTable` ON `$foreignTable`.ID = `$sourceTable`.$columnName";
+          $sql .= " LEFT JOIN `$foreignTable` ON `$foreignTable`.ID = `$sourceTable`.$columnName";
         }
       }
     }
@@ -390,8 +396,13 @@ class DatabaseHelper {
 	 */
   public function buildSearchQuery(array $params){
     $sql = ' WHERE ';
-    foreach ($params as $column => $value) {
-      $conditions []= "`$column`='$value'";
+    foreach ($params as $key => $value) {
+      if(strpos($key,".") !== FALSE){
+        $tableColumn = explode('.', $key);
+        $key = "`$tableColumn[0]`.$tableColumn[1]";
+      }
+
+      $conditions []= "$key='$value'";
     }
     return $sql.implode(" && ",$conditions);
   }
@@ -402,16 +413,20 @@ class DatabaseHelper {
    * @param string $sql SQL to run against connected database
    * @return associative array $row Row matched by the given SQL statement
    */
-  public function queryRow($sql = null){
+  public function queryRow($sql){
     $mysqli = $this->mysqli;
-    $this->query = $this->query ? : $mysqli->query($sql);
+    $this->query = ($this->query)? : $mysqli->query($sql);
 
     if($mysqli->error){
-          throw new DatabaseException( "Error in mysql: ".$mysqli->error);
+          throw new DatabaseException( "Error in sql: \nsql =  $sql\nerror = ".$mysqli->error);
     }
 
     // we have selected something
     $result = $this->query->fetch_assoc();
+    if(!$result){
+      $this->query = array();
+      return;
+    }
     return $result;
 
 
@@ -422,10 +437,13 @@ class DatabaseHelper {
     *  @param string $sql SQL to run against connected database
     * @return array of associative arrays
     **/
-  private function queryRows($sql = null){
+  private function queryRows($sql){
     $result = array();
     while($row = $this->queryRow($sql) ){
       $result[] = $row;
+    }
+    if (empty($result)){
+      //TODO handle: e.g. throw new DatabaseException( "Warning, no data returned from query: $sql");
     }
 
     return $result;
