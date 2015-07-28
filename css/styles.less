@@ -160,7 +160,7 @@ textarea{
 input{
   background-color: transparent;
   color:inherit;
-  &:last-of-type {
+  &:last-of-type:not([name^="affect"]) {
     margin-bottom: 60px;
   }
 }
@@ -370,26 +370,38 @@ small{
   color:       lighten(@base_grey, 20%);
 }
 th {
+  text-align:   center;
+  vertical-align:middle;
   border-bottom: 5px solid @base_blue;
 }
 td{
-  padding: 1%;
 
-
-  >input {
-    width: 20px;
+  padding: 20px;
+  &:first-child{
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  &:last-child{
+    text-align:    center;
+    vertical-align: middle;
+  }
+  >input{
+    width: 16px;
+    height: 16px;
   }
   >strong {
     margin: 20px;
   }
+
 }
 tr{
     &:not(:first-child){
       background-color: @base_yellow;
     }
-    &:nth-child(2) {
+    &:nth-child(2n) {
       background-color: darken(@base_yellow, 5%);
     }
+
 }
 /* ############################# utility classes ############################# */
 .map{

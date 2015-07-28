@@ -86,7 +86,7 @@ input {
   background-color: transparent;
   color: inherit;
 }
-input:last-of-type {
+input:last-of-type:not([name^="affect"]) {
   margin-bottom: 60px;
 }
 header {
@@ -298,13 +298,24 @@ small {
   color: #767176;
 }
 th {
+  text-align: center;
+  vertical-align: middle;
   border-bottom: 5px solid #189ef9;
 }
 td {
-  padding: 1%;
+  padding: 20px;
+}
+td:first-child {
+  font-size: 20px;
+  font-weight: bolder;
+}
+td:last-child {
+  text-align: center;
+  vertical-align: middle;
 }
 td > input {
-  width: 20px;
+  width: 16px;
+  height: 16px;
 }
 td > strong {
   margin: 20px;
@@ -312,7 +323,7 @@ td > strong {
 tr:not(:first-child) {
   background-color: #ffe57d;
 }
-tr:nth-child(2) {
+tr:nth-child(2n) {
   background-color: #ffe063;
 }
 /* ############################# utility classes ############################# */
