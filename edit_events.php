@@ -3,10 +3,17 @@ include('./templates/header.php');
 $events = $rodemHouseAdmin->getEventList();
 if ($_POST['action']) {
   $action = $rodemHouseAdmin->selectEventEditAction($_POST['affect'],$_POST['action']);
+  $show = $action['data'][0];
 }
 else if ($_POST['add']){
-  $message = $rodemHouseAdmin->addEvent($_POST['add']);
-  echo $message;
+  $rodemHouseAdmin->addEvent($_POST['add']);
+}
+else if ($_POST['edit']){
+  //TODO$rodemHouseAdmin->updateEvent($_POST['add']);
+
+}
+else if ($_POST['delete']){
+  //TODO$rodemHouseAdmin->deleteEvent($_POST['delete']);
 }
 ?>
 <?= (!isset($action))? '<form class="events" action="'.$_SERVER['PHP_SELF'].'" method="POST">' : '' ?>
@@ -35,7 +42,7 @@ else if ($_POST['add']){
               <td><?= gmdate("d-m-Y H:i:s ", $event['datetime'])?></td>
               <td><?= $event['category_title']?></td>
               <td><strong><?= (intval($event['featured']) )? "featured" : "" ?></strong></td>
-              <td><input type="checkbox" name="affect[<?= $event['ID']?>]" value=""></td>
+              <td><input type="checkbox" name="affect[<?= $event['ID']?>]" ></td>
             </tr>
           <?php endforeach?>
         </table>
