@@ -15,6 +15,12 @@ class MysqlConnector {
     $this->database = $database ?: $params['database'];
     $this.connect();
   }
+
+  /**
+    * reads a given json file and returns it as a multi-dimensional array
+    * @param string $file Location of the config file
+    * @TODO add checks to make sure given JSON file is correct
+    */
   private function getConfig ($file) {
     $fileStr = file_get_contents($file);
     $json = json_decode($fileStr);
